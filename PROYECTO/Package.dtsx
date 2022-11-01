@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{2ADAFC77-CAD9-4A33-8330-D66DFE44EF4C}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1FE3E4BB-7630-42BB-A510-72523D783500}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,21 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT10"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{0C49FE25-8A7F-4163-A53B-9A14E524E91F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT10"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DFT_VENTASQL"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1307,6 +1322,10 @@
           Size="116,41.6"
           Id="Package\TAREA1"
           TopLeft="349.285720234015,94.0588248485513" />
+        <NodeLayout
+          Size="108.8,41.6"
+          Id="Package\DFT10"
+          TopLeft="54.2857152101945,110.88235449626" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
