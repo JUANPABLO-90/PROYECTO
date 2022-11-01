@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{4AFB88BD-1240-487D-8DD4-92CF04B5BFBB}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{2ADAFC77-CAD9-4A33-8330-D66DFE44EF4C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1271,6 +1271,21 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TAREA1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{BF1678EE-8E76-4320-AE1A-436FF771122F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TAREA1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1287,7 +1302,11 @@
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\DFT_VENTASQL"
-          TopLeft="127.857145034537,55.8235301946686" />
+          TopLeft="115.714287684888,26.0000003646402" />
+        <NodeLayout
+          Size="116,41.6"
+          Id="Package\TAREA1"
+          TopLeft="349.285720234015,94.0588248485513" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
