@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{06F2A4EA-C9A3-4EF9-AF3E-8520FA5D9C7F}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{511CDE0B-B6A1-4880-BF33-23DCEFA106EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1287,6 +1287,21 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\TAREA BRANDON"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5B86EF94-AEEB-4149-B30A-6C583D22EE53}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TAREA BRANDON"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Tarea Ejecutar SQL"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
@@ -1327,15 +1342,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\DFT_VENTASQL"
           TopLeft="115.714287684888,26.0000003646402" />
-        <NodeLayout
-          Size="116,41.6"
-          Id="Package\TAREA1"
-          TopLeft="349.285720234015,94.0588248485513" />
         <NodeLayout
           Size="108.8,41.6"
           Id="Package\DFT10"
@@ -1344,6 +1355,14 @@
           Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="174.285717253782,138.729413609356" />
+        <NodeLayout
+          Size="116,41.6"
+          Id="Package\TAREA1"
+          TopLeft="349.285720234015,94.0588248485513" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\TAREA BRANDON"
+          TopLeft="182.857145971182,273.000003828722" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
