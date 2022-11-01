@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{1FE3E4BB-7630-42BB-A510-72523D783500}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{06F2A4EA-C9A3-4EF9-AF3E-8520FA5D9C7F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1287,6 +1287,20 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{94A95989-B797-46BE-90C4-4F99DB1DAE14}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\TAREA1"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
@@ -1326,6 +1340,10 @@
           Size="108.8,41.6"
           Id="Package\DFT10"
           TopLeft="54.2857152101945,110.88235449626" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="174.285717253782,138.729413609356" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
