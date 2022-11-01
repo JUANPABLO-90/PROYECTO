@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{511CDE0B-B6A1-4880-BF33-23DCEFA106EE}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{BE5D7DED-14A2-413E-BFD9-BE65C6B94DA5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1330,6 +1330,21 @@
           version="1" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TERA JP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{CE39F601-CB3B-4199-AFA4-63721E159BC5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TERA JP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1352,6 +1367,10 @@
           Id="Package\DFT10"
           TopLeft="54.2857152101945,110.88235449626" />
         <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\TAREA BRANDON"
+          TopLeft="182.857145971182,273.000003828722" />
+        <NodeLayout
           Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="174.285717253782,138.729413609356" />
@@ -1360,9 +1379,9 @@
           Id="Package\TAREA1"
           TopLeft="349.285720234015,94.0588248485513" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\TAREA BRANDON"
-          TopLeft="182.857145971182,273.000003828722" />
+          Size="117.6,41.6"
+          Id="Package\TERA JP"
+          TopLeft="456.428579201504,277.588239187188" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
