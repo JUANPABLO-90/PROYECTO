@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{BE5D7DED-14A2-413E-BFD9-BE65C6B94DA5}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{B048EAB5-26E5-4C4D-8C78-D26439B83B48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1309,7 +1309,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Tarea Ejecutar SQL"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
@@ -1343,6 +1343,20 @@
       <DTS:ObjectData>
         <pipeline
           version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE BRANDON"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3343922D-D359-4D1C-8523-D1C4195BD0BA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE BRANDON"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1382,6 +1396,10 @@
           Size="117.6,41.6"
           Id="Package\TERA JP"
           TopLeft="456.428579201504,277.588239187188" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\TRUNCATE BRANDON"
+          TopLeft="528.571437572946,194.235296841724" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
