@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{83F04CB6-9BB8-4217-B986-C831523B658A}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{C10CF90F-5501-4A2A-B460-9A23BE88E0B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2472,6 +2472,16 @@
           </DTS:ForEachVariableMappings>
         </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\VENTAS TO STAGE.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B71B335B-8572-4CB5-8F5D-CCE59775EBF1}"
+          DTS:From="Package\VENTAS TO STAGE\DFT_VENTASQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\VENTAS TO STAGE\Foreach Excel-Ventas" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -2485,11 +2495,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\VENTAS TO STAGE\DFT_VENTASQL"
-          TopLeft="28.9000055347172,5.5" />
+          TopLeft="46.3603232923821,3.80065357093855" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\VENTAS TO STAGE\Foreach Excel-Ventas\DFT_VENTAFILE"
@@ -2497,10 +2507,32 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,117.6"
-          Size="204.8,160.8"
+          PanelSize="204.8,88.8"
+          Size="204.8,132"
           Id="Package\VENTAS TO STAGE\Foreach Excel-Ventas"
-          TopLeft="25.936508923161,80.1803946950444" />
+          TopLeft="25.1428581159944,74.2326821933294" />
+        <EdgeLayout
+          Id="Package\VENTAS TO STAGE.PrecedenceConstraints[Constraint]"
+          TopLeft="125.551590704188,45.4006535709385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8320286223908"
+              Start="0,0"
+              End="0,21.3320286223908">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3320286223908" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
