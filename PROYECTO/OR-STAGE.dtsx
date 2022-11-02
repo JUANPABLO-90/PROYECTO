@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{FDEA8ECF-23E9-4C65-8958-3E3B10B83F89}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{29A8DFC8-C8CA-4E22-B74F-09334AE0F459}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -92,13 +92,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\dft2"
+      DTS:refId="Package\DFTJP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
       DTS:DTSID="{02F8D150-C20D-4700-9FA3-C48A9020A931}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="dft2"
+      DTS:ObjectName="DFTJP"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -2575,9 +2575,9 @@
           Id="Package\VENTAS TO STAGE"
           TopLeft="201.157143501846,5.50000000000009" />
         <NodeLayout
-          Size="96.8,41.6"
-          Id="Package\dft2"
-          TopLeft="0,30.5882357231061" />
+          Size="108,41.6"
+          Id="Package\DFTJP"
+          TopLeft="71.4285726449927,65.7647068046781" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
