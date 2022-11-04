@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{8F46AAEE-88B5-4599-872E-E8222F078F1F}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{F917757E-1D39-4702-A638-F59A5A06A15F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -590,7 +590,388 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino BD_STAGE_CLIENTE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[cliente_stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].Columns[rfc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="rfc"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[rfc]" />
+                    <inputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].Columns[razon_social]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="razon_social"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[razon_social]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[razon_social]" />
+                    <inputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].Columns[nombre_comercial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="nombre_comercial"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_comercial]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]" />
+                    <inputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="estatus"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="rfc" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[razon_social]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="razon_social" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="nombre_comercial" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="estatus" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen BD_ORIGEN_CLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[cliente_origen]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                      length="13"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                      name="rfc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[razon_social]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[razon_social]"
+                      length="150"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[razon_social]"
+                      name="razon_social"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre_comercial]"
+                      length="150"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]"
+                      name="nombre_comercial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                      length="15"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                      name="estatus"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="rfc" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[razon_social]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="razon_social" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre_comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="nombre_comercial" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="estatus" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                      name="rfc" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[razon_social]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[razon_social]"
+                      name="razon_social" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[nombre_comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[nombre_comercial]"
+                      name="nombre_comercial" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                      name="estatus" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_CLIENTE.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -605,7 +986,637 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen BD_ORIGEN_COMPRA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[compra_origen]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[direccion_entrega]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_entrega]"
+                      length="750"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[direccion_entrega]"
+                      name="direccion_entrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[codigo_seguridad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_seguridad]"
+                      length="20"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[codigo_seguridad]"
+                      name="codigo_seguridad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[proveedor_origen_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[proveedor_origen_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[proveedor_origen_id]"
+                      name="proveedor_origen_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha]"
+                      name="fecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[hora]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[hora]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[hora]"
+                      name="hora"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha_comprometida]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_comprometida]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha_comprometida]"
+                      name="fecha_comprometida"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[forma_pago_origen_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[forma_pago_origen_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[forma_pago_origen_id]"
+                      name="forma_pago_origen_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[estatus_orden_compra_origen_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus_orden_compra_origen_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[estatus_orden_compra_origen_id]"
+                      name="estatus_orden_compra_origen_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[subtotal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[subtotal]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[subtotal]"
+                      name="subtotal"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[iva]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[iva]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[iva]"
+                      name="iva"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[total]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[total]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[total]"
+                      name="total"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[ieps]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[ieps]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[ieps]"
+                      name="ieps"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_entrega]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      name="direccion_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_seguridad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="codigo_seguridad" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[proveedor_origen_id]"
+                      dataType="i4"
+                      name="proveedor_origen_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha]"
+                      dataType="dbDate"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[hora]"
+                      dataType="dbTime2"
+                      name="hora"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_comprometida]"
+                      dataType="dbDate"
+                      name="fecha_comprometida" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[forma_pago_origen_id]"
+                      dataType="i4"
+                      name="forma_pago_origen_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus_orden_compra_origen_id]"
+                      dataType="i4"
+                      name="estatus_orden_compra_origen_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[subtotal]"
+                      dataType="numeric"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[iva]"
+                      dataType="numeric"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[total]"
+                      dataType="numeric"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].ExternalColumns[ieps]"
+                      dataType="numeric"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[direccion_entrega]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[direccion_entrega]"
+                      name="direccion_entrega" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[codigo_seguridad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[codigo_seguridad]"
+                      name="codigo_seguridad" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[proveedor_origen_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[proveedor_origen_id]"
+                      name="proveedor_origen_id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[fecha]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[fecha]"
+                      name="fecha" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[hora]"
+                      dataType="dbTime2"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[hora]"
+                      name="hora"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[fecha_comprometida]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[fecha_comprometida]"
+                      name="fecha_comprometida" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[forma_pago_origen_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[forma_pago_origen_id]"
+                      name="forma_pago_origen_id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[estatus_orden_compra_origen_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[estatus_orden_compra_origen_id]"
+                      name="estatus_orden_compra_origen_id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[subtotal]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[subtotal]"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[iva]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[iva]"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[total]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[total]"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ieps]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ieps]"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Origen BD_STAGE_COMPRA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[compra_stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[direccion_entrega]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="750"
+                      cachedName="direccion_entrega"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_entrega]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[direccion_entrega]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[codigo_seguridad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="codigo_seguridad"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_seguridad]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[codigo_seguridad]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="fecha"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[hora]"
+                      cachedDataType="dbTime2"
+                      cachedName="hora"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[hora]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[hora]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[fecha_comprometida]"
+                      cachedDataType="dbDate"
+                      cachedName="fecha_comprometida"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_comprometida]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[fecha_comprometida]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[subtotal]"
+                      cachedDataType="numeric"
+                      cachedName="subtotal"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[subtotal]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[subtotal]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[iva]"
+                      cachedDataType="numeric"
+                      cachedName="iva"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[iva]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[iva]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[total]"
+                      cachedDataType="numeric"
+                      cachedName="total"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[total]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[total]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[ieps]"
+                      cachedDataType="numeric"
+                      cachedName="ieps"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[ieps]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[ieps]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[proveedor_origen_id]"
+                      cachedDataType="i4"
+                      cachedName="proveedor_origen_id"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[proveedor_stage_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[proveedor_origen_id]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[forma_pago_origen_id]"
+                      cachedDataType="i4"
+                      cachedName="forma_pago_origen_id"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[forma_pago_stage_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[forma_pago_origen_id]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].Columns[estatus_orden_compra_origen_id]"
+                      cachedDataType="i4"
+                      cachedName="estatus_orden_compra_origen_id"
+                      externalMetadataColumnId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus_orden_compra_stage_id]"
+                      lineageId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB].Columns[estatus_orden_compra_origen_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_entrega]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      name="direccion_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_seguridad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="codigo_seguridad" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[proveedor_stage_id]"
+                      dataType="i4"
+                      name="proveedor_stage_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      dataType="dbDate"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[hora]"
+                      dataType="dbTime2"
+                      name="hora"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_comprometida]"
+                      dataType="dbDate"
+                      name="fecha_comprometida" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[forma_pago_stage_id]"
+                      dataType="i4"
+                      name="forma_pago_stage_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus_orden_compra_stage_id]"
+                      dataType="i4"
+                      name="estatus_orden_compra_stage_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[subtotal]"
+                      dataType="numeric"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[iva]"
+                      dataType="numeric"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[total]"
+                      dataType="numeric"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB].ExternalColumns[ieps]"
+                      dataType="numeric"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_COMPRA.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -620,7 +1631,558 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen BD_ORIGEN_COMPRA_P"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[compra_producto_origen]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
+                      name="producto_origen_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[compra_origen_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[compra_origen_id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[compra_origen_id]"
+                      name="compra_origen_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                      name="cantidad"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[entrada]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[entrada]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[entrada]"
+                      name="entrada"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[no_incluido]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[no_incluido]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[no_incluido]"
+                      name="no_incluido"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[subtotal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[subtotal]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[subtotal]"
+                      name="subtotal"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[iva]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[iva]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[iva]"
+                      name="iva"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[total]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[total]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[total]"
+                      name="total"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[ieps]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[ieps]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[ieps]"
+                      name="ieps"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
+                      dataType="i4"
+                      name="producto_origen_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[compra_origen_id]"
+                      dataType="i4"
+                      name="compra_origen_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                      dataType="numeric"
+                      name="cantidad"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[entrada]"
+                      dataType="numeric"
+                      name="entrada"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[no_incluido]"
+                      dataType="numeric"
+                      name="no_incluido"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[subtotal]"
+                      dataType="numeric"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[iva]"
+                      dataType="numeric"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[total]"
+                      dataType="numeric"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].ExternalColumns[ieps]"
+                      dataType="numeric"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[producto_origen_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[producto_origen_id]"
+                      name="producto_origen_id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[compra_origen_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[compra_origen_id]"
+                      name="compra_origen_id" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[cantidad]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[cantidad]"
+                      name="cantidad"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[entrada]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[entrada]"
+                      name="entrada"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[no_incluido]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[no_incluido]"
+                      name="no_incluido"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[subtotal]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[subtotal]"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[iva]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[iva]"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[total]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[total]"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ieps]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ieps]"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Origen BD_STAGE_COMPRA_P"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[compra_producto_stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[cantidad]"
+                      cachedDataType="numeric"
+                      cachedName="cantidad"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[cantidad]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[cantidad]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[entrada]"
+                      cachedDataType="numeric"
+                      cachedName="entrada"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[entrada]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[entrada]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[no_incluido]"
+                      cachedDataType="numeric"
+                      cachedName="no_incluido"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[no_incluido]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[no_incluido]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[subtotal]"
+                      cachedDataType="numeric"
+                      cachedName="subtotal"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[subtotal]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[subtotal]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[iva]"
+                      cachedDataType="numeric"
+                      cachedName="iva"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[iva]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[iva]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[total]"
+                      cachedDataType="numeric"
+                      cachedName="total"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[total]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[total]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[ieps]"
+                      cachedDataType="numeric"
+                      cachedName="ieps"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[ieps]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[ieps]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[producto_origen_id]"
+                      cachedDataType="i4"
+                      cachedName="producto_origen_id"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[producto_stage_id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]" />
+                    <inputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].Columns[compra_origen_id]"
+                      cachedDataType="i4"
+                      cachedName="compra_origen_id"
+                      externalMetadataColumnId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[compra_stage_id]"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB].Columns[compra_origen_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[producto_stage_id]"
+                      dataType="i4"
+                      name="producto_stage_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[compra_stage_id]"
+                      dataType="i4"
+                      name="compra_stage_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[cantidad]"
+                      dataType="numeric"
+                      name="cantidad"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[entrada]"
+                      dataType="numeric"
+                      name="entrada"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[no_incluido]"
+                      dataType="numeric"
+                      name="no_incluido"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[subtotal]"
+                      dataType="numeric"
+                      name="subtotal"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[iva]"
+                      dataType="numeric"
+                      name="iva"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[total]"
+                      dataType="numeric"
+                      name="total"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB].ExternalColumns[ieps]"
+                      dataType="numeric"
+                      name="ieps"
+                      precision="9"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_COMPRA_P.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1313,7 +2875,502 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino BD_STAGE_PRODUCTO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[producto_stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[nombre]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[ancho]"
+                      cachedDataType="numeric"
+                      cachedName="ancho"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[ancho]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[ancho]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[alto]"
+                      cachedDataType="numeric"
+                      cachedName="alto"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[alto]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[alto]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[profundo]"
+                      cachedDataType="numeric"
+                      cachedName="profundo"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[profundo]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[profundo]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[peso]"
+                      cachedDataType="numeric"
+                      cachedName="peso"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[peso]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[peso]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="750"
+                      cachedName="descripcion"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[descripcion]" />
+                    <inputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="estatus"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[ancho]"
+                      dataType="numeric"
+                      name="ancho"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[alto]"
+                      dataType="numeric"
+                      name="alto"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[profundo]"
+                      dataType="numeric"
+                      name="profundo"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[peso]"
+                      dataType="numeric"
+                      name="peso"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="estatus" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen BD_ORIGEN_PRODUCTO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[producto_origen]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                      length="100"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                      name="nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[ancho]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[ancho]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[ancho]"
+                      name="ancho"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[alto]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[alto]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[alto]"
+                      name="alto"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[profundo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[profundo]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[profundo]"
+                      name="profundo"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[peso]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[peso]"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[peso]"
+                      name="peso"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
+                      length="750"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
+                      name="descripcion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                      length="15"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                      name="estatus"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[ancho]"
+                      dataType="numeric"
+                      name="ancho"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[alto]"
+                      dataType="numeric"
+                      name="alto"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[profundo]"
+                      dataType="numeric"
+                      name="profundo"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[peso]"
+                      dataType="numeric"
+                      name="peso"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="estatus" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                      name="nombre" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ancho]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ancho]"
+                      name="ancho"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[alto]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[alto]"
+                      name="alto"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[profundo]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[profundo]"
+                      name="profundo"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[peso]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[peso]"
+                      name="peso"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="750"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
+                      name="descripcion" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                      name="estatus" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_PRODUCTO.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4522,6 +6579,274 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_ESTATUS_COMPRA\Destino BD_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO"
+          TopLeft="194,95" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
+          TopLeft="241,180" />
+        <EdgeLayout
+          Id="Package\DFT_PRODUCTO.Paths[Salida de origen de OLE DB]"
+          TopLeft="318.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46,43"
+              Start="0,0"
+              End="46,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="42,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42,21.5"
+                    Point2="46,21.5"
+                    Point3="46,25.5" />
+                  <mssgle:LineSegment
+                    End="46,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DFT_COMPRA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="234,42"
+          Id="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA"
+          TopLeft="195,104" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA"
+          TopLeft="194,176" />
+        <EdgeLayout
+          Id="Package\DFT_COMPRA.Paths[Salida de origen de OLE DB]"
+          TopLeft="310,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DFT_COMPRA_P">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P"
+          TopLeft="273,69" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P"
+          TopLeft="271,154" />
+        <EdgeLayout
+          Id="Package\DFT_COMPRA_P.Paths[Salida de origen de OLE DB]"
+          TopLeft="394,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DFT_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE"
+          TopLeft="285,66" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE"
+          TopLeft="293,169" />
+        <EdgeLayout
+          Id="Package\DFT_CLIENTE.Paths[Salida de origen de OLE DB]"
+          TopLeft="404.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
