@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{D5956CF2-C8DF-48E6-9EC7-763AAC528F93}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{8F46AAEE-88B5-4599-872E-E8222F078F1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -167,6 +167,85 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contenedor de bucles Foreach"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contenedor de bucles Foreach"
+      DTS:DTSID="{13A436B7-0B00-4822-A51C-2F3C20F104AF}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenedor de bucles Foreach">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{DF248FF9-9239-451A-A423-1B1E9D3CA547}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_EMPLEADO"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Contenedor de secuencias 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{940F2A37-CF4B-4379-99D2-A15D54432A4C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenedor de secuencias 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias 1\DFT_DIRECCION_DELETE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{8288DD4D-5824-4DB6-A0AB-1E8AADFB2249}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_DIRECCION_DELETE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias 1\DFT_DIRECCION_INSERT_UPDATE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{40D15863-501E-4874-BD7B-350A73A2A1DF}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_DIRECCION_INSERT_UPDATE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias 1.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{377AA22A-434F-480C-AC45-179C6D156E15}"
+          DTS:From="Package\Contenedor de secuencias 1\DFT_DIRECCION_INSERT_UPDATE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Contenedor de secuencias 1\DFT_DIRECCION_DELETE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DELETE FROM BD_STAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -497,6 +576,51 @@
             </component>
           </components>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_CLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{89871CD3-E97F-41B8-B1E8-F61AAC8CBE93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_CLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_COMPRA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{6092530C-932E-4923-8B6B-E7A036562161}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_COMPRA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_COMPRA_P"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{0D178C27-F345-4982-B2A6-552DBE560BFF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_COMPRA_P"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1175,6 +1299,21 @@
               startId="Package\DFT_FORMAS_PAGO\Origen BD_ORIGEN.Outputs[Salida de origen de OLE DB]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_PRODUCTO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{4E26FB76-B9DE-4FF6-A296-4B97BA28E1B6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_PRODUCTO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -3610,6 +3749,54 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\DFT_ESTATUS_COMPRA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E4480BB-DD69-4A6C-BF09-663597B49803}"
+      DTS:From="Package\DFT_ESTATUS_COMPRA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DFT_PRODUCTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{47EC708A-D5D4-4D71-A982-BD437F9CF536}"
+      DTS:From="Package\DFT_PRODUCTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\DFT_COMPRA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{6701B651-BFE2-4E1B-949B-2EC6FE1C140B}"
+      DTS:From="Package\DFT_COMPRA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\DFT_COMPRA_P" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{866C9EC2-0B0F-43F4-9FC0-279CD3DC1E2E}"
+      DTS:From="Package\DFT_COMPRA_P"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Contenedor de bucles Foreach" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C735A68-8EA1-4571-BB1C-89978FDEE3C4}"
+      DTS:From="Package\Contenedor de bucles Foreach"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Contenedor de secuencias 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC85DF4F-321B-45AD-B10A-EED2970454CC}"
+      DTS:From="Package\Contenedor de secuencias 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\DFT_CLIENTE" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3622,15 +3809,15 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="191,42"
           Id="Package\DFT_FORMAS_PAGO"
-          TopLeft="549.75,287.5" />
+          TopLeft="554.75,287.5" />
         <NodeLayout
           Size="103,42"
           Id="Package\DFT2"
-          TopLeft="3.57142863224965,134.867648056222" />
+          TopLeft="8.57142863224965,134.867648056222" />
         <NodeLayout
           Size="154,42"
           Id="Package\VENTAS TO STAGE\DFT_VENTASQL"
@@ -3674,14 +3861,14 @@
           PanelSize="316,314"
           Size="316,357"
           Id="Package\VENTAS TO STAGE"
-          TopLeft="166.5,69.25" />
+          TopLeft="171.5,69.25" />
         <NodeLayout
           Size="219,42"
           Id="Package\DELETE FROM BD_STAGE"
-          TopLeft="558.75,142.5" />
+          TopLeft="563.75,142.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="558.75,163.5">
+          TopLeft="563.75,163.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3715,7 +3902,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="482.5,307.208333333333">
+          TopLeft="487.5,307.208333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3738,10 +3925,10 @@
         <NodeLayout
           Size="212,42"
           Id="Package\DFT_ESTATUS_COMPRA"
-          TopLeft="545,371.25" />
+          TopLeft="550,371.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="648.125,329.5">
+          TopLeft="653.125,329.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3753,6 +3940,250 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,34.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\DFT_PRODUCTO"
+          TopLeft="557.5,442.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_COMPRA"
+          TopLeft="256.25,435" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DFT_COMPRA_P"
+          TopLeft="257.5,520" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DFT_CLIENTE"
+          TopLeft="603.75,796.25" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_INSERT_UPDATE"
+          TopLeft="27.5,9.49999999999989" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_DELETE"
+          TopLeft="60,94.5" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias 1.PrecedenceConstraints[Constraint]"
+          TopLeft="160,51.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,43.0000000000001"
+              Start="0,0"
+              End="8.5,35.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5000000000001"
+                    Point2="0,21.5000000000001"
+                    Point3="4,21.5000000000001" />
+                  <mssgle:LineSegment
+                    End="4.5,21.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,21.5000000000001"
+                    Point2="8.5,21.5000000000001"
+                    Point3="8.5,25.5000000000001" />
+                  <mssgle:LineSegment
+                    End="8.5,35.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="321,191"
+          Size="321,234"
+          Id="Package\Contenedor de secuencias 1"
+          TopLeft="493.75,525" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO"
+          TopLeft="25.5,10.25" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,107"
+          Size="205,150"
+          Id="Package\Contenedor de bucles Foreach"
+          TopLeft="237.5,595" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="656,413.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.0000000000001,29.25"
+              Start="0,0"
+              End="-14.0000000000001,21.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.625"
+                    Point2="0,14.625"
+                    Point3="-4,14.625" />
+                  <mssgle:LineSegment
+                    End="-10.0000000000001,14.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.0000000000001,14.625"
+                    Point2="-14.0000000000001,14.625"
+                    Point3="-14.0000000000001,18.625" />
+                  <mssgle:LineSegment
+                    End="-14.0000000000001,21.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="557.5,459.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.25,0"
+              Start="0,0"
+              End="-138.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-138.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="337.625,477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="340.75,562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="442.5,670">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.25,-28"
+              Start="0,0"
+              End="43.75,-28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.625,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.625,0"
+                    Point2="25.625,0"
+                    Point3="25.625,-4" />
+                  <mssgle:LineSegment
+                    End="25.625,-24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.625,-24"
+                    Point2="25.625,-28"
+                    Point3="29.625,-28" />
+                  <mssgle:LineSegment
+                    End="43.75,-28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="654.25,759">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26,37.25"
+              Start="0,0"
+              End="26,29.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.625"
+                    Point2="0,18.625"
+                    Point3="4,18.625" />
+                  <mssgle:LineSegment
+                    End="22,18.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22,18.625"
+                    Point2="26,18.625"
+                    Point3="26,22.625" />
+                  <mssgle:LineSegment
+                    End="26,29.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3821,15 +4252,15 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="140.8,41.6"
+          Size="141,42"
           Id="Package\DFT2\Origen ODBC"
           TopLeft="140,185" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\DFT2\Destino de ODBC 1"
           TopLeft="675,106" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\DFT2\Destino de ODBC"
           TopLeft="343,53" />
       </GraphLayout>
