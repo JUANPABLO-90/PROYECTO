@@ -1,0 +1,7 @@
+id,nombre,descripcion,activo
+1,01,EFECTIVO,Activo
+2,02,CHEQUE,Activo
+3,03,TRANSFERENCIA,Activo
+4,04,TARJETA CREDITO,Activo
+5,28,TARJETA DEBITO,Activo
+6,99,Otros,Activo
