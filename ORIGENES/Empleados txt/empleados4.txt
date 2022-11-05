@@ -1,0 +1,28 @@
+id,nombre,apellido_paterno,apellido_materno,contrasenia,fecha_nacimiento,nacionalidad,nss,curp,rfc,estado_civil,tipo_sangre,email_corporativo,email_personal,telefono,red_social,fecha_ingreso,estatus
+1744,Diana Prisma ,Meza,Juarez,5$llCAC:=A;pC:m;>kl:moBl=pln@?@A<?,19/03/2004,Mexicana,18220491809,MEJD040319MGTZRNA2,MEJD0403191JA,Soltero/a,AB+,,,,,18/07/2022,Activo
+212,Juan Antonio,Rodriguez,Velazquez,6$nEE@>B?@q>@q<=?>ED=pD>nAB@CD?nCA,18/08/1973,Mexicana,51927356330,ROVJ730818HASDLN09,ROVJ730818LRA,casado,A-,,,4491700358,,12/11/2013,Inactivo
+1130,Jonathan Antonio ,Hernandez,Escamilla ,3$==h89k:8;:?l99h?9<i=:jki?8;<7?i?,01/10/1996,Mexicana,17159647712,HEEJ961001HGTRSN09,HEEJ961001IN6,Soltero/a,AB+,,,,,05/05/2020,Inactivo
+39,Rodrigo,Vera,Garcia,2$7igf:hj=f<:<h<:=g<;4if7e;f85eg75,06/09/1977,Mexicana,34567876543,VEGJ770906HGTRRM07,VEGR7709075S1,casado,O+,,RODGIS@HOTMAIL.COM,4777717975,,05/09/1995,Activo
+1646,Luis Gerardo,Diaz,Lopez,5$??n?Ck>@l>=A=A;<nm?Bk<n?;n<nC:<<,09/02/1978,Mexicana,12027812321,DILL780209HGTJKL02,DILL7802099KA,Casado/a,AB+,,,,,18/04/2022,Activo
+1001,GISELA,RAMIREZ,*,5$k?kA;?B;;Bo?Coo?C:><>l??llCkon;A,07/05/1976,Mexicana,12947610700,RATG760507MGTMRS05,RATG760507CA0,Casado/a,O+,,,,,01/10/2019,Activo
+295,Claudia Araceli,Hernandez,Torres,5$kpkAlkn;?o@n<nCk@AAC?mo:o@<o;>pk,11/02/1997,Mexicana,6545645645,HETC970211MGTRRL05,HETC970211000,Soltero/a,AB+,,,4777703254,,20/10/2014,Activo
+1089,Jaime Ivan,Cruz ,Camacho ,4$A@;n;l8nmnAn8l8?lmk:nA>8:kmlkiA9,04/11/1991,Mexicana,12089158971,CUCJ911104HGTRMM00,CUCJ911104GC5,Soltero/a,AB+,,,,,17/02/2020,Activo
+1275,Luz Estefania  ,Vargas,Martinez,1$25999e6c:978e3e7h;9g6eee95362676,04/06/1998,Mexicana,15139808016,VAML980604MGTRRZ07,VAML980604D99,Soltero/a,AB+,,,,,02/12/2020,Inactivo
+277,Daniela,Vera,Garcia,2$5h769jh786j=67h;g:h9j8e8gfg=476e,08/12/1979,Mexicana,3454678654,VEGD791208MGTRRN05,VEGD791209EH3,casado,O+,,,4617809870,,01/03/2017,Activo
+401,Norma Angelica,Yepez,Lugo,4$k=?>8k?8kjA8A>jkj:8:jikljk8j>mm>,15/01/1991,Mexicana,12099151636,YELN910115MGTPGR00,YELN910115AB9,casado,AB+,,,4612009369,,17/08/2009,Activo
+1520,Libia Samantha ,Torres,Sierra ,4$>=>>i:llk?i8nlj=j>=kii88i>??mi=n,28/03/1993,Mexicana,12139302546,TOSL930328MGTRRB03,TOSL930328GGA,Soltero/a,AB+,,,,,05/10/2021,Activo
+221,Maria Guadalupe,Escamilla,Garcia,3$:;8:7:j;>j8gi;klk?;i;<ihgjlh9hk7,28/12/1990,Mexicana,41109000855,EACG901228MSPSRD09,EACG901228958,Soltero/a,A+,,,,,22/11/2016,Activo
+60,Maria Teresa,Rojas,Romo,3$<=l;?>6llj8k7h8jj9j;jklhg:=:76lh,25/08/1984,Mexicana,12018404009,RORT840825MGTJMR01,RORT840825MT4,Soltero/a,A-,,,4773628078,,20/10/2014,Activo
+167,Jose Guadalupe,Herrera,Zavala,2$7:74j4hf7h:ghf=7fj6h744;:j5gg;g6,17/06/1987,Mexicana,51118706137,HEZG870617HASRVD01,HEZG870617HL8,Soltero/a,A+,,,,,23/04/2015,Activo
+273,Elia,Arenas,Arenas,4$@Al;:;niki@ik@:?8kkm@k=j@i?;jmiA,18/04/1986,Mexicana,12048680032,AEAE860418MGTRRL03,AEAE860418IT4,Soltero/a,AB+,,ALIECAM_18@HOTMAIL.COM,,ELIA ARENAS,31/08/2004,Activo
+1745,Marco Antonio,Rodriguez,Martinez,3$>8=>6ljlj:6=>gki=;8;6>k<::=?9?<j,03/02/1966,Mexicana,12846603186,ROMM660203HGTDRR09,ROMM660203M61,Soltero/a,AB+,,,,,19/07/2022,Activo
+294,Adriana,Castañeda,Torres,1$2hhdf64ce84gf4ggce;d8723d9gf;gg;,23/12/1989,Mexicana,12118942577,CATL891223MGTSRZ06,CATL891223000,Soltero/a,AB+,,,4777761355,,10/10/2011,Activo
+1555,Luisa Celene,Gonzalez,Perez,3$<9:6?7gjgh9g97::==9?8kl=8jh6;=;h,01/01/2003,Mexicana,35180307866,GOPL030101MGTNRSA5,GOPL0301012CA,Soltero/a,AB+,,,,,27/12/2021,Activo
+27,Yessica,Ramos,Perez,2$;;44ih;fjjj58h<gf8g9<f65988f4g:g,04/05/1984,Mexicana,51038409945,RAPY840504HDFMRS04,RAPY840504H69,Soltero/a,A+,yessiags@donpulcro.com,YES.RAMOSP@GMAIL.COM,4491558503,,10/07/2007,Activo
+1255,Marlen Guadalupe ,Estrada,Diaz,2$5;4e:9<85h5:=<he59:ei6h6gi8==7hh,01/11/2002,Mexicana,46200216128,EADM021101MGTSZRA1,EADM0211016N8,Soltero/a,AB+,,,,,24/11/2020,Inactivo
+440,SARAI GUADALUPE,SIERRA,MUÑOZ,2$56jj:i==j9757:<69g;e;997f6i44<59,05/07/1999,Mexicana,12139927961,SIMS990705MGTRXR10,SIMS990705K67,Soltero/a,O+,auxconta03@donpulcro.com,SARAI.SIERRA.MUNOZ.103@GMAIL.COM,4775197158,,22/08/2017,Activo
+1407,Leonardo,Vera,.,4$j9@;lklk@;>8;?9Ai9iml@:l>li8l9n=,01/06/2021,Mexicana,98653214852,MATI751221MASRRS10,XAXX010101007,Soltero/a,AB+,,,,,04/06/2021,Activo
+1169,Mayra Alejandra,Morales,Najera,6$nC?>>@@nB?AB@m=>oEDCDp>BErpCEDor,01/07/1989,Mexicana,17158952725,MONM890701MGTRJY07,MONM890701123,Soltero/a,AB+,,,,,03/08/2020,Activo
+163,Pilar,Perez,Vargas,2$;j459gh7<66e;i<8795h4<=<jjii<7j;,12/10/1986,Mexicana,12058614509,PEVG861012MGTRRD03,PEVG861012,Soltero/a,O+,pilarp@donpulcro.com,,,,07/07/2008,Activo
+278,Alejandro,Vera,Garcia,4$@=mAljml:>;l8n>l@=>;;nk@:@kni==:,11/01/1982,Mexicana,12048223858,VEGA820111HGTRRL09,VEGA820111VC6,casado,O+,alexve@donpulcro.com,ALEXVE82@HOTMAIL.COM,4448162700,FACEBOOK,05/01/2009,Activo
+1038,PATRICIA ,GAVINA ,GUERRERO,6$mCpo>?>@=B@BEmqBm?CAAA@moEEEp??<,10/12/1977,Mexicana,,GAGP771210MGTVRT03,GAGP771210111,Casado/a,AB+,,,,,01/10/2019,Activo

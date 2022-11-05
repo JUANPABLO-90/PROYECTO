@@ -1,0 +1,17 @@
+id,nombre,apellido_paterno,apellido_materno,contrasenia,fecha_nacimiento,nacionalidad,nss,curp,rfc,estado_civil,tipo_sangre,email_corporativo,email_personal,telefono,red_social,fecha_ingreso,estatus
+1226,Michel Massiel ,Rojas,Medina ,3$k7kh99<<=:7>h9k7glh:8=<j?ig;9:>i,24/02/1993,Mexicana,2209395843,ROMM930224MMCJDC01,ROMM930224K10,Soltero/a,AB+,,,,,16/10/2020,Activo
+82,Jose Martin,Celaya,Tolentino,5$@p@o=po=<nkB;=CnC;no::>mB>km=A>A,05/01/1972,Mexicana,78965412398,TOLE720105HGTLLR05,TOLE720105HL1,Soltero/a,A+,,,4641236547,,15/09/2014,Activo
+862,Julio Cesar,Claudio,Claudio,5$?><?<o<;Cm@><ml;?ol=?B>=:olnkm?<,25/05/1982,Mexicana,63008238428,CACJ820525HGTLLL09,CACJ820525KE2,Casado/a,AB+,,,4772324851,,15/07/2019,Activo
+16,Jose de Jesus,Rojas,Soto,3$?7=h>li96k8:>9k<<=g>8lg7ll>:=lki,07/10/1976,Mexicana,12987754129,ROSJ771007HGTJTS08,ROSJ7710074E8,Soltero/a,AB+,dp@donpulcro.com,PERSONAL@EMPRESA.COM,4611658510,,12/12/2008,Activo
+53,Gerardo Ossiel,Rodriguez,Mendoza,4$Ajjn=k<@Ajl?kl<lAm>A<nii8ji<A:8A,03/03/1996,Mexicana,38149615197,ROMG960303HGTDNR06,ROMG960303DU5,Soltero/a,A+,,,4626242648,,17/03/2015,Inactivo
+782,Andrea de Jesus,Salazar,Becerra,4$Aj>>lAj9k@m:@jnlj@A>8@m@>?An<ji@,10/11/1993,Mexicana,12129356122,SABA931110MGTLCN04,SABA931110V76,Casado/a,O+,,,4622574573,,09/04/2019,Inactivo
+1008,Marco Antonio,Lopez,Plascencia,7$qDBDtE@BttCFp?pt?BoC>DsFor@FGr>D,27/05/1974,Mexicana,94967403307,LOPM740527HGTPLR07,LOPM740527QP0,Casado/a,O+,,,4773805066,,21/10/2019,Inactivo
+941,Jennifer Guadalupe,Meza,Ricaño,5$np@;mp@<=lo@?n;nmkoBBmmkCll>:plA,06/02/1998,Mexicana,49169883086,MERJ980206MGTZCN02,MERJ980206J41,Soltero/a,AB+,,,4621263217,,26/09/2019,Inactivo
+1234,Martha Yanely ,Esquivel ,Leal,5$mo>>BmB@AAnlk=nBlo>;>lnn@CBAkBn@,26/03/1985,Mexicana,12048567478,EULM850326MGTSLR00,EULM850326IC7,Casado/a,AB+,,,,,21/10/2020,Inactivo
+14,Alonso,Torres,Vega,1$23;3::5c5e394f9ff76f47fe9e98c657,07/11/1992,Mexicana,12149200078,TOVA921107HGTRGL00,TOVA921107457,Soltero/a,AB+,dp@donpulcro.com,PERSONAL@EMPRESA.COM,4611658111,,13/10/2013,Activo
+1458,Jaime Jesus ,Rivera ,Rangel,3$h6jk9g<:j77;9igj;>i8:j??9=>6lj;g,28/09/1999,Mexicana,59169953987,RARJ990928HGTVNM15,RARJ990928TJ8,Soltero/a,AB+,,,,,09/08/2021,Activo
+1459,Luis Fernando ,Arriaga ,Barcenas,3$==>k<j<kikkij>i<hig6=9hih<=hh8i>,18/07/2003,Mexicana,35180382380,AIBL030718HGTRRSB6,AIBL030718J77,Soltero/a,AB+,,,,,10/08/2021,Activo
+1469,Luis Enrique ,Cabrera ,Gonzalez,5$?mlCn>A?noC=Alk@;>@@?plp:=l<<;@l,21/12/1998,Mexicana,20169874375,CAGL981221HGTBNS08,CAGL981221N20,Soltero/a,AB+,,,,,16/08/2021,Activo
+207,Marco Antonio,Oviedo,Flores,5$l@A>?C::>?=CkC=o@=:B>@:@;?omB?k<,24/05/1994,Mexicana,41139450518,OIFM940524HNLVLR04,OIFM940524NY9,Soltero/a,A+,,,4441053864,,11/09/2013,Activo
+1399,Jesus Eduardo,Zuñiga ,Gonzalez,3$?7>jg=8<6<7?k;ihj7<=8j;9hgj::?9i,20/03/1996,Mexicana,44149699249,ZUGJ960320HGTXNS00,ZUGJ960320648,Soltero/a,AB+,,,,,24/05/2021,Inactivo
+1398,Rosa Janette,Ramirez,Jaramillo,3$>g=>gi6?;=;8=8>iklh>>?ll8kl9gl=g,20/03/1995,Mexicana,8189547014,RAJR950320MGTMRS01,RAJR950320UF9,Soltero/a,AB+,,,,,24/05/2021,Inactivo

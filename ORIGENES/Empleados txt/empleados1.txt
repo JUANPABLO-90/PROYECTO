@@ -1,0 +1,11 @@
+id,nombre,apellido_paterno,apellido_materno,contrasenia,fecha_nacimiento,nacionalidad,nss,curp,rfc,estado_civil,tipo_sangre,email_corporativo,email_personal,telefono,red_social,fecha_ingreso,estatus
+729,Ana Laura,Rodriguez,Cruz,2$789i<j97=j7974=66gfi8ji9<<4j494;,17/09/1985,Mexicana,12058551834,ROCA850917MGTDRN06,ROCA850917MS2,Casado/a,AB+,,,123456789,,19/01/2019,Activo
+1040,Yazmin,Martinez,Hernandez,2$6;f64h;6f:54=j64;g77:54:j49:fi75,14/02/1983,Mexicana,63018302024,MAHY830214MDFRRZ01,MAHY830214F21,Casado/a,AB+,,,46246256374,,28/11/2019,Activo
+1179,Santiago ,Gutierrez,Rivera ,7$toCq?os?rB?CpF@sBEpDp?DpC>pApApp,25/07/1988,Mexicana,12048853258,GURS880725HGTTVN09,GURS880725C40,Casado/a,AB+,,,,,19/08/2020,Activo
+1153,Julissa Isabel,Feliz,Taveras,4$m?A8:@n>=jim@n;n:j;k8;9k9j?nm@jm,15/09/1998,Extranjera,2345676544,FETJ980919MNELVL00,TAFJ1509988D8,Soltero/a,O+,julissatav@cmaxton.com,julissataveras1509@hotmail.com,,,22/09/2019,Activo
+223,Gerardo Manuel,Zarzosa,Cuellar,4$=jkl:ilm9imn<8=i=jn?9>j@@ki:=l:A,21/01/1987,Mexicana,41128708256,ZACG870121HSPRLR04,ZACG870121AB9,Soltero/a,A+,,,4448334104,,14/03/2016,Activo
+232,Neil Anthony,Robles,Bedolla,3$8:7h>lh987ji9l9g<>l9g>l?66l?:l6:,04/01/1991,Mexicana,19149121246,ROBN910104HSPBDL09,ROBN910104A42,Soltero/a,A+,,,4442431161,,11/03/2015,Activo
+1178,Esmeralda Joselin,Villafaña,Zamilpa ,3$i6=k:;8hjhj?i;97<g:87:::kkgllkl<,07/11/1987,Mexicana,12058785192,VIZE871107MGTLMS05,VIZE871107U43,Soltero/a,AB+,,,,,19/08/2020,Activo
+1681,Jessica Yazmin,Garcia ,Aldaco,5$@=C<=n;B:o@?@>BA>@>BA:@>;lpoC>>n,20/07/1983,Mexicana,63008359877,GAAJ830720MGTRLS00,GAAJ830720RD5,Casado/a,AB+,,,,,16/05/2022,Activo
+905,Salvador,López,Villamar,3$?;g77<lij><7?:g=h<hkkji>:l7jh?>9,11/07/1999,Mexicana,3179910421,LOVS990711HGTPLL06,LOVS990711NX6,Soltero/a,AB+,,,,,26/08/2019,Activo
+1527,Juan ,Segundo,Martinez,1$34c39d45:5d79h:;de6ff4fee9fe6::h,16/05/1988,Mexicana,10158814508,SEMJ880516HMCGRN05,SEMJ880516J2A,Soltero/a,O+,,,,,19/10/2021,Activo

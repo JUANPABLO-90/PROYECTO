@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{F917757E-1D39-4702-A638-F59A5A06A15F}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{4114710B-9CAC-4B9A-AA81-FDBDD7CFF34D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\PROYECTO\ORIGENES\FORMA DE PAGO\formapago - copia.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\PROYECTO\ORIGENES\FORMA DE PAGO\formapago - copia.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -92,6 +92,187 @@
               DTS:TextQualified="True"
               DTS:ObjectName="activo"
               DTS:DTSID="{6F215695-A4DF-4D5D-A855-503C430E33AB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5C9E281F-DE48-4884-BCE3-59448A64FD60}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::RUTATXT]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PROYECTO\ORIGENES\Empleados txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{12F8D9EA-0D8A-4AA5-A77A-CC1178C3C0AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre"
+              DTS:DTSID="{A19D6610-50FA-477B-9BF7-34C1BD181BFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="apellido_paterno"
+              DTS:DTSID="{22FFB444-F255-4AA7-84B7-FC6967973812}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="apellido_materno"
+              DTS:DTSID="{197426A4-B1E6-454F-92C4-AE3B838C1754}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contrasenia"
+              DTS:DTSID="{66B70147-4E06-4D01-8C71-BDB45C72236E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_nacimiento"
+              DTS:DTSID="{B2DA29B9-5D91-4EEC-8823-A73B8D61200B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nacionalidad"
+              DTS:DTSID="{FA5E6D2E-136F-48BF-AE15-6D81F5EECC02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nss"
+              DTS:DTSID="{4DC36567-9365-4CB3-A9CF-DBECEE64744C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="18"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="curp"
+              DTS:DTSID="{AF8CB215-2549-4F44-9C6C-4251311C3ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="13"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rfc"
+              DTS:DTSID="{954741F8-8D5A-478F-9782-CB33DF72D864}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estado_civil"
+              DTS:DTSID="{FE1E9C0B-03E4-4FF2-BB88-8483426E25A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="18"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_sangre"
+              DTS:DTSID="{FA46C73C-A894-42AF-ACEC-D75341318160}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email_corporativo"
+              DTS:DTSID="{8723C6C7-012E-4935-9B8C-8DB6F4B6ED25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email_personal"
+              DTS:DTSID="{C519A3A8-C8B5-4C1C-95E3-1AE383A6A9E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="telefono"
+              DTS:DTSID="{125D6193-D7A1-4066-85BD-28CE4E55FA98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="red_social"
+              DTS:DTSID="{A79ABDCE-6939-418F-9A87-F4103C6C72B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_ingreso"
+              DTS:DTSID="{CAE14A58-D3A3-4FA4-8D3F-66AC65C0448C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estatus"
+              DTS:DTSID="{376BD583-9D0A-48C1-B11B-785E39AE0A2E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -165,6 +346,15 @@
       <DTS:VariableValue
         DTS:DataType="8">C:\PROYECTO\ORIGENES\VENTAS\XLS\venta1.xls</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81EA92BB-3A41-4D3D-BBE8-6E967130AD4C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RUTATXT">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\PROYECTO\ORIGENES\Empleados txt</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
@@ -175,6 +365,23 @@
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contenedor de bucles Foreach">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{528709C8-99D8-456A-B0AC-50386E6F94DE}"
+        DTS:ObjectName="{528709C8-99D8-456A-B0AC-50386E6F94DE}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\PROYECTO\ORIGENES\Empleados txt" />
+            <FEFEProperty
+              FileSpec="empleado*.TXT" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
@@ -189,10 +396,1832 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[empleado_origen]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nombre"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[apellido_paterno]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="apellido_paterno"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_paterno]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[apellido_materno]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="apellido_materno"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_materno]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[contrasenia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="contrasenia"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[contrasenia]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_nacimiento]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_nacimiento"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_nacimiento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nacionalidad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="nacionalidad"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nacionalidad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nss]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="nss"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nss]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[curp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="18"
+                          cachedName="curp"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[curp]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[rfc]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="rfc"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rfc]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estado_civil]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estado_civil"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_civil]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipo_sangre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="18"
+                          cachedName="tipo_sangre"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_sangre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[email_corporativo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email_corporativo"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_corporativo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[email_personal]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email_personal"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_personal]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[telefono]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="telefono"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[red_social]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="red_social"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[red_social]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_ingreso]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_ingreso"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_ingreso]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estatus]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_paterno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_materno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contrasenia" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="nacionalidad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="nss" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="curp" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado_civil" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="tipo_sangre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_corporativo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_personal" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="telefono" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="red_social" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
+                          dataType="dbDate"
+                          name="fecha_ingreso" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origen de archivo plano"
+                  localeId="2058"
+                  name="Origen de archivo plano"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si las columnas de longitud cero se tratan como NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                      name="Salida de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nombre]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nombre]"
+                          name="nombre"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[apellido_paterno]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_paterno]"
+                          name="apellido_paterno"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[apellido_materno]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[apellido_materno]"
+                          name="apellido_materno"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[contrasenia]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[contrasenia]"
+                          name="contrasenia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nacionalidad]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nacionalidad]"
+                          name="nacionalidad"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nss]"
+                          length="11"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nss]"
+                          name="nss"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[curp]"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[curp]"
+                          name="curp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[rfc]"
+                          length="13"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rfc]"
+                          name="rfc"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_civil]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estado_civil]"
+                          name="estado_civil"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_sangre]"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[tipo_sangre]"
+                          name="tipo_sangre"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email_corporativo]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_corporativo]"
+                          name="email_corporativo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email_personal]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email_personal]"
+                          name="email_personal"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[telefono]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]"
+                          name="telefono"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[red_social]"
+                          length="25"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[red_social]"
+                          name="red_social"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_ingreso]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_ingreso]"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_ingreso]"
+                          name="fecha_ingreso"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estatus]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[estatus]"
+                          name="estatus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_paterno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_materno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contrasenia" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="nacionalidad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="nss" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="curp" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado_civil" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="tipo_sangre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_corporativo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_personal" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="telefono" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="red_social" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[fecha_ingreso]"
+                          dataType="dbDate"
+                          name="fecha_ingreso" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Columna de salida de error de origen de archivo plano"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          name="Columna de salida de error de origen de archivo plano" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de archivo plano"
+                  startId="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de bucles Foreach\Tarea Ejecutar SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{3F716BD1-4DEA-4732-A73A-22CFE91149A2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar SQL"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{40788BB8-5889-478E-8CE9-3DCBF123CFB0}"
+              SQLTask:SqlStatementSource="DELETE  FROM empleado_origen" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{9842556C-FEF5-47D4-89B7-F292FD0B87B3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Flujo de datos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[empleado_stage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nombre"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[apellido_paterno]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="apellido_paterno"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_paterno]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[apellido_materno]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="apellido_materno"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_materno]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[contrasenia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="contrasenia"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contrasenia]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_nacimiento]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_nacimiento"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nacionalidad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="nacionalidad"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nacionalidad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nss]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="nss"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nss]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[curp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="18"
+                          cachedName="curp"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[curp]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[rfc]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="rfc"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estado_civil]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estado_civil"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado_civil]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipo_sangre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="18"
+                          cachedName="tipo_sangre"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipo_sangre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[email_corporativo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email_corporativo"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_corporativo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[email_personal]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email_personal"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_personal]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[telefono]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="telefono"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[telefono]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[red_social]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="red_social"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[red_social]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_ingreso]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_ingreso"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_ingreso]" />
+                        <inputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_paterno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_materno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contrasenia" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="nacionalidad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="nss" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="curp" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado_civil" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="tipo_sangre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_corporativo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_personal" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="telefono" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="red_social" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
+                          dataType="dbDate"
+                          name="fecha_ingreso" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[empleado_origen]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          name="nombre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[apellido_paterno]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_paterno]"
+                          name="apellido_paterno"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[apellido_materno]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[apellido_materno]"
+                          name="apellido_materno"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[contrasenia]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[contrasenia]"
+                          name="contrasenia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nacionalidad]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nacionalidad]"
+                          name="nacionalidad"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nss]"
+                          length="11"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nss]"
+                          name="nss"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[curp]"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[curp]"
+                          name="curp"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                          length="13"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                          name="rfc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estado_civil]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado_civil]"
+                          name="estado_civil"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[tipo_sangre]"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipo_sangre]"
+                          name="tipo_sangre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[email_corporativo]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_corporativo]"
+                          name="email_corporativo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[email_personal]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[email_personal]"
+                          name="email_personal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[telefono]"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[telefono]"
+                          name="telefono"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[red_social]"
+                          length="25"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[red_social]"
+                          name="red_social"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_ingreso]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_ingreso]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha_ingreso]"
+                          name="fecha_ingreso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          name="estatus"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_paterno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellido_materno" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contrasenia" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="nacionalidad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="nss" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="curp" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado_civil" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          name="tipo_sangre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_corporativo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email_personal" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="telefono" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="red_social" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_ingreso]"
+                          dataType="dbDate"
+                          name="fecha_ingreso" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          name="nombre" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[apellido_paterno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[apellido_paterno]"
+                          name="apellido_paterno" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[apellido_materno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[apellido_materno]"
+                          name="apellido_materno" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[contrasenia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[contrasenia]"
+                          name="contrasenia" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nacionalidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nacionalidad]"
+                          name="nacionalidad" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nss]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nss]"
+                          name="nss" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[curp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[curp]"
+                          name="curp" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                          name="rfc" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estado_civil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estado_civil]"
+                          name="estado_civil" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[tipo_sangre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="18"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[tipo_sangre]"
+                          name="tipo_sangre" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[email_corporativo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[email_corporativo]"
+                          name="email_corporativo" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[email_personal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[email_personal]"
+                          name="email_personal" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[telefono]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[telefono]"
+                          name="telefono" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[red_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[red_social]"
+                          name="red_social" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha_ingreso]"
+                          dataType="dbDate"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha_ingreso]"
+                          name="fecha_ingreso" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          name="estatus" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de bucles Foreach.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FB2B0547-81B5-4E1A-AECC-872D8A4D227E}"
+          DTS:From="Package\Contenedor de bucles Foreach\DFT_EMPLEADO"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Contenedor de bucles Foreach\Tarea Flujo de datos" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de bucles Foreach.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{71BE04A4-30DE-4A64-BDF0-2B1D5DD32154}"
+          DTS:From="Package\Contenedor de bucles Foreach\Tarea Ejecutar SQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Contenedor de bucles Foreach\DFT_EMPLEADO" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{1071FA38-63F1-43EB-813D-D0749A6FB2B2}"
+          DTS:ObjectName="{1071FA38-63F1-43EB-813D-D0749A6FB2B2}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::RUTATXT" />
+      </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Contenedor de secuencias 1"
@@ -5868,9 +7897,145 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO"
+          TopLeft="49.5,83.25" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos"
+          TopLeft="47,162" />
+        <EdgeLayout
+          Id="Package\Contenedor de bucles Foreach.PrecedenceConstraints[Constraint]"
+          TopLeft="135.25,125.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.75"
+              Start="0,0"
+              End="0,29.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contenedor de bucles Foreach\Tarea Ejecutar SQL"
+          TopLeft="43,13" />
+        <EdgeLayout
+          Id="Package\Contenedor de bucles Foreach.PrecedenceConstraints[Constraint 1]"
+          TopLeft="132.25,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.25"
+              Start="0,0"
+              End="0,20.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,259"
+          Size="271,302"
+          Id="Package\Contenedor de bucles Foreach"
+          TopLeft="164.5,593" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_DELETE"
+          TopLeft="60,94.5" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_INSERT_UPDATE"
+          TopLeft="27.5,9.49999999999989" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias 1.PrecedenceConstraints[Constraint]"
+          TopLeft="160,51.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,43.0000000000001"
+              Start="0,0"
+              End="8.5,35.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5000000000001"
+                    Point2="0,21.5000000000001"
+                    Point3="4,21.5000000000001" />
+                  <mssgle:LineSegment
+                    End="4.5,21.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,21.5000000000001"
+                    Point2="8.5,21.5000000000001"
+                    Point3="8.5,25.5000000000001" />
+                  <mssgle:LineSegment
+                    End="8.5,35.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="321,191"
+          Size="321,234"
+          Id="Package\Contenedor de secuencias 1"
+          TopLeft="493.75,525" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\DELETE FROM BD_STAGE"
+          TopLeft="563.75,142.5" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DFT_CLIENTE"
+          TopLeft="603.75,796.25" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_COMPRA"
+          TopLeft="256.25,435" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DFT_COMPRA_P"
+          TopLeft="257.5,520" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\DFT_ESTATUS_COMPRA"
+          TopLeft="550,371.25" />
+        <NodeLayout
           Size="191,42"
           Id="Package\DFT_FORMAS_PAGO"
           TopLeft="554.75,287.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\DFT_PRODUCTO"
+          TopLeft="557.5,442.5" />
         <NodeLayout
           Size="103,42"
           Id="Package\DFT2"
@@ -5919,10 +8084,6 @@
           Size="316,357"
           Id="Package\VENTAS TO STAGE"
           TopLeft="171.5,69.25" />
-        <NodeLayout
-          Size="219,42"
-          Id="Package\DELETE FROM BD_STAGE"
-          TopLeft="563.75,142.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="563.75,163.5">
@@ -5979,10 +8140,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\DFT_ESTATUS_COMPRA"
-          TopLeft="550,371.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="653.125,329.5">
@@ -6005,82 +8162,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\DFT_PRODUCTO"
-          TopLeft="557.5,442.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DFT_COMPRA"
-          TopLeft="256.25,435" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\DFT_COMPRA_P"
-          TopLeft="257.5,520" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\DFT_CLIENTE"
-          TopLeft="603.75,796.25" />
-        <NodeLayout
-          Size="265,42"
-          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_INSERT_UPDATE"
-          TopLeft="27.5,9.49999999999989" />
-        <NodeLayout
-          Size="217,42"
-          Id="Package\Contenedor de secuencias 1\DFT_DIRECCION_DELETE"
-          TopLeft="60,94.5" />
-        <EdgeLayout
-          Id="Package\Contenedor de secuencias 1.PrecedenceConstraints[Constraint]"
-          TopLeft="160,51.4999999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.5,43.0000000000001"
-              Start="0,0"
-              End="8.5,35.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5000000000001"
-                    Point2="0,21.5000000000001"
-                    Point3="4,21.5000000000001" />
-                  <mssgle:LineSegment
-                    End="4.5,21.5000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,21.5000000000001"
-                    Point2="8.5,21.5000000000001"
-                    Point3="8.5,25.5000000000001" />
-                  <mssgle:LineSegment
-                    End="8.5,35.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="321,191"
-          Size="321,234"
-          Id="Package\Contenedor de secuencias 1"
-          TopLeft="493.75,525" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO"
-          TopLeft="25.5,10.25" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,107"
-          Size="205,150"
-          Id="Package\Contenedor de bucles Foreach"
-          TopLeft="237.5,595" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="656,413.25">
@@ -6161,18 +8242,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="340.75,562">
+          TopLeft="341.5,562">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33"
+              EndConnector="-41.5,31"
               Start="0,0"
-              End="0,25.5">
+              End="-41.5,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
+                  <mssgle:LineSegment
+                    End="-37.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.5,15.5"
+                    Point2="-41.5,15.5"
+                    Point3="-41.5,19.5" />
+                  <mssgle:LineSegment
+                    End="-41.5,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6183,30 +8276,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="442.5,670">
+          TopLeft="435.5,744">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.25,-28"
+              EndConnector="58.25,-102"
               Start="0,0"
-              End="43.75,-28">
+              End="50.75,-102">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="21.625,0" />
+                    End="25.125,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="21.625,0"
-                    Point2="25.625,0"
-                    Point3="25.625,-4" />
+                    Point1="25.125,0"
+                    Point2="29.125,0"
+                    Point3="29.125,-4" />
                   <mssgle:LineSegment
-                    End="25.625,-24" />
+                    End="29.125,-98" />
                   <mssgle:CubicBezierSegment
-                    Point1="25.625,-24"
-                    Point2="25.625,-28"
-                    Point3="29.625,-28" />
+                    Point1="29.125,-98"
+                    Point2="29.125,-102"
+                    Point3="33.125,-102" />
                   <mssgle:LineSegment
-                    End="43.75,-28" />
+                    End="50.75,-102" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6253,18 +8346,345 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DFT_FORMAS_PAGO">
+    design-time-name="Package\Contenedor de bucles Foreach\DFT_EMPLEADO">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="196,42"
+          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Origen de archivo plano"
+          TopLeft="277,62" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB"
+          TopLeft="359,188" />
+        <EdgeLayout
+          Id="Package\Contenedor de bucles Foreach\DFT_EMPLEADO.Paths[Salida de origen de archivo plano]"
+          TopLeft="375,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.5,84"
+              Start="0,0"
+              End="71.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="67.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,42"
+                    Point2="71.5,42"
+                    Point3="71.5,46" />
+                  <mssgle:LineSegment
+                    End="71.5,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de bucles Foreach\DFT_EMPLEADO\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="230,42"
+          Id="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE"
+          TopLeft="293,169" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE"
+          TopLeft="285,66" />
+        <EdgeLayout
+          Id="Package\DFT_CLIENTE.Paths[Salida de origen de OLE DB]"
+          TopLeft="404.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_COMPRA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="234,42"
+          Id="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA"
+          TopLeft="195,104" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA"
+          TopLeft="194,176" />
+        <EdgeLayout
+          Id="Package\DFT_COMPRA.Paths[Salida de origen de OLE DB]"
+          TopLeft="310,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_COMPRA_P">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="241,42"
+          Id="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P"
+          TopLeft="271,154" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P"
+          TopLeft="273,69" />
+        <EdgeLayout
+          Id="Package\DFT_COMPRA_P.Paths[Salida de origen de OLE DB]"
+          TopLeft="394,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_ESTATUS_COMPRA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN"
+          TopLeft="216,70" />
+        <NodeLayout
           Size="178,42"
-          Id="Package\DFT_FORMAS_PAGO\Destino BD_STAGE"
-          TopLeft="287,162" />
+          Id="Package\DFT_ESTATUS_COMPRA\Destino BD_STAGE"
+          TopLeft="221,170" />
+        <EdgeLayout
+          Id="Package\DFT_ESTATUS_COMPRA.Paths[Salida de origen de OLE DB]"
+          TopLeft="308,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_ESTATUS_COMPRA\Destino BD_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_FORMAS_PAGO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\DFT_FORMAS_PAGO\Origen BD_ORIGEN"
           TopLeft="293,66" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DFT_FORMAS_PAGO\Destino BD_STAGE"
+          TopLeft="287,162" />
         <EdgeLayout
           Id="Package\DFT_FORMAS_PAGO.Paths[Salida de origen de OLE DB]"
           TopLeft="379.5,108">
@@ -6284,7 +8704,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6292,6 +8714,97 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_FORMAS_PAGO\Destino BD_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FORMAS_PAGO\Origen BD_ORIGEN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
+          TopLeft="241,180" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO"
+          TopLeft="194,95" />
+        <EdgeLayout
+          Id="Package\DFT_PRODUCTO.Paths[Salida de origen de OLE DB]"
+          TopLeft="318.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46,43"
+              Start="0,0"
+              End="46,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="42,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42,21.5"
+                    Point2="46,21.5"
+                    Point3="46,25.5" />
+                  <mssgle:LineSegment
+                    End="46,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6513,236 +9026,45 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_FORMAS_PAGO\Origen BD_ORIGEN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DFT_ESTATUS_COMPRA">
+    design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN"
-          TopLeft="216,70" />
+          Size="175,42"
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB"
+          TopLeft="244,234" />
         <NodeLayout
-          Size="178,42"
-          Id="Package\DFT_ESTATUS_COMPRA\Destino BD_STAGE"
-          TopLeft="221,170" />
+          Size="170,42"
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB"
+          TopLeft="287,126" />
         <EdgeLayout
-          Id="Package\DFT_ESTATUS_COMPRA.Paths[Salida de origen de OLE DB]"
-          TopLeft="308,112">
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="372,168">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="-40.5,66"
               Start="0,0"
-              End="0,50.5">
+              End="-40.5,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_ESTATUS_COMPRA\Destino BD_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DFT_PRODUCTO">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="249,42"
-          Id="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO"
-          TopLeft="194,95" />
-        <NodeLayout
-          Size="247,42"
-          Id="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
-          TopLeft="241,180" />
-        <EdgeLayout
-          Id="Package\DFT_PRODUCTO.Paths[Salida de origen de OLE DB]"
-          TopLeft="318.5,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46,43"
-              Start="0,0"
-              End="46,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
                   <mssgle:LineSegment
-                    End="42,21.5" />
+                    End="-36.5,33" />
                   <mssgle:CubicBezierSegment
-                    Point1="42,21.5"
-                    Point2="46,21.5"
-                    Point3="46,25.5" />
+                    Point1="-36.5,33"
+                    Point2="-40.5,33"
+                    Point3="-40.5,37" />
                   <mssgle:LineSegment
-                    End="46,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT_COMPRA">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="234,42"
-          Id="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA"
-          TopLeft="195,104" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA"
-          TopLeft="194,176" />
-        <EdgeLayout
-          Id="Package\DFT_COMPRA.Paths[Salida de origen de OLE DB]"
-          TopLeft="310,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT_COMPRA_P">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="247,42"
-          Id="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P"
-          TopLeft="273,69" />
-        <NodeLayout
-          Size="241,42"
-          Id="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P"
-          TopLeft="271,154" />
-        <EdgeLayout
-          Id="Package\DFT_COMPRA_P.Paths[Salida de origen de OLE DB]"
-          TopLeft="394,111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT_CLIENTE">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="232,42"
-          Id="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE"
-          TopLeft="285,66" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE"
-          TopLeft="293,169" />
-        <EdgeLayout
-          Id="Package\DFT_CLIENTE.Paths[Salida de origen de OLE DB]"
-          TopLeft="404.5,108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="-40.5,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6755,7 +9077,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO">
+    design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6768,85 +9090,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_COMPRA\Origen BD_ORIGEN_COMPRA">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_COMPRA\Origen BD_STAGE_COMPRA">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_CLIENTE\Origen BD_ORIGEN_CLIENTE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_CLIENTE\Destino BD_STAGE_CLIENTE">
+    design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
