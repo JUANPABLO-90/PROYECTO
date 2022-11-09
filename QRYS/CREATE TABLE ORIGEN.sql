@@ -1,7 +1,7 @@
- USE BD_ORIGEN
+ USE ORIGEN
 CREATE TABLE producto_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     nombre VARCHAR (100) NOT NULL ,
     ancho          DECIMAL (9,2) ,
     alto           DECIMAL (9,2) ,
@@ -19,13 +19,13 @@ ALTER TABLE producto_origen ADD CONSTRAINT producto_origen_nombre_UN UNIQUE ( no
 
 CREATE TABLE direccion_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     calle VARCHAR (250) ,
     numero_exterior VARCHAR (15) ,
     numero_interior VARCHAR (15) ,
     localidad VARCHAR (250) ,
     codigo_postal VARCHAR (15)  ,
-    colonia       VARCHAR (50)  ,
+    colonia       VARCHAR (100)  ,
     municipio     VARCHAR (50)  ,
     estado        VARCHAR (50)  ,
     pais          VARCHAR (50) ,
@@ -39,7 +39,7 @@ ALTER TABLE direccion_origen ADD CONSTRAINT direccion_origen_PK PRIMARY KEY ( id
 
 CREATE TABLE empleado_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     nombre VARCHAR (50) NOT NULL ,
     apellido_paterno VARCHAR (50) NOT NULL ,
     apellido_materno VARCHAR (50) NOT NULL ,
@@ -70,7 +70,7 @@ ALTER TABLE empleado_origen ADD CONSTRAINT empleado_origen_contrasenia_UN UNIQUE
 
 CREATE TABLE forma_pago_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     nombre VARCHAR (15) NOT NULL ,
     descripcion VARCHAR (750) ,
     estatus       VARCHAR (15) NOT NULL 
@@ -80,7 +80,7 @@ ALTER TABLE forma_pago_origen ADD CONSTRAINT forma_pago_origen_nombre_UN UNIQUE 
 
 CREATE TABLE cliente_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     rfc VARCHAR (13) ,
     razon_social VARCHAR (150) ,
     nombre_comercial VARCHAR (150),
@@ -100,29 +100,10 @@ ALTER TABLE cliente_origen ADD CONSTRAINT cliente_origen_PK PRIMARY KEY ( id ) ;
 ALTER TABLE cliente_origen ADD CONSTRAINT cliente_origen__UN UNIQUE ( rfc ) ;
 
 
-CREATE TABLE proveedor_origen
-  (
-    id INT NOT NULL ,
-    rfc VARCHAR (13) NOT NULL ,
-    razon_social VARCHAR (50) NOT NULL ,
-    nombre_comercial VARCHAR (50) NOT NULL ,
-    email VARCHAR (50) ,
-    telefono_1 VARCHAR (50) ,
-    telefono_2 VARCHAR (50) ,
-    estatus       VARCHAR (15) NOT NULL 
-  ) ;
-CREATE UNIQUE INDEX proveedor_origen_IDX ON proveedor_origen
-  (
-    nombre_comercial ASC
-  )
-  ;
-ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_PK PRIMARY KEY ( id ) ;
-ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_rfc_UN UNIQUE ( rfc ) ;
-ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_razon_social_UN UNIQUE ( razon_social ) ;
 
 CREATE TABLE estatus_orden_compra_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     nombre VARCHAR (25) NOT NULL ,
     estatus       VARCHAR (15) NOT NULL
   ) ;
@@ -131,7 +112,7 @@ ALTER TABLE estatus_orden_compra_origen ADD CONSTRAINT estatus_orden_compra_orig
 
 CREATE TABLE compra_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     direccion_entrega VARCHAR (750) NOT NULL ,
     codigo_seguridad VARCHAR (20) NOT NULL ,    
     proveedor_origen_id            INT NOT NULL ,
@@ -158,7 +139,7 @@ CREATE INDEX compra_origen__IDX ON compra_origen
   
   CREATE TABLE compra_producto_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     producto_origen_id          INT ,
     compra_origen_id            INT NOT NULL , 
     cantidad             DECIMAL (9,2) NOT NULL ,
@@ -177,7 +158,7 @@ UPDATE CASCADE ;
 
  CREATE TABLE venta_origen
   (
-    id               INT NOT NULL ,
+    id INT  NOT NULL ,
     empleado_origen_id      INT NOT NULL ,
     cliente_origen_id       INT ,
     fecha            DATE NOT NULL ,
@@ -215,7 +196,7 @@ UPDATE CASCADE ;
 
 CREATE TABLE venta_producto_origen
   (
-    id INT NOT NULL ,
+    id INT  NOT NULL ,
     venta_origen_id    INT NOT NULL ,
     producto_origen_id INT NOT NULL ,
     fecha            DATE NOT NULL ,
@@ -243,3 +224,62 @@ ALTER TABLE venta_producto_origen ADD CONSTRAINT venta_producto_origen_venta_ori
 UPDATE CASCADE ;
 ALTER TABLE venta_producto_origen ADD CONSTRAINT venta_producto_origen_producto_origen_FK FOREIGN KEY ( producto_origen_id ) REFERENCES producto_origen ( id ) ON
 UPDATE CASCADE ;
+
+CREATE TABLE produccion_origen
+  (
+    id INT  NOT NULL ,
+    producto_origen_id        INTEGER NOT NULL ,
+    empleado_origen_id        INTEGER NOT NULL ,
+    fecha              DATE NOT NULL ,
+    hora               TIME NOT NULL ,
+    cantidad_producida DECIMAL (9,2) NOT NULL
+  ) ;
+CREATE INDEX produccion_origen__IDX ON produccion_origen
+  (
+    id ASC
+  ) ;
+ALTER TABLE produccion_origen ADD CONSTRAINT produccion_origen_PK PRIMARY KEY ( id ) ;
+ALTER TABLE produccion_origen ADD CONSTRAINT produccion_origen_produccion_origen_FK FOREIGN KEY ( producto_origen_id ) REFERENCES producto_origen ( id ) ON
+UPDATE CASCADE ;
+ALTER TABLE produccion_origen ADD CONSTRAINT produccion_origen_empleado_origen_FK FOREIGN KEY ( empleado_origen_id ) REFERENCES empleado_origen ( id ) ON
+UPDATE CASCADE ;
+
+CREATE TABLE movimiento_caja_origen
+  (
+    id INT  NOT NULL ,
+    empleado_origen_id        INTEGER NOT NULL ,
+    fecha              DATE NOT NULL ,
+    hora               TIME NOT NULL, 
+    tipo_movimiento VARCHAR (25) NOT NULL ,
+    monto DECIMAL (9,2) NOT NULL   ,
+    observaciones  VARCHAR (750)     
+  ) ;
+CREATE INDEX movimiento_caja_origenn__IDX ON movimiento_caja_origen
+  (
+    id ASC
+  ) ;
+ALTER TABLE movimiento_caja_origen ADD CONSTRAINT movimiento_caja_origen_PK PRIMARY KEY ( id ) ;
+ALTER TABLE movimiento_caja_origen ADD CONSTRAINT movimiento_caja_origen_empleado_origen_FK FOREIGN KEY ( empleado_origen_id ) REFERENCES empleado_origen ( id ) ON
+UPDATE CASCADE ;
+
+
+--MYSQL
+CREATE TABLE proveedor_origen
+  (
+    id INT ,
+    rfc VARCHAR (13) NOT NULL ,
+    razon_social VARCHAR (50) NOT NULL ,
+    nombre_comercial VARCHAR (50) NOT NULL ,
+    email VARCHAR (50) ,
+    telefono_1 VARCHAR (50) ,
+    telefono_2 VARCHAR (50) ,
+    estatus       VARCHAR (15) NOT NULL 
+  ) ;
+CREATE UNIQUE INDEX proveedor_origen_IDX ON proveedor_origen
+  (
+    nombre_comercial ASC
+  )
+  ;
+ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_PK PRIMARY KEY ( id ) ;
+ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_rfc_UN UNIQUE ( rfc ) ;
+ALTER TABLE proveedor_origen ADD CONSTRAINT proveedor_origen_razon_social_UN UNIQUE ( razon_social ) ;

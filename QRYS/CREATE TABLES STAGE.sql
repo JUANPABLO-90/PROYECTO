@@ -243,3 +243,35 @@ ALTER TABLE venta_producto_stage ADD CONSTRAINT venta_producto_stage_venta_stage
 UPDATE CASCADE ;
 ALTER TABLE venta_producto_stage ADD CONSTRAINT venta_producto_stage_producto_stage_FK FOREIGN KEY ( producto_stage_id ) REFERENCES producto_stage ( id ) ON
 UPDATE CASCADE ;
+
+CREATE TABLE produccion_stage
+  (
+    id INT NOT NULL ,
+    producto_stage_id        INTEGER NOT NULL ,
+    empleado_stage_id        INTEGER NOT NULL ,
+    fecha              DATE NOT NULL ,
+    hora               TIME NOT NULL ,
+    cantidad_producida DECIMAL (9,2) NOT NULL
+  ) ;
+CREATE INDEX produccion_stage__IDX ON produccion_stage
+  (
+    id ASC
+  ) ;
+ALTER TABLE produccion_stage ADD CONSTRAINT produccion_stage_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE movimiento_caja_stage
+  (
+    id INT NOT NULL ,
+    empleado_stage_id        INTEGER NOT NULL ,
+    fecha              DATE NOT NULL ,
+    hora               TIME NOT NULL, 
+    tipo_movimiento VARCHAR (25) NOT NULL ,
+    monto DECIMAL (9,2) NOT NULL   ,
+    observaciones  VARCHAR (750)     
+  ) ;
+CREATE INDEX movimiento_caja_stagen__IDX ON movimiento_caja_stage
+  (
+    id ASC
+  ) ;
+ALTER TABLE movimiento_caja_stage ADD CONSTRAINT movimiento_caja_stage_PK PRIMARY KEY ( id ) ;
+
