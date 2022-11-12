@@ -128,7 +128,9 @@ CREATE TABLE compra_origen
   ) ;
 ALTER TABLE compra_origen ADD CONSTRAINT compra_origen_empleado_origen_PK PRIMARY KEY ( id) ;
 ALTER TABLE compra_origen ADD CONSTRAINT compra_origen_codigo_seguridad_UN UNIQUE ( codigo_seguridad ) ;
-ALTER TABLE compra_origen ADD CONSTRAINT compr_origena_estatus_orden_compra_origen_FK FOREIGN KEY ( estatus_orden_compra_origen_id ) REFERENCES estatus_orden_compra_origen ( id ) ON
+ALTER TABLE compra_origen ADD CONSTRAINT compra_origena_estatus_orden_compra_origen_FK FOREIGN KEY ( estatus_orden_compra_origen_id ) REFERENCES estatus_orden_compra_origen ( id ) ON
+UPDATE CASCADE ;
+ALTER TABLE compra_origen ADD CONSTRAINT compra_origena_forma_pago_origen_FK FOREIGN KEY ( forma_pago_origen_id ) REFERENCES forma_pago_origen ( id ) ON
 UPDATE CASCADE ;
 
 CREATE INDEX compra_origen__IDX ON compra_origen
@@ -166,7 +168,7 @@ UPDATE CASCADE ;
     fecha_cerrado            DATE ,
     hora_cerrado             TIME ,
     serie VARCHAR (20) NOT NULL ,
-    forma_pago_id INT NOT NULL ,
+    forma_pago_origen_id INT NOT NULL ,
     cuenta VARCHAR (4) ,
     subtotal      DECIMAL (11,4) DEFAULT 0 NOT NULL ,
     iva           DECIMAL (11,4) DEFAULT 0 NOT NULL ,
@@ -190,6 +192,8 @@ ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_serie_UN UNIQUE ( serie ) ;
 ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_PK PRIMARY KEY ( id ) ;
 
 ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_empleado_origen_FK FOREIGN KEY ( empleado_origen_id ) REFERENCES empleado_origen ( id ) ON
+UPDATE CASCADE ;
+ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_cliente_origen_FK FOREIGN KEY ( cliente_origen_id ) REFERENCES cliente_origen ( id ) ON
 UPDATE CASCADE ;
 ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_cliente_origen_FK FOREIGN KEY ( cliente_origen_id ) REFERENCES cliente_origen ( id ) ON
 UPDATE CASCADE ;
