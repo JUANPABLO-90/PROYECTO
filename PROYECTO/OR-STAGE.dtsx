@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{95990FAB-BE5E-4E59-8401-25AEBEFF6D33}">
+  DTS:VersionBuild="115"
+  DTS:VersionGUID="{D7341D59-AC17-4C80-9592-B012903EF111}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9022,8 +9022,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\MOVIMIENTO_CAJA_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -10960,7 +10960,7 @@ WHERE id =?</property>
                           refId="Package\Carga Venta\DFT_VENTASQL\Ordenar.Inputs[Entrada de ordenación].Columns[empleado_id]"
                           cachedDataType="i4"
                           cachedName="empleado_id"
-                          lineageId="Package\Carga Venta\DFT_VENTASQL\95:invalid">
+                          lineageId="Package\Carga Venta\DFT_VENTASQL\228:invalid">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -10976,7 +10976,7 @@ WHERE id =?</property>
                           refId="Package\Carga Venta\DFT_VENTASQL\Ordenar.Inputs[Entrada de ordenación].Columns[cliente_id]"
                           cachedDataType="i4"
                           cachedName="cliente_id"
-                          lineageId="Package\Carga Venta\DFT_VENTASQL\96:invalid">
+                          lineageId="Package\Carga Venta\DFT_VENTASQL\229:invalid">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -11230,7 +11230,7 @@ WHERE id =?</property>
                               containsID="true"
                               dataType="System.Int32"
                               description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                              name="SortColumnId">#{Package\Carga Venta\DFT_VENTASQL\95:invalid}</property>
+                              name="SortColumnId">#{Package\Carga Venta\DFT_VENTASQL\228:invalid}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -11243,7 +11243,7 @@ WHERE id =?</property>
                               containsID="true"
                               dataType="System.Int32"
                               description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                              name="SortColumnId">#{Package\Carga Venta\DFT_VENTASQL\96:invalid}</property>
+                              name="SortColumnId">#{Package\Carga Venta\DFT_VENTASQL\229:invalid}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -15372,79 +15372,9 @@ WHERE id =?</property>
           Id="Package\Carga Compra Producto"
           TopLeft="47.0833333333337,398.083333333334" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\Carga de Empleado\DFT_EMPLEADO"
-          TopLeft="49.5,83.25" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Carga de Empleado\Tarea Ejecutar SQL"
-          TopLeft="43,13" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Carga de Empleado\Tarea Flujo de datos"
-          TopLeft="47,155.75" />
-        <EdgeLayout
-          Id="Package\Carga de Empleado.PrecedenceConstraints[Constraint]"
-          TopLeft="135.25,125.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.5"
-              Start="0,0"
-              End="0,23">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Empleado.PrecedenceConstraints[Constraint 1]"
-          TopLeft="132.25,55">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.25"
-              Start="0,0"
-              End="0,20.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="271,253"
-          Size="271,296"
-          Id="Package\Carga de Empleado"
-          TopLeft="873.25,46.5" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Carga de Producto\DFT_PRODUCTO"
-          TopLeft="16.75,27.25" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,124"
-          Size="205,167"
-          Id="Package\Carga de Producto"
-          TopLeft="62.25,144.5" />
+          Size="275,42"
+          Id="Package\Carga de Direccion\DELETE DIRECCION DE  BD_ORIGEN"
+          TopLeft="27.6666666666666,22.6666666666667" />
         <NodeLayout
           Size="217,42"
           Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN"
@@ -15457,10 +15387,6 @@ WHERE id =?</property>
           Size="217,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE"
           TopLeft="255.555555555555,175.722222222222" />
-        <NodeLayout
-          Size="275,42"
-          Id="Package\Carga de Direccion\DELETE DIRECCION DE  BD_ORIGEN"
-          TopLeft="27.6666666666666,22.6666666666667" />
         <EdgeLayout
           Id="Package\Carga de Direccion.PrecedenceConstraints[Constraint]"
           TopLeft="220.111111111111,197.222222222222">
@@ -15559,16 +15485,79 @@ WHERE id =?</property>
           Id="Package\Carga de Direccion"
           TopLeft="311.25,20.5" />
         <NodeLayout
-          Size="191,42"
-          Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO"
-          TopLeft="6.25,8" />
+          Size="168,42"
+          Id="Package\Carga de Empleado\DFT_EMPLEADO"
+          TopLeft="49.5,83.25" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Carga de Empleado\Tarea Flujo de datos"
+          TopLeft="47,155.75" />
+        <EdgeLayout
+          Id="Package\Carga de Empleado.PrecedenceConstraints[Constraint]"
+          TopLeft="135.25,125.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5"
+              Start="0,0"
+              End="0,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Carga de Empleado\Tarea Ejecutar SQL"
+          TopLeft="43,13" />
+        <EdgeLayout
+          Id="Package\Carga de Empleado.PrecedenceConstraints[Constraint 1]"
+          TopLeft="132.25,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.25"
+              Start="0,0"
+              End="0,20.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="216,105"
-          Size="216,148"
-          Id="Package\Carga Formas de Pago"
-          TopLeft="1201.25,121" />
+          PanelSize="271,253"
+          Size="271,296"
+          Id="Package\Carga de Empleado"
+          TopLeft="873.25,46.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Carga de Producto\DFT_PRODUCTO"
+          TopLeft="16.75,27.25" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,124"
+          Size="205,167"
+          Id="Package\Carga de Producto"
+          TopLeft="62.25,144.5" />
         <NodeLayout
           Size="212,42"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA"
@@ -15581,11 +15570,18 @@ WHERE id =?</property>
           Id="Package\Carga Estatus de Compra"
           TopLeft="538.75,387.25" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\DELETE FROM BD_STAGE"
-          TopLeft="54.916666666667,46.25" />
+          Size="191,42"
+          Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO"
+          TopLeft="6.25,8" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="216,105"
+          Size="216,148"
+          Id="Package\Carga Formas de Pago"
+          TopLeft="1201.25,121" />
         <NodeLayout
-          Size="192,42"
+          Size="205,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           TopLeft="25.9428628843659,18.6470609362975" />
         <ContainerLayout
@@ -15705,6 +15701,10 @@ WHERE id =?</property>
           Size="309,342"
           Id="Package\Carga Venta Producto"
           TopLeft="375.764292879008,578.00882776567" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\DELETE FROM BD_STAGE"
+          TopLeft="54.916666666667,46.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="1144.25,194.75">
@@ -15785,6 +15785,28 @@ WHERE id =?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="39.4404711017805,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="538.75,473.875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.25,0"
+              Start="0,0"
+              End="-23.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-23.75,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15981,28 +16003,6 @@ WHERE id =?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="538.75,473.875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-31.25,0"
-              Start="0,0"
-              End="-23.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-23.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -16010,7 +16010,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Cliente\DFT_CLIENTE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="230,42"
           Id="Package\Carga Cliente\DFT_CLIENTE\Destino BD_STAGE_CLIENTE"
@@ -16038,7 +16038,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16074,7 +16076,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Compra\DFT_COMPRA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="234,42"
           Id="Package\Carga Compra\DFT_COMPRA\Origen BD_ORIGEN_COMPRA"
@@ -16102,7 +16104,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16138,7 +16142,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Compra Producto\DFT_COMPRA_P">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="241,42"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P"
@@ -16166,7 +16170,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16199,16 +16205,515 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Origen de Excel"
+          TopLeft="319,60" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Destino de OLE DB"
+          TopLeft="325,285" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Conversión de datos"
+          TopLeft="318,157" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\División condicional"
+          TopLeft="330,221" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida predeterminada de división condicional]"
+          TopLeft="506,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-6,64"
+              Start="0,0"
+              End="1.5,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,60"
+                    Point2="22.5,64"
+                    Point3="18.5,64" />
+                  <mssgle:LineSegment
+                    End="1.5,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.42279296875,-18.1953125,201.8455859375,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida de origen de Excel]"
+          TopLeft="397.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,55"
+              Start="0,0"
+              End="10.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="6.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,27.5"
+                    Point2="10.5,27.5"
+                    Point3="10.5,31.5" />
+                  <mssgle:LineSegment
+                    End="10.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida de conversión de datos]"
+          TopLeft="318,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,64"
+              Start="0,0"
+              End="4.5,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,60"
+                    Point2="-22.5,64"
+                    Point3="-18.5,64" />
+                  <mssgle:LineSegment
+                    End="4.5,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Origen de Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Destino de OLE DB"
+          TopLeft="253,255" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Columna derivada"
+          TopLeft="251,98" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Comando de OLE DB"
+          TopLeft="573,254" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
+          TopLeft="554,167" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Origen de OLE DB"
+          TopLeft="250,26" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda"
+          TopLeft="269,175" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[UPDATE]"
+          TopLeft="642,209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.5,45"
+              Start="0,0"
+              End="23.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="19.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.5,22.5"
+                    Point2="23.5,22.5"
+                    Point3="23.5,26.5" />
+                  <mssgle:LineSegment
+                    End="23.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.91189453125,27.5,37.3237890625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
+          TopLeft="335,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="337,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.8890234375,9.15234375,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="398,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156,-8"
+              Start="0,0"
+              End="148.5,-8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="74,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74,0"
+                    Point2="78,0"
+                    Point3="78,-4" />
+                  <mssgle:LineSegment
+                    End="78,-4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78,-4"
+                    Point2="78,-8"
+                    Point3="82,-8" />
+                  <mssgle:LineSegment
+                    End="148.5,-8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.8190234375,1,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
+          TopLeft="334.25,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[direccion_stage]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Comando de OLE DB"
+          TopLeft="397,262" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Origen de OLE DB"
+          TopLeft="349,57" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda"
+          TopLeft="368,156" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE.Paths[Salida de origen de OLE DB]"
+          TopLeft="433.25,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="432.5,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,64"
+              Start="0,0"
+              End="57,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="53,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,32"
+                    Point2="57,32"
+                    Point3="57,36" />
+                  <mssgle:LineSegment
+                    End="57,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.3890234375,37,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[direccion_origen]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Carga de Empleado\DFT_EMPLEADO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196,41.6"
+          Size="196,42"
           Id="Package\Carga de Empleado\DFT_EMPLEADO\Origen de archivo plano"
           TopLeft="277,62" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Carga de Empleado\DFT_EMPLEADO\Destino de OLE DB"
           TopLeft="279.714284364058,176.529411603835" />
         <EdgeLayout
@@ -16230,9 +16735,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16394,452 +16897,39 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN">
+    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Origen de Excel"
-          TopLeft="319,60" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Destino de OLE DB"
-          TopLeft="325,285" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Conversión de datos"
-          TopLeft="318,157" />
+          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN"
+          TopLeft="77,3" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\División condicional"
-          TopLeft="330,221" />
+          Size="178,42"
+          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Destino BD_STAGE"
+          TopLeft="81,70" />
         <EdgeLayout
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida predeterminada de división condicional]"
-          TopLeft="506,242">
+          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA.Paths[Salida de origen de OLE DB]"
+          TopLeft="168.5,45">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-6,64"
+              EndConnector="0,25"
               Start="0,0"
-              End="1.5,64">
+              End="0,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,60"
-                    Point2="22.5,64"
-                    Point3="18.5,64" />
-                  <mssgle:LineSegment
-                    End="1.5,64" />
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-78.42279296875,-18.1953125,201.8455859375,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida de origen de Excel]"
-          TopLeft="397.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5,55"
-              Start="0,0"
-              End="10.5,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="6.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,27.5"
-                    Point2="10.5,27.5"
-                    Point3="10.5,31.5" />
-                  <mssgle:LineSegment
-                    End="10.5,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN.Paths[Salida de conversión de datos]"
-          TopLeft="318,178">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12,64"
-              Start="0,0"
-              End="4.5,64">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
-                  <mssgle:LineSegment
-                    End="-22.5,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,60"
-                    Point2="-22.5,64"
-                    Point3="-18.5,64" />
-                  <mssgle:LineSegment
-                    End="4.5,64" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Origen de Excel">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT EXCEL A BD_ORIGEN\Destino de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Destino de OLE DB"
-          TopLeft="253,255" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Columna derivada"
-          TopLeft="251,98" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Comando de OLE DB"
-          TopLeft="573,254" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
-          TopLeft="554,167" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Origen de OLE DB"
-          TopLeft="250,26" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda"
-          TopLeft="269,175" />
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[UPDATE]"
-          TopLeft="642,209">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.5,45"
-              Start="0,0"
-              End="23.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="19.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.5,22.5"
-                    Point2="23.5,22.5"
-                    Point3="23.5,26.5" />
-                  <mssgle:LineSegment
-                    End="23.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-6.91189453125,27.5,37.3237890625,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
-          TopLeft="335,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="337,217">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-106.8890234375,9.15234375,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="398,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="156,-8"
-              Start="0,0"
-              End="148.5,-8">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="74,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74,0"
-                    Point2="78,0"
-                    Point3="78,-4" />
-                  <mssgle:LineSegment
-                    End="78,-4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78,-4"
-                    Point2="78,-8"
-                    Point3="82,-8" />
-                  <mssgle:LineSegment
-                    End="148.5,-8" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.8190234375,1,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
-          TopLeft="334.25,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Destino de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Origen de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[direccion_stage]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Comando de OLE DB"
-          TopLeft="397,262" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Origen de OLE DB"
-          TopLeft="349,57" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda"
-          TopLeft="368,156" />
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE.Paths[Salida de origen de OLE DB]"
-          TopLeft="433.25,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="432.5,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57,64"
-              Start="0,0"
-              End="57,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="4,32" />
-                  <mssgle:LineSegment
-                    End="53,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53,32"
-                    Point2="57,32"
-                    Point3="57,36" />
-                  <mssgle:LineSegment
-                    End="57,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.3890234375,37,213.778046875,12.1953125"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -16847,7 +16937,7 @@ WHERE id =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Origen de OLE DB">
+    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Destino BD_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16860,25 +16950,15 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda">
+    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[direccion_origen]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -16935,70 +17015,6 @@ WHERE id =?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\Origen BD_ORIGEN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN"
-          TopLeft="77,3" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Destino BD_STAGE"
-          TopLeft="81,70" />
-        <EdgeLayout
-          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA.Paths[Salida de origen de OLE DB]"
-          TopLeft="168.5,45">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25"
-              Start="0,0"
-              End="0,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Destino BD_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\Origen BD_ORIGEN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17118,17 +17134,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Produccion\DFT_PRODUCCION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181.6,41.6"
+          Size="182,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
           TopLeft="192.857146141481,196.529414520957" />
         <NodeLayout
-          Size="188,41.6"
+          Size="188,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_ORIGEN"
           TopLeft="190.714288962131,23.7058826854072" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\Ordenar"
           TopLeft="221.428575199478,103.235295565483" />
         <EdgeLayout
@@ -17150,9 +17166,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17174,23 +17188,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Produccion\DFT_PRODUCCION"
           FontInfo="{assembly:Null}"
-          Size="71.2,NaN"
+          Size="71,40"
           Id="b0da02ca-95f5-438f-8a00-19ff2e18af29"
           TopLeft="64.2857153804935,16.0588237546307" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Produccion\DFT_PRODUCCION"
           FontInfo="{assembly:Null}"
-          Size="82.4,NaN"
+          Size="82,40"
           Id="3b7effcc-df21-4bdf-85c5-532055722ad1"
           TopLeft="56.4285723895443,193.894120231714" />
       </GraphLayout>
@@ -17226,7 +17238,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Proveedor\DFT_PROVEEDOR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR"
@@ -17258,7 +17270,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17280,21 +17294,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN MYSQL"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="114,40"
+          Size="114,NaN"
           Id="8e127328-ed24-49c4-bae0-e114cd669956"
           TopLeft="70.0000011920929,25.2352944715625" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="82,40"
+          Size="82,NaN"
           Id="a0edfb0b-b11d-48c4-9954-65362ea4a11e"
           TopLeft="82.8571442681917,202.54117788625" />
       </GraphLayout>
@@ -17381,21 +17397,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="71,40"
+          Size="71,NaN"
           Id="a2f32b26-658d-4060-99c3-8d1f33b21de0"
           TopLeft="45.5714287173991,9.7058825030871" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="82,40"
+          Size="82,NaN"
           Id="28ea90e6-deee-4569-a3d0-97255059380f"
           TopLeft="26.7142858115994,166.117649879423" />
       </GraphLayout>
@@ -17431,7 +17449,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="117,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\VENTAS"
@@ -17463,7 +17481,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17485,21 +17505,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGENES\VENTAS\XLS"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="154,40"
+          Size="154,NaN"
           Id="2697ccb0-a5c9-41b3-a9d6-cc333c8cf0fe"
           TopLeft="74,54" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="82,40"
+          Size="82,NaN"
           Id="819ee8bf-b981-471c-a660-58a75c5a311d"
           TopLeft="113.230769230769,233.676923076923" />
       </GraphLayout>
