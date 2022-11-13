@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="115"
-  DTS:VersionGUID="{D7341D59-AC17-4C80-9592-B012903EF111}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{70DFBFD7-BB25-4459-9CCE-548272D25E7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -441,6 +441,52 @@
               DTS:TextQualified="True"
               DTS:ObjectName="estatus"
               DTS:DTSID="{5D38FA84-374F-4F86-BAEE-A9639031FDC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B6DF6D7B-ABBB-46DD-8E8A-61C636DA007F}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\PROYECTO\ORIGENES\CONTACTO_CLIENTE\ContactoCliente.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cliente_id"
+              DTS:DTSID="{DA49637A-024B-4578-BF38-16DE404E8064}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{9B404B82-741B-4739-96FD-93ED58C6302F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="telefono"
+              DTS:DTSID="{88C5696B-A771-44FF-90D4-A1E6EB14D701}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2202,6 +2248,1140 @@
                   endId="Package\Carga Compra Producto\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P.Inputs[Entrada de destino de OLE DB]"
                   name="Salida de origen de OLE DB"
                   startId="Package\Carga Compra Producto\DFT_COMPRA_P\Origen BD_ORIGEN_COMPRA_P.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Contacto Cliente"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{DAAA4D97-B4C0-477F-B1C2-234C4B38E102}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Contacto Cliente">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{F7EDD3FE-028F-4403-9210-973E520A6F00}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_CONTACTO_CLIENTE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+                  name="Combinación de mezcla"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el tipo de combinación que se debe realizar."
+                      name="JoinType"
+                      typeConverter="JoinType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número de columnas de la clave de ordenación."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores NULL se tratan como valores iguales."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada izquierda de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[rfc]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="rfc"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[rfc]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[razon_social]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="razon_social"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[razon_social]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[nombre_comercial]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="nombre_comercial"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[nombre_comercial]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[estatus]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada derecha de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cliente_id]"
+                          cachedDataType="i4"
+                          cachedName="cliente_id"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[cliente_id]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[email]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[email]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[telefono]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="telefono"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[telefono]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                      isSorted="true"
+                      name="Salida de combinación de mezcla">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cliente_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cliente_id]"
+                          name="cliente_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cliente_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[id]"
+                          name="id"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[rfc]"
+                          name="rfc">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[rfc]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[razon_social]"
+                          name="razon_social">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[razon_social]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nombre_comercial]"
+                          name="nombre_comercial">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[nombre_comercial]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[estatus]"
+                          name="estatus">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[estatus]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[email]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[email]"
+                          name="email">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[email]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[telefono]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[telefono]"
+                          name="telefono">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[telefono]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[cliente_stage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[rfc]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="rfc"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[rfc]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[razon_social]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="razon_social"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[razon_social]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[razon_social]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre_comercial]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="nombre_comercial"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_comercial]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nombre_comercial]" />
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[estatus]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="razon_social" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="nombre_comercial" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+                  name="Ordenar"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación]"
+                      name="Entrada de ordenación">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación].Columns[rfc]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="rfc"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación].Columns[razon_social]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="razon_social"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[razon_social]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación].Columns[nombre_comercial]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="nombre_comercial"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación]"
+                      isSorted="true"
+                      name="Salida de ordenación">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[id]"
+                          name="id"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[rfc]"
+                          name="rfc">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[razon_social]"
+                          name="razon_social">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[razon_social]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[nombre_comercial]"
+                          name="nombre_comercial">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación].Columns[estatus]"
+                          name="estatus">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+                  name="Ordenar 1"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Inputs[Entrada de ordenación]"
+                      name="Entrada de ordenación">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Inputs[Entrada de ordenación].Columns[cliente_id]"
+                          cachedDataType="i4"
+                          cachedName="cliente_id"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cliente_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Inputs[Entrada de ordenación].Columns[email]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Inputs[Entrada de ordenación].Columns[telefono]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="telefono"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación]"
+                      isSorted="true"
+                      name="Salida de ordenación">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[cliente_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[cliente_id]"
+                          name="cliente_id"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cliente_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[email]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[email]"
+                          name="email">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[telefono]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación].Columns[telefono]"
+                          name="telefono">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origen de archivo plano"
+                  localeId="2058"
+                  name="Origen de archivo plano"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si las columnas de longitud cero se tratan como NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                      name="Salida de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cliente_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[cliente_id]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cliente_id]"
+                          name="cliente_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email]"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[email]"
+                          name="email"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[telefono]"
+                          length="50"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[telefono]"
+                          name="telefono"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[cliente_id]"
+                          dataType="i4"
+                          name="cliente_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[email]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[telefono]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="telefono" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Columna de salida de error de origen de archivo plano"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          name="Columna de salida de error de origen de archivo plano" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[cliente_origen]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                          length="13"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[rfc]"
+                          name="rfc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[razon_social]"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[razon_social]"
+                          name="razon_social"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre_comercial]"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre_comercial]"
+                          name="nombre_comercial"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          length="15"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          name="estatus"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="rfc" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="razon_social" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="nombre_comercial" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
+                          name="rfc" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[razon_social]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[razon_social]"
+                          name="razon_social" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre_comercial]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre_comercial]"
+                          name="nombre_comercial" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          name="estatus" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de combinación de mezcla]"
+                  endId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de combinación de mezcla"
+                  startId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+                <path
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de ordenación]"
+                  endId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  name="Salida de ordenación"
+                  startId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Outputs[Salida de ordenación]" />
+                <path
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de ordenación1]"
+                  endId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  name="Salida de ordenación"
+                  startId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Outputs[Salida de ordenación]" />
+                <path
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1.Inputs[Entrada de ordenación]"
+                  name="Salida de origen de archivo plano"
+                  startId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+                <path
+                  refId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -9719,8 +10899,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.ORIGEN 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.ORIGEN 1]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -9932,8 +11112,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -15262,6 +16442,14 @@ WHERE id =?</property>
       DTS:ObjectName="Constraint 12"
       DTS:To="Package\Carga Compra" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{13767E7E-7A39-4CBA-84B0-513C104DDBC9}"
+      DTS:From="Package\Carga Produccion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Carga Contacto Cliente" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{6A9730A5-BA33-442B-A542-3F097955EE58}"
@@ -15371,6 +16559,17 @@ WHERE id =?</property>
           Size="221,153"
           Id="Package\Carga Compra Producto"
           TopLeft="47.0833333333337,398.083333333334" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE"
+          TopLeft="38.25,15.75" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="267,114"
+          Size="267,157"
+          Id="Package\Carga Contacto Cliente"
+          TopLeft="1317.5,680" />
         <NodeLayout
           Size="275,42"
           Id="Package\Carga de Direccion\DELETE DIRECCION DE  BD_ORIGEN"
@@ -15489,6 +16688,10 @@ WHERE id =?</property>
           Id="Package\Carga de Empleado\DFT_EMPLEADO"
           TopLeft="49.5,83.25" />
         <NodeLayout
+          Size="176,42"
+          Id="Package\Carga de Empleado\Tarea Ejecutar SQL"
+          TopLeft="43,13" />
+        <NodeLayout
           Size="180,42"
           Id="Package\Carga de Empleado\Tarea Flujo de datos"
           TopLeft="47,155.75" />
@@ -15514,10 +16717,6 @@ WHERE id =?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Carga de Empleado\Tarea Ejecutar SQL"
-          TopLeft="43,13" />
         <EdgeLayout
           Id="Package\Carga de Empleado.PrecedenceConstraints[Constraint 1]"
           TopLeft="132.25,55">
@@ -15807,6 +17006,28 @@ WHERE id =?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="-23.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="1268.73809592335,755.720592164115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.7619040766499,0"
+              Start="0,0"
+              End="41.2619040766499,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.2619040766499,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16193,6 +17414,234 @@ WHERE id =?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Carga Compra Producto\DFT_COMPRA_P\Origen BD_STAGE_COMPRA_P">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB"
+          TopLeft="131,33" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar"
+          TopLeft="194,122" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de archivo plano"
+          TopLeft="377,22" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Ordenar 1"
+          TopLeft="364,125" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Combinación de mezcla"
+          TopLeft="260,241" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB"
+          TopLeft="286,322" />
+        <EdgeLayout
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de origen de OLE DB]"
+          TopLeft="213,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.5,47"
+              Start="0,0"
+              End="39.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="35.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,23.5"
+                    Point2="39.5,23.5"
+                    Point3="39.5,27.5" />
+                  <mssgle:LineSegment
+                    End="39.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de origen de archivo plano]"
+          TopLeft="472.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.5,61"
+              Start="0,0"
+              End="-45.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-41.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.5,30.5"
+                    Point2="-45.5,30.5"
+                    Point3="-45.5,34.5" />
+                  <mssgle:LineSegment
+                    End="-45.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de ordenación1]"
+          TopLeft="427,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.6666666666667,74"
+              Start="0,0"
+              End="-41.6666666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0292275574113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.0292275574113"
+                    Point2="0,44.0292275574113"
+                    Point3="-4,44.0292275574113" />
+                  <mssgle:LineSegment
+                    End="-37.6666666666667,44.0292275574113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.6666666666667,44.0292275574113"
+                    Point2="-41.6666666666667,44.0292275574113"
+                    Point3="-41.6666666666667,48.0292275574113" />
+                  <mssgle:LineSegment
+                    End="-41.6666666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de ordenación]"
+          TopLeft="252.5,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.1666666666667,77"
+              Start="0,0"
+              End="72.1666666666667,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8141962421712" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.8141962421712"
+                    Point2="0,45.8141962421712"
+                    Point3="4,45.8141962421712" />
+                  <mssgle:LineSegment
+                    End="68.1666666666667,45.8141962421712" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.1666666666667,45.8141962421712"
+                    Point2="72.1666666666667,45.8141962421712"
+                    Point3="72.1666666666667,49.8141962421712" />
+                  <mssgle:LineSegment
+                    End="72.1666666666667,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE.Paths[Salida de combinación de mezcla]"
+          TopLeft="355,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,39"
+              Start="0,0"
+              End="15,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="11,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,19.5"
+                    Point2="15,19.5"
+                    Point3="15,23.5" />
+                  <mssgle:LineSegment
+                    End="15,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Contacto Cliente\DFT_CONTACTO_CLIENTE\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17138,29 +18587,29 @@ WHERE id =?</property>
         <NodeLayout
           Size="182,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
-          TopLeft="192.857146141481,196.529414520957" />
+          TopLeft="43.857146141481,163.529414520957" />
         <NodeLayout
           Size="188,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_ORIGEN"
-          TopLeft="190.714288962131,23.7058826854072" />
+          TopLeft="38.714288962131,20.7058826854072" />
         <NodeLayout
-          Size="117,42"
+          Size="119,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\Ordenar"
-          TopLeft="221.428575199478,103.235295565483" />
+          TopLeft="68.428575199478,92.235295565483" />
         <EdgeLayout
           Id="Package\Carga Produccion\DFT_PRODUCCION.Paths[Salida de origen de OLE DB]"
-          TopLeft="282.271432080804,65.3058826854072">
+          TopLeft="130.321432080805,62.7058826854072">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.9294128800759"
+              EndConnector="0,29.5294128800758"
               Start="0,0"
-              End="0,30.4294128800759">
+              End="0,22.0294128800758">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.4294128800759" />
+                    End="0,22.0294128800758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17171,18 +18620,18 @@ WHERE id =?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Produccion\DFT_PRODUCCION.Paths[Salida de ordenación]"
-          TopLeft="281.742860670479,144.835295565483">
+          TopLeft="131.39286067048,134.235295565483">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.6941189554736"
+              EndConnector="0,29.294118955474"
               Start="0,0"
-              End="0,44.1941189554736">
+              End="0,21.794118955474">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.1941189554736" />
+                    End="0,21.794118955474" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17197,14 +18646,14 @@ WHERE id =?</property>
           FontInfo="{assembly:Null}"
           Size="71,40"
           Id="b0da02ca-95f5-438f-8a00-19ff2e18af29"
-          TopLeft="64.2857153804935,16.0588237546307" />
+          TopLeft="258.285715380494,23.0588237546307" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Produccion\DFT_PRODUCCION"
           FontInfo="{assembly:Null}"
           Size="82,40"
           Id="3b7effcc-df21-4bdf-85c5-532055722ad1"
-          TopLeft="56.4285723895443,193.894120231714" />
+          TopLeft="272.428572389544,158.894120231714" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
