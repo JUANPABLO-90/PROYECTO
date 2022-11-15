@@ -1,4 +1,4 @@
-USE [ORIGEN]
+USE [BD_ORIGEN]
 GO
 INSERT [dbo].[producto_origen] ([id], [nombre], [ancho], [alto], [profundo], [peso], [descripcion], [estatus]) VALUES (1, N'BASTON', CAST(0.00 AS Decimal(9, 2)), CAST(0.00 AS Decimal(9, 2)), CAST(0.00 AS Decimal(9, 2)), CAST(1.00 AS Decimal(9, 2)), N'', N'Activo')
 INSERT [dbo].[producto_origen] ([id], [nombre], [ancho], [alto], [profundo], [peso], [descripcion], [estatus]) VALUES (2, N'SOSA ESCAMAS', CAST(0.00 AS Decimal(9, 2)), CAST(0.00 AS Decimal(9, 2)), CAST(0.00 AS Decimal(9, 2)), CAST(1.00 AS Decimal(9, 2)), N'', N'Activo')
