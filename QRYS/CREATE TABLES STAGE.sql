@@ -25,11 +25,12 @@ CREATE TABLE direccion_stage
     numero_interior VARCHAR (15) ,
     localidad VARCHAR (250) ,
     codigo_postal VARCHAR (15)  ,
-    colonia       VARCHAR (50)  ,
+    colonia       VARCHAR (100)  ,
     municipio     VARCHAR (50)  ,
     estado        VARCHAR (50)  ,
     pais          VARCHAR (50) ,
-    estatus           VARCHAR (15) 
+    estatus           VARCHAR (15)  ,
+    status           VARCHAR (1) 
   ) ;
 CREATE INDEX direccion_stage__IDX ON direccion_stage
   ( id ASC
@@ -84,7 +85,9 @@ CREATE TABLE cliente_stage
     rfc VARCHAR (13) ,
     razon_social VARCHAR (150) ,
     nombre_comercial VARCHAR (150),
-    estatus VARCHAR (15) NOT NULL
+    estatus VARCHAR (15) NOT NULL,
+    email varchar(50),
+    telefono varchar(50)
   ) ;
 CREATE INDEX cliente_stage__IDX ON cliente_stage
   (
