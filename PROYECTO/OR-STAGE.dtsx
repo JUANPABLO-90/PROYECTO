@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="175"
-  DTS:VersionGUID="{08140801-A142-46E1-AFE9-529D67288429}">
+  DTS:VersionBuild="179"
+  DTS:VersionGUID="{7D1DC7C9-D55A-425E-A088-A6D0F9EF4668}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -357,6 +357,15 @@
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
                           name="estatus"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_origen_id]"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]"
+                          name="direccion_origen_id"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -388,6 +397,10 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_origen_id]"
+                          dataType="i4"
+                          name="direccion_origen_id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -428,6 +441,11 @@
                           length="15"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
                           name="estatus" />
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[direccion_origen_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[direccion_origen_id]"
+                          name="direccion_origen_id" />
                         <outputColumn
                           refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           dataType="i4"
@@ -555,6 +573,12 @@
                           cachedName="estatus"
                           externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
+                        <inputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].Columns[direccion_origen_id]"
+                          cachedDataType="i4"
+                          cachedName="direccion_origen_id"
+                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -586,6 +610,10 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
+                          dataType="i4"
+                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -766,6 +794,12 @@
                           cachedName="CHtelefono"
                           externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1.Outputs[Salida de columna derivada].Columns[CHtelefono]" />
+                        <inputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].Columns[direccion_stage_id]"
+                          cachedDataType="i4"
+                          cachedName="direccion_stage_id"
+                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[direccion_stage_id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -809,6 +843,10 @@
                           dataType="str"
                           length="50"
                           name="telefono" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
+                          dataType="i4"
+                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -951,6 +989,15 @@
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[estatus]"
                           name="estatus"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_stage_id]"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]"
+                          name="direccion_stage_id"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -982,6 +1029,10 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_stage_id]"
+                          dataType="i4"
+                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -994,6 +1045,11 @@
                           dataType="i4"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[id]"
                           name="id" />
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[direccion_stage_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[direccion_stage_id]"
+                          name="direccion_stage_id" />
                         <outputColumn
                           refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
                           codePage="1252"
@@ -1218,6 +1274,11 @@
                           cachedLength="15"
                           cachedName="estatus"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Outputs[Salida de ordenación].Columns[estatus]" />
+                        <inputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[direccion_stage_id]"
+                          cachedDataType="i4"
+                          cachedName="direccion_stage_id"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Outputs[Salida de ordenación].Columns[direccion_stage_id]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1354,6 +1415,19 @@
                               dataType="System.Int32"
                               description="La columna de entrada asociada a esta columna de salida"
                               name="InputColumnID">#{Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[telefono]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[direccion_stage_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[direccion_stage_id]"
+                          name="direccion_stage_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[direccion_stage_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -1602,6 +1676,22 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Inputs[Entrada de ordenación].Columns[direccion_stage_id]"
+                          cachedDataType="i4"
+                          cachedName="direccion_stage_id"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1684,6 +1774,19 @@
                               dataType="System.Int32"
                               description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
                               name="SortColumnId">#{Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[estatus]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Outputs[Salida de ordenación].Columns[direccion_stage_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Outputs[Salida de ordenación].Columns[direccion_stage_id]"
+                          name="direccion_stage_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3162,7 +3265,7 @@
                       expressionType="Notify"
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[direccion_stage]) [refTable]
-where [refTable].[id] = ?</property>
+where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exterior] = ? and [refTable].[numero_interior] = ? and [refTable].[localidad] = ? and [refTable].[codigo_postal] = ? and [refTable].[colonia] = ? and [refTable].[municipio] = ? and [refTable].[estado] = ? and [refTable].[pais] = ? and [refTable].[estatus] = ? and [refTable].[status] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
@@ -3193,12 +3296,12 @@ where [refTable].[id] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indica si se debe hacer referencia a metadatos en formato XML."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calle" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_exterior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_interior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="localidad" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_postal" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="colonia" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estado" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pais" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estatus" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="status" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calle" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_exterior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_interior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="localidad" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_postal" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="colonia" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estado" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pais" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estatus" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="status" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                      name="ParameterMap">#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\245:invalid};</property>
+                      name="ParameterMap">#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[id]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Outputs[Salida de columna derivada].Columns[STATUS_INSERT]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -3231,6 +3334,204 @@ where [refTable].[id] = ?</property>
                               dataType="System.String"
                               description="Especifica la columna de la tabla de referencia con la que se combina una columna."
                               name="JoinToReferenceColumn">id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[calle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="calle"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">calle</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[numero_exterior]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="numero_exterior"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">numero_exterior</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[numero_interior]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="numero_interior"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">numero_interior</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[localidad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="localidad"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">localidad</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[codigo_postal]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="codigo_postal"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">codigo_postal</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[colonia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="colonia"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">colonia</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[municipio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="municipio"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">municipio</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[estado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="estado"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">estado</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[pais]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="pais"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">pais</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[estatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estatus"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">estatus</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[STATUS_INSERT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="STATUS_INSERT"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Outputs[Salida de columna derivada].Columns[STATUS_INSERT]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">status</property>
                             <property
                               dataType="System.Null"
                               description="Especifica la columna de la tabla de referencia de la que se copia una columna."
@@ -3348,7 +3649,7 @@ where [refTable].[id] = ?</property>
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Copiar columna"
-                          length="50"
+                          length="100"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LKPcolonia]"
                           name="LKPcolonia"
                           truncationRowDisposition="FailComponent">
@@ -3421,6 +3722,22 @@ where [refTable].[id] = ?</property>
                               dataType="System.String"
                               description="Especifica la columna de la tabla de referencia de la que se copia una columna."
                               name="CopyFromReferenceColumn">estatus</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copiar columna"
+                          length="1"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[status]"
+                          name="status"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn">status</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -4687,160 +5004,8 @@ WHERE id =?</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1"
-                  componentClassID="Microsoft.ConditionalSplit"
-                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
-                  name="División condicional 1"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional]"
-                      description="Entrada en la transformación División condicional"
-                      name="Entrada de división condicional">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[calle]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="calle"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[numero_exterior]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="numero_exterior"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[numero_interior]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="numero_interior"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[localidad]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="localidad"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[codigo_postal]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="codigo_postal"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[colonia]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="100"
-                          cachedName="colonia"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[municipio]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="municipio"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[estado]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="estado"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional].Columns[pais]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="pais"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[QUITANULL]"
-                      description="Salida 1 de la transformación División condicional"
-                      errorOrTruncationOperation="Cálculo"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="QUITANULL"
-                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional]"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                          name="Expression">[REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]}," ") == " " || [REPLACENULL](#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]}," ") == " "</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(calle," ") == " " || REPLACENULL(numero_exterior," ") == " " || REPLACENULL(numero_interior," ") == " " || REPLACENULL(localidad," ") == " " || REPLACENULL(codigo_postal," ") == " " || REPLACENULL(colonia," ") == " " || REPLACENULL(municipio," ") == " " || REPLACENULL(estado," ") == " " || REPLACENULL(pais," ") == " "</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
-                          name="EvaluationOrder">0</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida predeterminada de división condicional]"
-                      description="Salida predeterminada de la transformación División condicional"
-                      exclusionGroup="1"
-                      name="Salida predeterminada de división condicional"
-                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional]">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          name="IsDefaultOut">true</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida de error de división condicional]"
-                      description="Salida de error de la transformación División condicional"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Salida de error de división condicional"
-                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
-                <path
-                  refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[QUITANULL]"
-                  endId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Inputs[Entrada de columna derivada]"
-                  name="QUITANULL"
-                  startId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Outputs[QUITANULL]" />
                 <path
                   refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
                   endId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda]"
@@ -4858,7 +5023,7 @@ WHERE id =?</property>
                   startId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
                 <path
                   refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
-                  endId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1.Inputs[Entrada de división condicional]"
+                  endId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Inputs[Entrada de columna derivada]"
                   name="Salida de origen de OLE DB"
                   startId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB]" />
                 <path
@@ -14050,6 +14215,10 @@ WHERE id =?</property>
           Size="243.2,219.2"
           Id="Package\Cargar Empleados"
           TopLeft="887.542865268552,109.870589125445" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\DELETE TABLES STAGE"
+          TopLeft="69.3877562837073,39.3277316439936" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="810.45,194.5">
@@ -14353,32 +14522,6 @@ WHERE id =?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="320.53571427355,746.462747216169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="55.2285786054581,0"
-              Start="0,0"
-              End="47.7285786054581,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="47.7285786054581,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\DELETE TABLES STAGE"
-          TopLeft="69.3877562837073,39.3277316439936" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="164.418878141854,80.9277316439936">
           <EdgeLayout.Curve>
@@ -14392,6 +14535,28 @@ WHERE id =?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,56.0722683560064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="320.53571427355,746.462747216169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.2285786054581,0"
+              Start="0,0"
+              End="47.7285786054581,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.7285786054581,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14442,7 +14607,7 @@ WHERE id =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1">
+    design-time-name="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14455,7 +14620,7 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE">
+    design-time-name="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14473,21 +14638,33 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar"
-          TopLeft="663,128" />
+          Size="162.4,41.6"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1"
+          TopLeft="322,26" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1"
+          TopLeft="453,289.8" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla"
+          TopLeft="438,222" />
         <NodeLayout
           Size="125.6,41.6"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1"
           TopLeft="341,124" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1"
-          TopLeft="322,26" />
+          Size="116.8,41.6"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar"
+          TopLeft="663,128" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Origen de archivo plano"
           TopLeft="623,30" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE"
+          TopLeft="460,381" />
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de origen de OLE DB]"
           TopLeft="403.5,67.6">
@@ -14532,10 +14709,40 @@ WHERE id =?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla"
-          TopLeft="438,222" />
+        <EdgeLayout
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de ordenación1]"
+          TopLeft="721.4,169.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.866666666667,52.3999999999999"
+              Start="0,0"
+              End="-158.866666666667,44.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1757983193277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.1757983193277"
+                    Point2="0,31.1757983193277"
+                    Point3="-4,31.1757983193277" />
+                  <mssgle:LineSegment
+                    End="-154.866666666667,31.1757983193277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.866666666667,31.1757983193277"
+                    Point2="-158.866666666667,31.1757983193277"
+                    Point3="-158.866666666667,35.1757983193277" />
+                  <mssgle:LineSegment
+                    End="-158.866666666667,44.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de ordenación]"
           TopLeft="403.8,165.6">
@@ -14571,44 +14778,6 @@ WHERE id =?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de ordenación1]"
-          TopLeft="721.4,169.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-158.866666666667,52.3999999999999"
-              Start="0,0"
-              End="-158.866666666667,44.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1757983193277" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1757983193277"
-                    Point2="0,31.1757983193277"
-                    Point3="-4,31.1757983193277" />
-                  <mssgle:LineSegment
-                    End="-154.866666666667,31.1757983193277" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-154.866666666667,31.1757983193277"
-                    Point2="-158.866666666667,31.1757983193277"
-                    Point3="-158.866666666667,35.1757983193277" />
-                  <mssgle:LineSegment
-                    End="-158.866666666667,44.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1"
-          TopLeft="453,289.8" />
-        <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de combinación de mezcla]"
           TopLeft="535.7,263.6">
           <EdgeLayout.Curve>
@@ -14630,10 +14799,6 @@ WHERE id =?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE"
-          TopLeft="460,381" />
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de columna derivada]"
           TopLeft="538.7,331.4">
@@ -14661,6 +14826,19 @@ WHERE id =?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14740,7 +14918,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Compra Producto\DFT_COMPRA_P">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P\STAGE_COMPRA_P"
@@ -14768,7 +14946,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14810,29 +14990,25 @@ WHERE id =?</property>
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN"
           TopLeft="259,0.199999999999989" />
         <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE"
+          TopLeft="249.5714285471,123.517646597661" />
+        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE"
           TopLeft="257,320.4" />
-        <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE"
-          TopLeft="251,156.4" />
         <NodeLayout
           Size="192,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CM_DIRECCION_STAGE"
           TopLeft="543,317.4" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
-          TopLeft="554,234.4" />
-        <NodeLayout
           Size="128.8,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda"
           TopLeft="278,233.4" />
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional 1"
-          TopLeft="254,79.2" />
+          Size="176,41.6"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
+          TopLeft="554,234.4" />
         <EdgeLayout
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[UPDATE]"
           TopLeft="640.5,276">
@@ -14858,28 +15034,6 @@ WHERE id =?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
-          TopLeft="345.7,41.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.4"
-              Start="0,0"
-              End="0,29.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de entradas no coincidentes de búsqueda]"
           TopLeft="342.5,275">
           <EdgeLayout.Curve>
@@ -14899,7 +15053,7 @@ WHERE id =?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-106.8890234375,12.85234375,213.778046875,12.1953125"
+              BoundingBox="-106.8890234375,12.8523437499999,213.778046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14929,18 +15083,18 @@ WHERE id =?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
-          TopLeft="344.3,198">
+          TopLeft="343.58571427355,165.117646597661">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.4"
+              EndConnector="0,68.282353402339"
               Start="0,0"
-              End="0,27.9">
+              End="0,60.782353402339">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9" />
+                    End="0,60.782353402339" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14950,27 +15104,25 @@ WHERE id =?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[QUITANULL]"
-          TopLeft="344.9,120.8">
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
+          TopLeft="346.28571427355,41.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.6"
+              EndConnector="0,81.717646597661"
               Start="0,0"
-              End="0,28.1">
+              End="0,74.217646597661">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1" />
+                    End="0,74.217646597661" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.024453125,8.38203125,54.04890625,11.3359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15008,7 +15160,7 @@ WHERE id =?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15018,7 +15170,7 @@ WHERE id =?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15061,7 +15213,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15131,7 +15285,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga de Producto\DFT_PRODUCTO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="247.2,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
@@ -15159,7 +15313,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15197,13 +15353,13 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN"
-          TopLeft="77,3" />
-        <NodeLayout
           Size="206.4,41.6"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_STAGE"
           TopLeft="81,70" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN"
+          TopLeft="77,3" />
         <EdgeLayout
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA.Paths[Salida de origen de OLE DB]"
           TopLeft="184,44.6">
@@ -15230,7 +15386,7 @@ WHERE id =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_STAGE">
+    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15243,7 +15399,7 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN">
+    design-time-name="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15294,7 +15450,7 @@ WHERE id =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_STAGE">
+    design-time-name="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_ORIGEN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15307,7 +15463,7 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_ORIGEN">
+    design-time-name="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15323,7 +15479,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116.8,41.6"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\Ordenar"
@@ -15355,7 +15511,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15389,21 +15547,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           FontInfo="{assembly:Null}"
-          Size="71.2,40"
+          Size="71.2,NaN"
           Id="12410242-dd91-4bd0-8f7c-cf81092f0adb"
           TopLeft="131,34" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           FontInfo="{assembly:Null}"
-          Size="81.6,56"
+          Size="81.6,NaN"
           Id="b9881619-d699-4ad4-81c1-e2fd69fd7f67"
           TopLeft="140,236" />
       </GraphLayout>
@@ -15543,7 +15703,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Proveedor\DFT_PROVEEDOR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_ORIGEN"
@@ -15575,7 +15735,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15597,21 +15759,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN MYSQL"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="113.6,40"
+          Size="113.6,NaN"
           Id="8e127328-ed24-49c4-bae0-e114cd669956"
           TopLeft="70.0000011920929,25.2352944715625" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="81.6,56"
+          Size="81.6,NaN"
           Id="a0edfb0b-b11d-48c4-9954-65362ea4a11e"
           TopLeft="82.8571442681917,202.54117788625" />
       </GraphLayout>
@@ -15642,7 +15806,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta\DFT_VENTASQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,41.6"
           Id="Package\Carga Venta\DFT_VENTASQL\VENTA_STAGE"
@@ -15670,21 +15834,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="71.2,40"
+          Size="71.2,NaN"
           Id="a2f32b26-658d-4060-99c3-8d1f33b21de0"
           TopLeft="45.5714287173991,19.7058825030871" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="81.6,56"
+          Size="81.6,NaN"
           Id="28ea90e6-deee-4569-a3d0-97255059380f"
           TopLeft="26.7142858115994,176.117649879423" />
       </GraphLayout>
@@ -15720,7 +15886,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116.8,41.6"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\VENTAS"
@@ -15752,7 +15918,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15774,21 +15942,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGENES\VENTAS\XLS"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="153.6,40"
+          Size="153.6,NaN"
           Id="2697ccb0-a5c9-41b3-a9d6-cc333c8cf0fe"
           TopLeft="74,54" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="81.6,56"
+          Size="81.6,NaN"
           Id="819ee8bf-b981-471c-a660-58a75c5a311d"
           TopLeft="113.230769230769,233.676923076923" />
       </GraphLayout>
@@ -15824,11 +15994,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\Ordenar"
-          TopLeft="366,103" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="215.2,41.6"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN"
@@ -15837,6 +16003,10 @@ WHERE id =?</property>
           Size="208,41.6"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_STAGE"
           TopLeft="322,197" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\Ordenar"
+          TopLeft="366,103" />
         <EdgeLayout
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL.Paths[Salida de origen de OLE DB]"
           TopLeft="428,68.6">
@@ -15856,7 +16026,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15878,14 +16050,16 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL"
           FontInfo="{assembly:Null}"
-          Size="71.2,40"
+          Size="71.2,NaN"
           Id="73b8e3f2-1572-49ab-87bb-590522d06ed5"
           TopLeft="127,29" />
       </GraphLayout>
@@ -15921,7 +16095,7 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS\VENTAPRODUCTO"
@@ -15953,7 +16127,9 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15975,21 +16151,23 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           FontInfo="{assembly:Null}"
-          Size="82.4,40"
+          Size="82.4,NaN"
           Id="ed130230-dede-4b8b-9f55-625915a44843"
           TopLeft="138,242" />
         <AnnotationLayout
           Text="EXCEL FILE"
           ParentId="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           FontInfo="{assembly:Null}"
-          Size="84.8,40"
+          Size="84.8,NaN"
           Id="6f9017be-c1b3-4b67-8a32-78d388043266"
           TopLeft="142,36" />
       </GraphLayout>
@@ -16060,19 +16238,6 @@ WHERE id =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN">
     <Properties>
       <Property>
@@ -16086,7 +16251,7 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE">
+    design-time-name="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
