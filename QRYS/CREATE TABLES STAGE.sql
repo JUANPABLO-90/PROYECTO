@@ -79,15 +79,41 @@ CREATE TABLE forma_pago_stage
 ALTER TABLE forma_pago_stage ADD CONSTRAINT forma_pago_stage__PK PRIMARY KEY ( id ) ;
 ALTER TABLE forma_pago_stage ADD CONSTRAINT forma_pago_stage_nombre_UN UNIQUE ( nombre ) ;
 
+CREATE TABLE cliente_stage1
+  (
+    id INT NOT NULL ,
+    direccion_stage_id INT NOT NULL , 
+    rfc VARCHAR (13) ,
+    razon_social VARCHAR (150) ,
+    nombre_comercial VARCHAR (150),
+    estatus VARCHAR (15) NOT NULL
+  ) ;
+CREATE INDEX cliente_stage1__IDX ON cliente_stage1
+  (
+    id ASC
+  ) ;
+CREATE INDEX cliente_stage1_IDX2 ON cliente_stage1
+  (
+    rfc ASC ,
+    nombre_comercial ASC ,
+    razon_social ASC
+  ) ;
+ALTER TABLE cliente_stage1 ADD CONSTRAINT cliente_stage1_PK PRIMARY KEY ( id ) ;
+ALTER TABLE cliente_stage1 ADD CONSTRAINT cliente_stage1__UN UNIQUE ( rfc ) ;
+ALTER TABLE cliente_stage1 ADD CONSTRAINT cliente_stage1_direccion_stage_FK FOREIGN KEY ( direccion_stage_id ) REFERENCES direccion_stage ( id ) ON
+UPDATE CASCADE ;
+
+
 CREATE TABLE cliente_stage
   (
     id INT NOT NULL ,
+    direccion_stage_id INT NOT NULL , 
     rfc VARCHAR (13) ,
     razon_social VARCHAR (150) ,
     nombre_comercial VARCHAR (150),
     estatus VARCHAR (15) NOT NULL,
-    email varchar(50),
-    telefono varchar(50)
+    email VARCHAR(50),
+    telefono VARCHAR(50)
   ) ;
 CREATE INDEX cliente_stage__IDX ON cliente_stage
   (
@@ -101,6 +127,8 @@ CREATE INDEX cliente_stage_IDX2 ON cliente_stage
   ) ;
 ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage_PK PRIMARY KEY ( id ) ;
 ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage__UN UNIQUE ( rfc ) ;
+ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage_direccion_stage_FK FOREIGN KEY ( direccion_stage_id ) REFERENCES direccion_stage ( id ) ON
+UPDATE CASCADE ;
 
 
 CREATE TABLE proveedor_stage

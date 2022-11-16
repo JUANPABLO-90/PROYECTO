@@ -29,5 +29,21 @@ EXEC [BD_STAGE].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
 
+USE [master]
+GO
+CREATE DATABASE [BD_MART]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'BD_MART', FILENAME = N'C:\SQL2019\DATA\BD_MART.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'BD_MART_log', FILENAME = N'C:\SQL2019\DATA\BD_MART_log.ldf' , SIZE = 139264KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [BD_MART].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+
+
 --mysl
 CREATE DATABASE ORIGEN

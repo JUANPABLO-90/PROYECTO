@@ -205,6 +205,7 @@ GO
 CREATE TABLE cliente_origen
   (
     id INT  NOT NULL ,
+    direccion_origen_id INT NOT NULL ,
     rfc VARCHAR (13) ,
     razon_social VARCHAR (150) ,
     nombre_comercial VARCHAR (150),
@@ -222,10 +223,15 @@ CREATE INDEX cliente_origen_IDX2 ON cliente_origen
   ) ;
 ALTER TABLE cliente_origen ADD CONSTRAINT cliente_origen_PK PRIMARY KEY ( id ) ;
 ALTER TABLE cliente_origen ADD CONSTRAINT cliente_origen__UN UNIQUE ( rfc ) ;
+ALTER TABLE cliente_origen ADD CONSTRAINT cliente_origen_direccion_origen_FK FOREIGN KEY ( direccion_origen_id ) REFERENCES direccion_origen ( id ) ON
+UPDATE CASCADE 
 
 
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del Cliente' , @level0type=N'SCHEMA',@level0name=N'dbo',
  @level1type=N'TABLE',@level1name=N'cliente_origen', @level2type=N'COLUMN',@level2name=N'id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id de la dirección del Cliente' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'cliente_origen', @level2type=N'COLUMN',@level2name=N'direccion_origen_id'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Rfc del Cliente' , @level0type=N'SCHEMA',@level0name=N'dbo',
  @level1type=N'TABLE',@level1name=N'cliente_origen', @level2type=N'COLUMN',@level2name=N'rfc'
