@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="179"
-  DTS:VersionGUID="{7D1DC7C9-D55A-425E-A088-A6D0F9EF4668}">
+  DTS:VersionBuild="180"
+  DTS:VersionGUID="{2ABB803E-9B21-4602-8FB3-71578948346B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -147,27 +147,27 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+      DTS:refId="Package.ConnectionManagers[TI.BD_ORIGEN]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{4C709714-DED3-4CDB-B4B1-38FEA4BDFCA1}"
-      DTS:ObjectName="PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN">
+      DTS:DTSID="{C26A3788-F714-44D0-BD58-25D7AC352EB4}"
+      DTS:ObjectName="TI.BD_ORIGEN">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_ORIGEN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{4C709714-DED3-4CDB-B4B1-38FEA4BDFCA1}PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_ORIGEN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{C26A3788-F714-44D0-BD58-25D7AC352EB4}TI.BD_ORIGEN;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+      DTS:refId="Package.ConnectionManagers[TI.BD_Stage]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A808B98D-F1F0-4A11-870A-DD8D10628387}"
-      DTS:ObjectName="PCCAUDILLO\MSSQLSERVER2019.BD_STAGE">
+      DTS:DTSID="{8B69F670-1514-438A-A01F-879C469E4139}"
+      DTS:ObjectName="TI.BD_Stage">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{A808B98D-F1F0-4A11-870A-DD8D10628387}PCCAUDILLO\MSSQLSERVER2019.BD_STAGE;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{8B69F670-1514-438A-A01F-879C469E4139}TI.BD_Stage;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -268,7 +268,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -294,8 +294,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -357,15 +357,6 @@
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
                           name="estatus"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_origen_id]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]"
-                          name="direccion_origen_id"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -397,10 +388,6 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_origen_id]"
-                          dataType="i4"
-                          name="direccion_origen_id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -442,11 +429,6 @@
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
                           name="estatus" />
                         <outputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[direccion_origen_id]"
-                          dataType="i4"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[direccion_origen_id]"
-                          name="direccion_origen_id" />
-                        <outputColumn
                           refId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
@@ -479,7 +461,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">[dbo].[cliente_stage1]</property>
+                      name="OpenRowset">[dbo].[cliente_stage]</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -488,7 +470,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -522,8 +504,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -573,12 +555,6 @@
                           cachedName="estatus"
                           externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
-                        <inputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].Columns[direccion_origen_id]"
-                          cachedDataType="i4"
-                          cachedName="direccion_origen_id"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE.Outputs[Salida de origen de OLE DB].Columns[direccion_origen_id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -610,10 +586,6 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
-                          dataType="i4"
-                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -692,7 +664,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -726,8 +698,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -778,28 +750,6 @@
                           cachedName="estatus"
                           externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[estatus]" />
-                        <inputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].Columns[CHemail]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="CHemail"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1.Outputs[Salida de columna derivada].Columns[CHemail]" />
-                        <inputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].Columns[CHtelefono]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="CHtelefono"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1.Outputs[Salida de columna derivada].Columns[CHtelefono]" />
-                        <inputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].Columns[direccion_stage_id]"
-                          cachedDataType="i4"
-                          cachedName="direccion_stage_id"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[direccion_stage_id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -831,22 +781,6 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="email" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="telefono" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[direccion_stage_id]"
-                          dataType="i4"
-                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -891,7 +825,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">[dbo].[cliente_stage1]</property>
+                      name="OpenRowset">[dbo].[cliente_stage]</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -900,7 +834,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -926,8 +860,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -989,15 +923,6 @@
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[estatus]"
                           name="estatus"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_stage_id]"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]"
-                          name="direccion_stage_id"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1029,10 +954,6 @@
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].ExternalColumns[direccion_stage_id]"
-                          dataType="i4"
-                          name="direccion_stage_id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1045,11 +966,6 @@
                           dataType="i4"
                           lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[id]"
                           name="id" />
-                        <outputColumn
-                          refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[direccion_stage_id]"
-                          dataType="i4"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[direccion_stage_id]"
-                          name="direccion_stage_id" />
                         <outputColumn
                           refId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de error de origen de OLE DB].Columns[rfc]"
                           codePage="1252"
@@ -1680,7 +1596,7 @@
                           refId="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1.Inputs[Entrada de ordenación].Columns[direccion_stage_id]"
                           cachedDataType="i4"
                           cachedName="direccion_stage_id"
-                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]">
+                          lineageId="Package\Carga Cliente\DFT_CLIENTE_TXT\52:invalid">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1786,7 +1702,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                              name="SortColumnId">#{Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1.Outputs[Salida de origen de OLE DB].Columns[direccion_stage_id]}</property>
+                              name="SortColumnId">#{Package\Carga Cliente\DFT_CLIENTE_TXT\52:invalid}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2034,7 +1950,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -2060,8 +1976,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Compra\DFT_COMPRA\ORIGEN_COMPRA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -2395,7 +2311,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -2429,8 +2345,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Compra\DFT_COMPRA\STAGE_COMPRA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -2691,7 +2607,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -2717,8 +2633,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Compra Producto\DFT_COMPRA_P\ORIGEN_COMPRA_P.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -3001,7 +2917,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -3035,8 +2951,8 @@
                   <connections>
                     <connection
                       refId="Package\Carga Compra Producto\DFT_COMPRA_P\STAGE_COMPRA_P.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -3258,14 +3174,14 @@
                       description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[direccion_stage]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[direccion_stage]</property>
                     <property
                       dataType="System.String"
                       description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[direccion_stage]) [refTable]
-where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exterior] = ? and [refTable].[numero_interior] = ? and [refTable].[localidad] = ? and [refTable].[codigo_postal] = ? and [refTable].[colonia] = ? and [refTable].[municipio] = ? and [refTable].[estado] = ? and [refTable].[pais] = ? and [refTable].[estatus] = ? and [refTable].[status] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[direccion_stage]) [refTable]
+where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exterior] = ? and [refTable].[numero_interior] = ? and [refTable].[localidad] = ? and [refTable].[codigo_postal] = ? and [refTable].[colonia] = ? and [refTable].[municipio] = ? and [refTable].[estado] = ? and [refTable].[pais] = ? and [refTable].[estatus] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
@@ -3296,12 +3212,12 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                     <property
                       dataType="System.String"
                       description="Indica si se debe hacer referencia a metadatos en formato XML."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calle" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_exterior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_interior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="localidad" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_postal" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="colonia" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estado" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pais" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estatus" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="status" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="calle" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_exterior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero_interior" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="localidad" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_postal" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="colonia" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estado" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pais" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estatus" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                      name="ParameterMap">#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[id]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Outputs[Salida de columna derivada].Columns[STATUS_INSERT]};</property>
+                      name="ParameterMap">#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[id]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[calle]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[numero_interior]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[localidad]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[colonia]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[municipio]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[pais]};#{Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -3314,8 +3230,8 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                       name="OleDbConnection" />
                   </connections>
@@ -3520,24 +3436,6 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                               name="CopyFromReferenceColumn" />
                           </properties>
                         </inputColumn>
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Inputs[Entrada de búsqueda].Columns[STATUS_INSERT]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="STATUS_INSERT"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Outputs[Salida de columna derivada].Columns[STATUS_INSERT]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
-                              name="JoinToReferenceColumn">status</property>
-                            <property
-                              dataType="System.Null"
-                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3649,7 +3547,7 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Copiar columna"
-                          length="100"
+                          length="50"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LKPcolonia]"
                           name="LKPcolonia"
                           truncationRowDisposition="FailComponent">
@@ -3722,22 +3620,6 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                               dataType="System.String"
                               description="Especifica la columna de la tabla de referencia de la que se copia una columna."
                               name="CopyFromReferenceColumn">estatus</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[status]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Copiar columna"
-                          length="1"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[status]"
-                          name="status"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                              name="CopyFromReferenceColumn">status</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3868,7 +3750,7 @@ where [refTable].[id] = ? and [refTable].[calle] = ? and [refTable].[numero_exte
                       description="Comando SQL para ejecutar."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE direccion_stage SET
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE direccion_stage SET
 calle=?,
 numero_exterior=?,
 numero_interior=?,
@@ -3889,8 +3771,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CM_DIRECCION_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -4192,7 +4074,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -4218,8 +4100,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -4538,7 +4420,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -4572,8 +4454,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -4671,14 +4553,6 @@ WHERE id =?</property>
                           cachedName="estatus"
                           externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]" />
-                        <inputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].Columns[STATUS_INSERT]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="STATUS_INSERT"
-                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[status]"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE.Outputs[Salida de columna derivada].Columns[STATUS_INSERT]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4720,7 +4594,7 @@ WHERE id =?</property>
                           refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[colonia]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="50"
                           name="colonia" />
                         <externalMetadataColumn
                           refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[municipio]"
@@ -4746,12 +4620,6 @@ WHERE id =?</property>
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="status" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4902,7 +4770,7 @@ WHERE id =?</property>
                           refId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional.Inputs[Entrada de división condicional].Columns[LKPcolonia]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="100"
+                          cachedLength="50"
                           cachedName="LKPcolonia"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LKPcolonia]" />
                         <inputColumn
@@ -5063,13 +4931,13 @@ WHERE id =?</property>
                       description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[direccion_origen]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[direccion_origen]</property>
                     <property
                       dataType="System.String"
                       description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[direccion_origen]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[direccion_origen]) [refTable]
 where [refTable].[id] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -5119,8 +4987,8 @@ where [refTable].[id] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                       name="OleDbConnection" />
                   </connections>
@@ -5224,7 +5092,7 @@ where [refTable].[id] = ?</property>
                       description="Comando SQL para ejecutar."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE direccion_stage SET
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE direccion_stage SET
 estatus = 'Inactivo',
 Status = 'D'
 WHERE id =?</property>
@@ -5236,8 +5104,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\CM_DELETE_DIRECCION_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -5329,7 +5197,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -5355,8 +5223,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -5484,17 +5352,6 @@ WHERE id =?</property>
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estatus]"
                           name="estatus"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[status]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[status]"
-                          length="1"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[status]"
-                          name="status"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5536,7 +5393,7 @@ WHERE id =?</property>
                           refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[colonia]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="50"
                           name="colonia" />
                         <externalMetadataColumn
                           refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[municipio]"
@@ -5562,12 +5419,6 @@ WHERE id =?</property>
                           dataType="str"
                           length="15"
                           name="estatus" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="status" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5619,7 +5470,7 @@ WHERE id =?</property>
                           refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[colonia]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="50"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[colonia]"
                           name="colonia" />
                         <outputColumn
@@ -5650,13 +5501,6 @@ WHERE id =?</property>
                           length="15"
                           lineageId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
                           name="estatus" />
-                        <outputColumn
-                          refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[status]"
-                          name="status" />
                         <outputColumn
                           refId="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           dataType="i4"
@@ -5751,7 +5595,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -5785,8 +5629,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Producto\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -5962,7 +5806,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -5988,8 +5832,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga de Producto\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -6273,7 +6117,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -6299,8 +6143,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -6427,7 +6271,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -6461,8 +6305,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -6605,7 +6449,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -6631,8 +6475,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -6783,7 +6627,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -6817,8 +6661,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -6975,7 +6819,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -7001,8 +6845,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\MOVIMIENTO_CAJA_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -7210,7 +7054,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -7244,8 +7088,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\MOVIMIENTO_CAJA_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -7915,7 +7759,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -7941,8 +7785,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -8120,7 +7964,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -8154,8 +7998,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -8910,7 +8754,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -8944,8 +8788,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="{A808B98D-F1F0-4A11-870A-DD8D10628387}:invalid"
+                      connectionManagerRefId="{A808B98D-F1F0-4A11-870A-DD8D10628387}:invalid"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -9164,7 +9008,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -9190,8 +9034,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Venta\DFT_VENTASQL\VENTA_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -9570,7 +9414,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -9604,8 +9448,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Venta\DFT_VENTASQL\VENTA_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -10352,7 +10196,7 @@ WHERE id =?</property>
                           dataType="System.String"
                           description="Comando SQL para ejecutar."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.String"
                           description="Variable que contiene el comando SQL para ejecutar."
@@ -10714,7 +10558,7 @@ WHERE id =?</property>
                           dataType="System.String"
                           description="Comando SQL para ejecutar."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.Int32"
                           description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -10748,8 +10592,8 @@ WHERE id =?</property>
                       <connections>
                         <connection
                           refId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\VENTA_STAGE.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                          connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                          connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                          connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                           description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                           name="OleDbConnection" />
                       </connections>
@@ -11443,7 +11287,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -11469,8 +11313,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -11487,24 +11331,6 @@ WHERE id =?</property>
                           externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
                           lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[id]"
                           name="id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[venta_origen_id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[venta_origen_id]"
-                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[venta_origen_id]"
-                          name="venta_origen_id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
-                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
-                          name="producto_origen_id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[fecha]"
@@ -11524,28 +11350,6 @@ WHERE id =?</property>
                           lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[hora]"
                           name="hora"
                           scale="7"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
-                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
-                          name="cantidad"
-                          precision="9"
-                          scale="2"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[precio_unitario]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[precio_unitario]"
-                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[precio_unitario]"
-                          name="precio_unitario"
-                          precision="11"
-                          scale="4"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[subtotal]"
@@ -11591,6 +11395,46 @@ WHERE id =?</property>
                           lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[cancelado]"
                           name="cancelado"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[venta_origen_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[venta_origen_id]"
+                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[venta_origen_id]"
+                          name="venta_origen_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
+                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[producto_origen_id]"
+                          name="producto_origen_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                          name="cantidad"
+                          precision="9"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[precio_unitario]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[precio_unitario]"
+                          lineageId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[precio_unitario]"
+                          name="precio_unitario"
+                          precision="11"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -11598,14 +11442,6 @@ WHERE id =?</property>
                           refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
                           dataType="i4"
                           name="id" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[venta_origen_id]"
-                          dataType="i4"
-                          name="venta_origen_id" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
-                          dataType="i4"
-                          name="producto_origen_id" />
                         <externalMetadataColumn
                           refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha]"
                           dataType="dbDate"
@@ -11615,18 +11451,6 @@ WHERE id =?</property>
                           dataType="dbTime2"
                           name="hora"
                           scale="7" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
-                          dataType="numeric"
-                          name="cantidad"
-                          precision="9"
-                          scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[precio_unitario]"
-                          dataType="numeric"
-                          name="precio_unitario"
-                          precision="11"
-                          scale="4" />
                         <externalMetadataColumn
                           refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[subtotal]"
                           dataType="numeric"
@@ -11651,6 +11475,26 @@ WHERE id =?</property>
                           dataType="str"
                           length="15"
                           name="cancelado" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[venta_origen_id]"
+                          dataType="i4"
+                          name="venta_origen_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[producto_origen_id]"
+                          dataType="i4"
+                          name="producto_origen_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                          dataType="numeric"
+                          name="cantidad"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN.Outputs[Salida de origen de OLE DB].ExternalColumns[precio_unitario]"
+                          dataType="numeric"
+                          name="precio_unitario"
+                          precision="11"
+                          scale="4" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -11768,7 +11612,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -11802,8 +11646,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -12405,7 +12249,7 @@ WHERE id =?</property>
                           dataType="System.String"
                           description="Comando SQL para ejecutar."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.String"
                           description="Variable que contiene el comando SQL para ejecutar."
@@ -12686,7 +12530,7 @@ WHERE id =?</property>
                           dataType="System.String"
                           description="Comando SQL para ejecutar."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.Int32"
                           description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -12720,8 +12564,8 @@ WHERE id =?</property>
                       <connections>
                         <connection
                           refId="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS\VENTA_PRODUCTO_STAGE.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                          connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                          connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                          connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                           description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                           name="OleDbConnection" />
                       </connections>
@@ -12986,7 +12830,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -13012,8 +12856,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_ORIGEN]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_ORIGEN]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_ORIGEN]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -13479,7 +13323,7 @@ WHERE id =?</property>
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">[dbo].[empleado_stage]</property>
+                      name="OpenRowset">[dbo].[direccion_stage]</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -13488,7 +13332,7 @@ WHERE id =?</property>
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -13522,8 +13366,8 @@ WHERE id =?</property>
                   <connections>
                     <connection
                       refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[PCCAUDILLO\MSSQLSERVER2019.BD_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -13542,130 +13386,6 @@ WHERE id =?</property>
                           externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[id]"
                           lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[id]" />
                         <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="nombre"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[nombre]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[apellido_paterno]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="apellido_paterno"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[apellido_paterno]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[apellido_materno]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="apellido_materno"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[apellido_materno]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[contrasenia]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="contrasenia"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[contrasenia]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[fecha_nacimiento]"
-                          cachedDataType="dbDate"
-                          cachedName="fecha_nacimiento"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[nacionalidad]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="nacionalidad"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[nacionalidad]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[nss]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="11"
-                          cachedName="nss"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[nss]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[curp]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="18"
-                          cachedName="curp"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[curp]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[rfc]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="13"
-                          cachedName="rfc"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[rfc]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[estado_civil]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="estado_civil"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[estado_civil]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[tipo_sangre]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="18"
-                          cachedName="tipo_sangre"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[tipo_sangre]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[email_corporativo]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="email_corporativo"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[email_corporativo]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[email_personal]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="email_personal"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[email_personal]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[telefono]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="telefono"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[telefono]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[red_social]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="25"
-                          cachedName="red_social"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[red_social]" />
-                        <inputColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[fecha_ingreso]"
-                          cachedDataType="dbDate"
-                          cachedName="fecha_ingreso"
-                          externalMetadataColumnId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
-                          lineageId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN.Outputs[Salida de origen de OLE DB].Columns[fecha_ingreso]" />
-                        <inputColumn
                           refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].Columns[estatus]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -13681,103 +13401,65 @@ WHERE id =?</property>
                           dataType="i4"
                           name="id" />
                         <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="nombre" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_paterno]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="apellido_paterno" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido_materno]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="apellido_materno" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[contrasenia]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="contrasenia" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
-                          dataType="dbDate"
-                          name="fecha_nacimiento" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nacionalidad]"
-                          codePage="1252"
-                          dataType="str"
-                          length="15"
-                          name="nacionalidad" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[nss]"
-                          codePage="1252"
-                          dataType="str"
-                          length="11"
-                          name="nss" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[curp]"
-                          codePage="1252"
-                          dataType="str"
-                          length="18"
-                          name="curp" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[rfc]"
-                          codePage="1252"
-                          dataType="str"
-                          length="13"
-                          name="rfc" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado_civil]"
-                          codePage="1252"
-                          dataType="str"
-                          length="15"
-                          name="estado_civil" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipo_sangre]"
-                          codePage="1252"
-                          dataType="str"
-                          length="18"
-                          name="tipo_sangre" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_corporativo]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="email_corporativo" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[email_personal]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="email_personal" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefono]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="telefono" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[red_social]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="red_social" />
-                        <externalMetadataColumn
-                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_ingreso]"
-                          dataType="dbDate"
-                          name="fecha_ingreso" />
-                        <externalMetadataColumn
                           refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estatus]"
                           codePage="1252"
                           dataType="str"
                           length="15"
                           name="estatus" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[calle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="calle" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_exterior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="numero_exterior" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[numero_interior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="numero_interior" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[localidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="localidad" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo_postal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="codigo_postal" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[colonia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="colonia" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[municipio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="municipio" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="estado" />
+                        <externalMetadataColumn
+                          refId="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE.Inputs[Entrada de destino de OLE DB].ExternalColumns[pais]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="pais" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -13955,27 +13637,27 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Carga Cliente\DFT_CLIENTE"
           TopLeft="23,5.49999999999997" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT"
-          TopLeft="20.8285834589788,74.5882379109473" />
+          TopLeft="21.8285834589788,73.5882379109473" />
         <EdgeLayout
           Id="Package\Carga Cliente.PrecedenceConstraints[Constraint]"
-          TopLeft="102.314291729489,47.1">
+          TopLeft="102.914291729489,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.4882379109473"
+              EndConnector="0,26.0882379109474"
               Start="0,0"
-              End="0,19.9882379109473">
+              End="0,18.5882379109474">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9882379109473" />
+                    End="0,18.5882379109474" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13987,38 +13669,38 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="246.4,180"
-          Size="246.4,223.2"
+          PanelSize="246,180"
+          Size="246,223"
           Id="Package\Carga Cliente"
           TopLeft="1200.41666666667,391.833333333333" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Carga Compra\DFT_COMPRA"
           TopLeft="40.25,14" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,80.8"
-          Size="204.8,124"
+          PanelSize="205,81"
+          Size="205,124"
           Id="Package\Carga Compra"
           TopLeft="302.5,413.5" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P"
           TopLeft="21.3333333333333,13" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.8,110.4"
-          Size="220.8,152.8"
+          PanelSize="221,110"
+          Size="221,153"
           Id="Package\Carga Compra Producto"
           TopLeft="47.0833333333337,398.083333333334" />
         <NodeLayout
-          Size="180,68.8"
+          Size="180,69"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE"
           TopLeft="40.1111111111112,163.222222222222" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="217,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE"
           TopLeft="255.555555555555,175.722222222222" />
         <EdgeLayout
@@ -14046,89 +13728,89 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="499.2,304.8"
-          Size="499.2,348"
+          PanelSize="499,305"
+          Size="499,348"
           Id="Package\Carga de Direccion"
           TopLeft="311.25,20.5" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO"
           TopLeft="16.75,27.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,124"
-          Size="204.8,167.2"
+          PanelSize="205,124"
+          Size="205,167"
           Id="Package\Carga de Producto"
           TopLeft="62.25,144.5" />
         <NodeLayout
-          Size="212,41.6"
+          Size="212,42"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA"
           TopLeft="39.25,29.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,127.2"
-          Size="288,169.6"
+          PanelSize="288,127"
+          Size="288,170"
           Id="Package\Carga Estatus de Compra"
           TopLeft="538.75,387.25" />
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO"
           TopLeft="6.25,8" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="216,104.8"
+          PanelSize="216,105"
           Size="216,148"
           Id="Package\Carga Formas de Pago"
           TopLeft="1201.25,121" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           TopLeft="25.9428628843659,18.6470609362975" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="252.8,135.2"
-          Size="252.8,177.6"
+          PanelSize="253,135"
+          Size="253,178"
           Id="Package\Carga Movimiento Caja"
           TopLeft="727.797624821566,664.91177150892" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION"
           TopLeft="34.8428596061103,20.0117688348961" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240.8,121.6"
-          Size="240.8,164.8"
+          PanelSize="241,122"
+          Size="241,165"
           Id="Package\Carga Produccion"
           TopLeft="1027.73809592335,670.44118432823" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR"
           TopLeft="39.0000060456142,26.9294145209566" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="243.2,126.4"
-          Size="243.2,168.8"
+          PanelSize="243,126"
+          Size="243,169"
           Id="Package\Carga Proveedor"
           TopLeft="898.75,384.75" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Carga Venta\DFT_VENTASQL"
           TopLeft="46.3603232923821,3.80065357093855" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           TopLeft="26.5079424089314,24.1986950459644" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,88.8"
-          Size="204.8,132"
+          PanelSize="205,89"
+          Size="205,132"
           Id="Package\Carga Venta\Foreach Excel-Ventas"
           TopLeft="25.1428581159944,74.2326821933294" />
         <EdgeLayout
@@ -14156,23 +13838,23 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316,220.8"
+          PanelSize="316,221"
           Size="316,264"
           Id="Package\Carga Venta"
           TopLeft="4.53571427354998,611.916666666667" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL"
           TopLeft="32.7714366363019,20.6705909486461" />
         <NodeLayout
-          Size="207.2,41.6"
+          Size="207,42"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           TopLeft="20.1714370620497,13.7176511556634" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="233.6,92.8"
-          Size="233.6,136"
+          PanelSize="234,93"
+          Size="234,136"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO"
           TopLeft="19.6000080040525,110.470589672405" />
         <EdgeLayout
@@ -14200,23 +13882,23 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="308.8,299.2"
-          Size="308.8,342.4"
+          PanelSize="309,299"
+          Size="309,342"
           Id="Package\Carga Venta Producto"
           TopLeft="375.764292879008,578.00882776567" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Cargar Empleados\DFT_EMPLEADO"
           TopLeft="42.7428571793494,29.5852928306817" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="243.2,176"
-          Size="243.2,219.2"
+          PanelSize="243,176"
+          Size="243,219"
           Id="Package\Cargar Empleados"
           TopLeft="887.542865268552,109.870589125445" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="190,42"
           Id="Package\DELETE TABLES STAGE"
           TopLeft="69.3877562837073,39.3277316439936" />
         <EdgeLayout
@@ -14259,9 +13941,9 @@ WHERE id =?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14.36666666667,122.833333333333"
+              EndConnector="14.1666666666699,122.833333333333"
               Start="0,0"
-              End="14.36666666667,115.333333333333">
+              End="14.1666666666699,115.333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14272,13 +13954,13 @@ WHERE id =?</property>
                     Point2="0,61.4166666666665"
                     Point3="4,61.4166666666665" />
                   <mssgle:LineSegment
-                    End="10.36666666667,61.4166666666665" />
+                    End="10.1666666666699,61.4166666666665" />
                   <mssgle:CubicBezierSegment
-                    Point1="10.36666666667,61.4166666666665"
-                    Point2="14.36666666667,61.4166666666665"
-                    Point3="14.36666666667,65.4166666666665" />
+                    Point1="10.1666666666699,61.4166666666665"
+                    Point2="14.1666666666699,61.4166666666665"
+                    Point3="14.1666666666699,65.4166666666665" />
                   <mssgle:LineSegment
-                    End="14.36666666667,115.333333333333" />
+                    End="14.1666666666699,115.333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14355,30 +14037,30 @@ WHERE id =?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1200.41666666667,503.433333333333">
+          TopLeft="1200.41666666667,503.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-58.4666666666699,-34.283333333333"
+              EndConnector="-58.6666666666699,-34.083333333333"
               Start="0,0"
-              End="-50.9666666666699,-34.283333333333">
+              End="-51.1666666666699,-34.083333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-25.2333333333349,0" />
+                    End="-25.333333333335,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.2333333333349,0"
-                    Point2="-29.2333333333349,0"
-                    Point3="-29.2333333333349,-4" />
+                    Point1="-25.333333333335,0"
+                    Point2="-29.333333333335,0"
+                    Point3="-29.333333333335,-4" />
                   <mssgle:LineSegment
-                    End="-29.2333333333349,-30.283333333333" />
+                    End="-29.333333333335,-30.083333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29.2333333333349,-30.283333333333"
-                    Point2="-29.2333333333349,-34.283333333333"
-                    Point3="-33.2333333333349,-34.283333333333" />
+                    Point1="-29.333333333335,-30.083333333333"
+                    Point2="-29.333333333335,-34.083333333333"
+                    Point3="-33.333333333335,-34.083333333333" />
                   <mssgle:LineSegment
-                    End="-50.9666666666699,-34.283333333333" />
+                    End="-51.1666666666699,-34.083333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14574,13 +14256,13 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1"
-          TopLeft="489,121" />
-        <NodeLayout
-          Size="183.2,41.6"
+          Size="183,42"
           Id="Package\Carga Cliente\DFT_CLIENTE\BD_ORIGEN_CLIENTE"
           TopLeft="484,19" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carga Cliente\DFT_CLIENTE\BD_STAGE_CLIENTE1"
+          TopLeft="489,121" />
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE.Paths[Salida de origen de OLE DB]"
           TopLeft="577.9,60.6">
@@ -14636,71 +14318,49 @@ WHERE id =?</property>
     design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1"
-          TopLeft="322,26" />
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1"
-          TopLeft="453,289.8" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla"
-          TopLeft="438,222" />
-        <NodeLayout
-          Size="125.6,41.6"
+          Size="126,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1"
           TopLeft="341,124" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="189,42"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla"
+          TopLeft="438,222" />
+        <NodeLayout
+          Size="117,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar"
           TopLeft="663,128" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Origen de archivo plano"
-          TopLeft="623,30" />
+          TopLeft="623,29" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE"
           TopLeft="460,381" />
-        <EdgeLayout
-          Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de origen de OLE DB]"
-          TopLeft="403.5,67.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.4"
-              Start="0,0"
-              End="0,48.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1"
+          TopLeft="322,26" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1"
+          TopLeft="453,289.8" />
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de origen de archivo plano]"
-          TopLeft="719.8,71.6">
+          TopLeft="719.75,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.4"
+              EndConnector="0,57"
               Start="0,0"
-              End="0,48.9">
+              End="0,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.9" />
+                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14745,30 +14405,30 @@ WHERE id =?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de ordenación]"
-          TopLeft="403.8,165.6">
+          TopLeft="404,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="128.6,56.3999999999999"
+              EndConnector="98.3333333333333,56"
               Start="0,0"
-              End="128.6,48.8999999999999">
+              End="98.3333333333333,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.2" />
+                    End="0,29.3179433368311" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.2"
-                    Point2="0,28.2"
-                    Point3="4,28.2" />
+                    Point1="0,29.3179433368311"
+                    Point2="0,33.3179433368311"
+                    Point3="4,33.3179433368311" />
                   <mssgle:LineSegment
-                    End="124.6,28.2" />
+                    End="94.3333333333333,33.3179433368311" />
                   <mssgle:CubicBezierSegment
-                    Point1="124.6,28.2"
-                    Point2="128.6,28.2"
-                    Point3="128.6,32.2" />
+                    Point1="94.3333333333333,33.3179433368311"
+                    Point2="98.3333333333333,33.3179433368311"
+                    Point3="98.3333333333333,37.3179433368311" />
                   <mssgle:LineSegment
-                    End="128.6,48.8999999999999" />
+                    End="98.3333333333333,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14821,11 +14481,35 @@ WHERE id =?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Cliente\DFT_CLIENTE_TXT.Paths[Salida de origen de OLE DB]"
+          TopLeft="403.5,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1">
+    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14838,7 +14522,7 @@ WHERE id =?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE">
+    design-time-name="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14856,11 +14540,11 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Carga Compra\DFT_COMPRA\ORIGEN_COMPRA"
           TopLeft="66,13" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Carga Compra\DFT_COMPRA\STAGE_COMPRA"
           TopLeft="71,82" />
         <EdgeLayout
@@ -14918,13 +14602,13 @@ WHERE id =?</property>
     design-time-name="Package\Carga Compra Producto\DFT_COMPRA_P">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P\STAGE_COMPRA_P"
           TopLeft="24,101" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P\ORIGEN_COMPRA_P"
           TopLeft="26,13" />
         <EdgeLayout
@@ -14946,9 +14630,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14986,29 +14668,51 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_ORIGEN"
           TopLeft="259,0.199999999999989" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CD_DIRECCION_STAGE"
           TopLeft="249.5714285471,123.517646597661" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\DIRECCION_STAGE"
           TopLeft="257,320.4" />
         <NodeLayout
-          Size="192,41.6"
+          Size="176,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
+          TopLeft="554,234.4" />
+        <NodeLayout
+          Size="192,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\CM_DIRECCION_STAGE"
           TopLeft="543,317.4" />
         <NodeLayout
-          Size="128.8,41.6"
+          Size="129,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\Búsqueda"
           TopLeft="278,233.4" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE\División condicional"
-          TopLeft="554,234.4" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
+          TopLeft="343.58571427355,165.117646597661">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.282353402339"
+              Start="0,0"
+              End="0,60.782353402339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.782353402339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[UPDATE]"
           TopLeft="640.5,276">
@@ -15031,6 +14735,28 @@ WHERE id =?</property>
             <mssgm:EdgeLabel
               BoundingBox="-18.66189453125,12.2390625,37.3237890625,9.421875"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
+          TopLeft="346.28571427355,41.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.717646597661"
+              Start="0,0"
+              End="0,74.217646597661">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.217646597661" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15079,50 +14805,6 @@ WHERE id =?</property>
             <mssgm:EdgeLabel
               BoundingBox="-29.9690234375,5,199.638046875,12.1953125"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de columna derivada]"
-          TopLeft="343.58571427355,165.117646597661">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68.282353402339"
-              Start="0,0"
-              End="0,60.782353402339">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.782353402339" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE.Paths[Salida de origen de OLE DB]"
-          TopLeft="346.28571427355,41.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,81.717646597661"
-              Start="0,0"
-              End="0,74.217646597661">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.217646597661" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15183,15 +14865,15 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="240.8,41.6"
+          Size="241,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\CM_DELETE_DIRECCION_ORIGEN"
           TopLeft="313,261" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN"
           TopLeft="349,57" />
         <NodeLayout
-          Size="128.8,41.6"
+          Size="129,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda"
           TopLeft="368,156" />
         <EdgeLayout
@@ -15213,9 +14895,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15264,7 +14944,7 @@ WHERE id =?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15274,7 +14954,7 @@ WHERE id =?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15285,13 +14965,13 @@ WHERE id =?</property>
     design-time-name="Package\Carga de Producto\DFT_PRODUCTO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="247.2,41.6"
+          Size="247,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO\Destino BD_STAGE_PRODUCTO"
           TopLeft="241,180" />
         <NodeLayout
-          Size="248.8,41.6"
+          Size="249,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO\Origen BD_ORIGEN_PRODUCTO"
           TopLeft="240,90" />
         <EdgeLayout
@@ -15313,9 +14993,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15353,11 +15031,11 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_STAGE"
           TopLeft="81,70" />
         <NodeLayout
-          Size="213.6,41.6"
+          Size="214,42"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA\ESTATUS_COMPRA_ORIGEN"
           TopLeft="77,3" />
         <EdgeLayout
@@ -15417,11 +15095,11 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="189.6,41.6"
+          Size="190,42"
           Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_ORIGEN"
           TopLeft="107,14" />
         <NodeLayout
-          Size="183.2,41.6"
+          Size="183,42"
           Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO\FORMA_PAGO_STAGE"
           TopLeft="108,94" />
         <EdgeLayout
@@ -15479,17 +15157,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\Ordenar"
           TopLeft="323,126" />
         <NodeLayout
-          Size="234.4,41.6"
+          Size="234,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\MOVIMIENTO_CAJA_STAGE"
           TopLeft="277,224" />
         <NodeLayout
-          Size="217.6,41.6"
+          Size="218,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA\MOVIMIENTO_CAJA_ORIGEN"
           TopLeft="275,41" />
         <EdgeLayout
@@ -15511,9 +15189,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15547,23 +15223,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           FontInfo="{assembly:Null}"
-          Size="71.2,NaN"
+          Size="71,40"
           Id="12410242-dd91-4bd0-8f7c-cf81092f0adb"
           TopLeft="131,34" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           FontInfo="{assembly:Null}"
-          Size="81.6,NaN"
+          Size="82,40"
           Id="b9881619-d699-4ad4-81c1-e2fd69fd7f67"
           TopLeft="140,236" />
       </GraphLayout>
@@ -15601,15 +15275,15 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
           TopLeft="43.857146141481,163.529414520957" />
         <NodeLayout
-          Size="188,41.6"
+          Size="188,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_ORIGEN"
           TopLeft="38.714288962131,20.7058826854072" />
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION\Ordenar"
           TopLeft="68.428575199478,92.235295565483" />
         <EdgeLayout
@@ -15660,14 +15334,14 @@ WHERE id =?</property>
           Text="ORIGEN"
           ParentId="Package\Carga Produccion\DFT_PRODUCCION"
           FontInfo="{assembly:Null}"
-          Size="71.2,40"
+          Size="71,40"
           Id="b0da02ca-95f5-438f-8a00-19ff2e18af29"
           TopLeft="258.285715380494,23.0588237546307" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Produccion\DFT_PRODUCCION"
           FontInfo="{assembly:Null}"
-          Size="81.6,56"
+          Size="82,40"
           Id="3b7effcc-df21-4bdf-85c5-532055722ad1"
           TopLeft="272.428572389544,158.894120231714" />
       </GraphLayout>
@@ -15703,17 +15377,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Proveedor\DFT_PROVEEDOR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_ORIGEN"
           TopLeft="190.142860755629,27.5882357231061" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_STAGE"
           TopLeft="195.00000332083,203.411767558656" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\Ordenar"
           TopLeft="222.857146652377,113.94117806857" />
         <EdgeLayout
@@ -15735,9 +15409,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15759,23 +15431,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN MYSQL"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="113.6,NaN"
+          Size="114,40"
           Id="8e127328-ed24-49c4-bae0-e114cd669956"
           TopLeft="70.0000011920929,25.2352944715625" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="81.6,NaN"
+          Size="82,40"
           Id="a0edfb0b-b11d-48c4-9954-65362ea4a11e"
           TopLeft="82.8571442681917,202.54117788625" />
       </GraphLayout>
@@ -15806,13 +15476,13 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta\DFT_VENTASQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Carga Venta\DFT_VENTASQL\VENTA_STAGE"
           TopLeft="140,174" />
         <NodeLayout
-          Size="154.4,41.6"
+          Size="154,42"
           Id="Package\Carga Venta\DFT_VENTASQL\VENTA_ORIGEN"
           TopLeft="135,19" />
         <EdgeLayout
@@ -15834,23 +15504,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="71.2,NaN"
+          Size="71,40"
           Id="a2f32b26-658d-4060-99c3-8d1f33b21de0"
           TopLeft="45.5714287173991,19.7058825030871" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\DFT_VENTASQL"
           FontInfo="{assembly:Null}"
-          Size="81.6,NaN"
+          Size="82,40"
           Id="28ea90e6-deee-4569-a3d0-97255059380f"
           TopLeft="26.7142858115994,176.117649879423" />
       </GraphLayout>
@@ -15886,17 +15554,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\VENTAS"
           TopLeft="258,62" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\Conversión de datos"
           TopLeft="235.384615384615,147.692307692308" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE\VENTA_STAGE"
           TopLeft="241.923076923077,232.923076923077" />
         <EdgeLayout
@@ -15918,9 +15586,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15942,23 +15608,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGENES\VENTAS\XLS"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="153.6,NaN"
+          Size="154,40"
           Id="2697ccb0-a5c9-41b3-a9d6-cc333c8cf0fe"
           TopLeft="74,54" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           FontInfo="{assembly:Null}"
-          Size="81.6,NaN"
+          Size="82,40"
           Id="819ee8bf-b981-471c-a660-58a75c5a311d"
           TopLeft="113.230769230769,233.676923076923" />
       </GraphLayout>
@@ -15994,17 +15658,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_ORIGEN"
           TopLeft="324,27" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\VENTA_PRODUCTO_STAGE"
           TopLeft="322,197" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL\Ordenar"
           TopLeft="366,103" />
         <EdgeLayout
@@ -16026,9 +15690,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16050,16 +15712,14 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="ORIGEN"
           ParentId="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL"
           FontInfo="{assembly:Null}"
-          Size="71.2,NaN"
+          Size="71,40"
           Id="73b8e3f2-1572-49ab-87bb-590522d06ed5"
           TopLeft="127,29" />
       </GraphLayout>
@@ -16095,17 +15755,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS\VENTAPRODUCTO"
           TopLeft="360,45" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS\Conversión de datos"
           TopLeft="352,150" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS\VENTA_PRODUCTO_STAGE"
           TopLeft="337,238" />
         <EdgeLayout
@@ -16127,9 +15787,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16151,23 +15809,21 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           FontInfo="{assembly:Null}"
-          Size="82.4,NaN"
+          Size="82,40"
           Id="ed130230-dede-4b8b-9f55-625915a44843"
           TopLeft="138,242" />
         <AnnotationLayout
           Text="EXCEL FILE"
           ParentId="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           FontInfo="{assembly:Null}"
-          Size="84.8,NaN"
+          Size="85,40"
           Id="6f9017be-c1b3-4b67-8a32-78d388043266"
           TopLeft="142,36" />
       </GraphLayout>
@@ -16205,11 +15861,11 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_ORIGEN"
           TopLeft="250,99" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Cargar Empleados\DFT_EMPLEADO\EMPLEADO_STAGE"
           TopLeft="257,237" />
         <EdgeLayout
