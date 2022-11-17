@@ -6,10 +6,37 @@
     <Name>ProyectoFinalCubos.database</Name>
     <FullPath>ProyectoFinalCubos.database</FullPath>
   </Database>
+  <DataSources>
+    <ProjectItem>
+      <Name>BD MART DS.ds</Name>
+      <FullPath>BD MART DS.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>BD MART DSV.dsv</Name>
+      <FullPath>BD MART DSV.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>BD MART DS</Id>
+            <Name>BD MART DS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=TI;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>BD MART DS</Id>
+            <Name>BD MART DS</Name>
+            <Value xsi:type="xsd:int">1</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
