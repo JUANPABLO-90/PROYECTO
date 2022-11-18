@@ -6,6 +6,44 @@
     <Name>ProyectoFinalCubos.database</Name>
     <FullPath>ProyectoFinalCubos.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>BD MART DSV.cube</Name>
+      <FullPath>BD MART DSV.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BD MART DSV.partitions</Name>
+          <FullPath>BD MART DSV.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>EmpleadoDim.dim</Name>
+      <FullPath>EmpleadoDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ClienteDim.dim</Name>
+      <FullPath>ClienteDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FormaPagoDim.dim</Name>
+      <FullPath>FormaPagoDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIMFECHA.dim</Name>
+      <FullPath>DIMFECHA.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ProductoDim.dim</Name>
+      <FullPath>ProductoDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>VentaProducto.dim</Name>
+      <FullPath>VentaProducto.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>BD MART DS.ds</Name>
@@ -26,7 +64,7 @@
           <ConfigurationSetting>
             <Id>BD MART DS</Id>
             <Name>BD MART DS</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=TI;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=PCCAUDILLO\MSSQLSERVER2019;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
