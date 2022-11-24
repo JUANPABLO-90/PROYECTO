@@ -17,6 +17,36 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>BD MART DSV COMPRA_PRODUCTO.cube</Name>
+      <FullPath>BD MART DSV COMPRA_PRODUCTO.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BD MART DSV COMPRA_PRODUCTO.partitions</Name>
+          <FullPath>BD MART DSV COMPRA_PRODUCTO.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>BD MART DSV PRODUCCION.cube</Name>
+      <FullPath>BD MART DSV PRODUCCION.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BD MART DSV PRODUCCION.partitions</Name>
+          <FullPath>BD MART DSV PRODUCCION.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>BD MART DSV COMPRA.cube</Name>
+      <FullPath>BD MART DSV COMPRA.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BD MART DSV COMPRA.partitions</Name>
+          <FullPath>BD MART DSV COMPRA.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -43,6 +73,22 @@
       <Name>VentaProducto.dim</Name>
       <FullPath>VentaProducto.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>CompraDim.dim</Name>
+      <FullPath>CompraDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Compra_ProductoDim.dim</Name>
+      <FullPath>Compra_ProductoDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ProduccionDim.dim</Name>
+      <FullPath>ProduccionDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ProveedorDim.dim</Name>
+      <FullPath>ProveedorDim.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
@@ -64,7 +110,7 @@
           <ConfigurationSetting>
             <Id>BD MART DS</Id>
             <Name>BD MART DS</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=PCCAUDILLO\MSSQLSERVER2019;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=TI;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

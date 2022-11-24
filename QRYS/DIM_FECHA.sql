@@ -6,7 +6,7 @@ SET DATEFIRST 1
 SET LANGUAGE SPANISH 
 
 /*Base de datos destino*/
-use BD_STAGE
+use BD_MART
 GO
 
 /*Creación de la tabla*/
@@ -73,7 +73,7 @@ BEGIN TRANSACTION
 		SELECT @NDiaSemana = DATENAME(dw, @FechaDesde)                                  -- Lunes
 		SELECT @DiaAnio = DATEPART(dy,@FechaDesde)
 		SELECT @Semestre = ((DATEPART(month,@FechaDesde)-1)/6)+1
-		INSERT INTO BD_STAGE.dbo.DIM_FECHA
+		INSERT INTO BD_MART.dbo.DIM_FECHA
 		(
 			Fecha_Key,
 			Fecha,
