@@ -1,4 +1,4 @@
- USE BD_MART 
+ USE BD_MART
 CREATE TABLE producto_dim
   (
     producto_key INT IDENTITY(1,1) NOT NULL ,
@@ -149,6 +149,7 @@ CREATE TABLE compra
     compra_fecha                   DATE NOT NULL ,
     compra_hora                    TIME NOT NULL ,
     forma_pago_dim_key           INT NOT NULL ,
+    fecha_dim_key INT NOT NULL ,
     compra_estatus INT NOT NULL ,
     compra_subtotal DECIMAL (15,4) NOT NULL ,
     compra_iva DECIMAL (15,4) NOT NULL ,
@@ -173,8 +174,8 @@ UPDATE CASCADE ;
     compra_producto_iva DECIMAL (15,4) NOT NULL ,
     compra_producto_total DECIMAL (15,4) 
   ) ;
-ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_PK PRIMARY KEY ( id ) ;
-ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_compra_FK FOREIGN KEY ( compra_id ) REFERENCES compra ( id ) ON
+ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_PK PRIMARY KEY ( compra_producto_key ) ;
+ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_compra_FK FOREIGN KEY ( compra_key ) REFERENCES compra ( compra_key ) ON
 UPDATE CASCADE ;
 ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_producto_dim_FK FOREIGN KEY ( producto_dim_key ) REFERENCES producto_dim ( producto_key ) ON
 UPDATE CASCADE ;

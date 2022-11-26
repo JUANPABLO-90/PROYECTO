@@ -421,6 +421,52 @@ UPDATE CASCADE ;
 ALTER TABLE venta_origen ADD CONSTRAINT venta_origen_forma_pago_origen_FK FOREIGN KEY ( forma_pago_origen_id ) REFERENCES forma_pago_origen ( id ) ON
 UPDATE CASCADE ;
 
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id de Venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del empleado_origen' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'empleado_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del cliente quien realizó la compra' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'cliente_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fecha de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'fecha'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Hora de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'hora'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fecha en que se cerró la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'fecha_cerrado'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Hora en que se cerró la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'hora_cerrado'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Serie de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'serie'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id de la forma de pago en la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'forma_pago_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Últmos 4 dígitos de la cuenta de pago en la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'cuenta'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Subtotal de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'subtotal'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Iva de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'iva'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Total de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'total'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Estatus de factura en la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'facturado'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Estatus de canleado en la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_origen', @level2type=N'COLUMN',@level2name=N'cancelado'
+GO
+
 CREATE TABLE venta_producto_origen
   (
     id INT  NOT NULL ,
@@ -452,6 +498,40 @@ UPDATE CASCADE ;
 ALTER TABLE venta_producto_origen ADD CONSTRAINT venta_producto_origen_producto_origen_FK FOREIGN KEY ( producto_origen_id ) REFERENCES producto_origen ( id ) ON
 UPDATE CASCADE ;
 
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'venta_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del producto en el detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'producto_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fecha del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'fecha'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Hora del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'hora'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Cantidad del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'cantidad'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Precio unitario del producto del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'precio_unitario'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Subtotal del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'subtotal'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Iva del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'iva'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Total del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'total'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Estatus de canleado del detalle de la venta' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'venta_producto_origen', @level2type=N'COLUMN',@level2name=N'cancelado'
+GO
+
 CREATE TABLE produccion_origen
   (
     id INT  NOT NULL ,
@@ -471,6 +551,25 @@ UPDATE CASCADE ;
 ALTER TABLE produccion_origen ADD CONSTRAINT produccion_origen_empleado_origen_FK FOREIGN KEY ( empleado_origen_id ) REFERENCES empleado_origen ( id ) ON
 UPDATE CASCADE ;
 
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id de la producción' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del producto producido' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'producto_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del empleado quien realizó la producción' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'empleado_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fecha de la producción' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'fecha'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Hora de la producción' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'hora'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Cantidad de mercancía producida' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'produccion_origen', @level2type=N'COLUMN',@level2name=N'cantidad_producida'
+GO
+
 CREATE TABLE movimiento_caja_origen
   (
     id INT  NOT NULL ,
@@ -489,6 +588,27 @@ ALTER TABLE movimiento_caja_origen ADD CONSTRAINT movimiento_caja_origen_PK PRIM
 ALTER TABLE movimiento_caja_origen ADD CONSTRAINT movimiento_caja_origen_empleado_origen_FK FOREIGN KEY ( empleado_origen_id ) REFERENCES empleado_origen ( id ) ON
 UPDATE CASCADE ;
 
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Id del empleado quien realizó el movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'empleado_origen_id'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fecha del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'fecha'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Hora del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'hora'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Tipo del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'tipo_movimiento'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Monto total del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'monto'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Observaciones del movimiento de caja' , @level0type=N'SCHEMA',@level0name=N'dbo',
+ @level1type=N'TABLE',@level1name=N'movimiento_caja_origen', @level2type=N'COLUMN',@level2name=N'observaciones'
+GO
 
 --MYSQL
 CREATE TABLE proveedor_origen
