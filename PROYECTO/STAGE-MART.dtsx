@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{F7DBFBDA-7DCB-48BE-925E-711202C7853E}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{58229375-024A-4DA6-9A6C-85A58EE06BC6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1511,7 +1511,629 @@ on d.direccion_id = c.direccion_stage_id</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+                  description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+                  name="Búsqueda"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[direccion_dim]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[direccion_dim]) [refTable]
+where [refTable].[direccion_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el tipo de caché de la tabla de búsqueda."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica si se debe hacer referencia a metadatos en formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="direccion_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="direccion_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="direccion_calle" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="direccion_codigo_postal" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="direccion_municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="direccion_estado" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="direccion_pais" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                      name="ParameterMap">#{Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_MART]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_MART]"
+                      description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda]"
+                      name="Entrada de búsqueda">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                              name="JoinToReferenceColumn">direccion_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                      errorOrTruncationOperation="Búsqueda"
+                      exclusionGroup="1"
+                      name="Salida de entradas coincidentes de búsqueda"
+                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                      description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                      exclusionGroup="1"
+                      name="Salida de entradas no coincidentes de búsqueda"
+                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de error de búsqueda]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de búsqueda"
+                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+                  name="Comando de OLE DB"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">DELETE from direccion_dim
+WHERE direccion_id =?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_MART]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_MART]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                      errorOrTruncationOperation="Ejecución de comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de comando de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                      exclusionGroup="1"
+                      name="Salida de comando de OLE DB"
+                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de comando de OLE DB"
+                      synchronousInputId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="DIRECCION_STAGE"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[direccion_stage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[calle]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[calle]"
+                          length="250"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[calle]"
+                          name="calle"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[numero_exterior]"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[numero_exterior]"
+                          name="numero_exterior"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[numero_interior]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[numero_interior]"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[numero_interior]"
+                          name="numero_interior"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[localidad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[localidad]"
+                          length="250"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[localidad]"
+                          name="localidad"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_postal]"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[codigo_postal]"
+                          name="codigo_postal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[colonia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[colonia]"
+                          length="100"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[colonia]"
+                          name="colonia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[municipio]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[municipio]"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[municipio]"
+                          name="municipio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[estado]"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[estado]"
+                          name="estado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[pais]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[pais]"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[pais]"
+                          name="pais"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[estatus]"
+                          name="estatus"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[status]"
+                          length="1"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].Columns[status]"
+                          name="status"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[calle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="calle" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[numero_exterior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="numero_exterior" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[numero_interior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="numero_interior" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[localidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="localidad" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_postal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="codigo_postal" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[colonia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="colonia" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[municipio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="municipio" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="estado" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[pais]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="pais" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estatus" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="status" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[calle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[calle]"
+                          name="calle" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[numero_exterior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[numero_exterior]"
+                          name="numero_exterior" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[numero_interior]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[numero_interior]"
+                          name="numero_interior" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[localidad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[localidad]"
+                          name="localidad" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[codigo_postal]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[codigo_postal]"
+                          name="codigo_postal" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[colonia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[colonia]"
+                          name="colonia" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[municipio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[municipio]"
+                          name="municipio" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[estado]"
+                          name="estado" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[pais]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[pais]"
+                          name="pais" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[estatus]"
+                          name="estatus" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[status]"
+                          name="status" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE.Paths[Salida de entradas no coincidentes de búsqueda]"
+                  endId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  startId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+                <path
+                  refId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2813,6 +3435,16 @@ WHERE direccion_id=?</property>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga de Direccion.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{00D60035-E35D-4C17-AD79-37CEB3B073B4}"
+          DTS:From="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Carga de Empleado"
@@ -6629,6 +7261,23 @@ on p.producto_id = pr.producto_stage_id</property>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0A86351D-F780-42FC-87CD-16C803CEE499}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1243F914-7D8D-41D6-B1E5-316F82F5557B}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM compra&#xA;DELETE FROM produccion&#xA;DELETE FROM venta&#xA;DELETE FROM cliente_dim&#xA;DELETE FROM forma_pago_dim&#xA;DELETE FROM proveedor_dim&#xA;DELETE FROM empleado_dim&#xA;DELETE FROM direccion_dim&#xA;DELETE FROM producto_dim" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -6688,6 +7337,14 @@ on p.producto_id = pr.producto_stage_id</property>
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Carga de Forma de Pago" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{452A2AEE-2BD4-47D0-9063-B00563BF2DD3}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Carga de Producto" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
       DTS:DTSID="{5AA3FFC0-B221-4E50-BDD5-CE2C3C03C710}"
@@ -6709,106 +7366,140 @@ on p.producto_id = pr.producto_stage_id</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Carga Compra\DFT_COMPRA_DIM"
           TopLeft="26.5,11.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="236,108.8"
+          PanelSize="236,109"
           Size="236,152"
           Id="Package\Carga Compra"
           TopLeft="666.416666666667,568.833333333333" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM"
           TopLeft="19.6666666666667,13.2539682539684" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,110.4"
-          Size="204.8,152.8"
+          PanelSize="205,110"
+          Size="205,153"
           Id="Package\Carga de Cliente"
           TopLeft="344.555555555556,356.492063492063" />
         <NodeLayout
-          Size="228,41.6"
+          Size="228,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE"
           TopLeft="41.0555555555557,103.333333333333" />
         <NodeLayout
-          Size="265.6,41.6"
+          Size="266,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE"
           TopLeft="12.1666666666666,38.5555555555556" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion.PrecedenceConstraints[Constraint]"
+          TopLeft="145.166666666667,80.5555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.88888888888911,22.7777777777774"
+              Start="0,0"
+              End="9.88888888888911,15.2777777777774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.3888888888887" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.3888888888887"
+                    Point2="0,11.3888888888887"
+                    Point3="4,11.3888888888887" />
+                  <mssgle:LineSegment
+                    End="5.88888888888911,11.3888888888887" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.88888888888911,11.3888888888887"
+                    Point2="9.88888888888911,11.3888888888887"
+                    Point3="9.88888888888911,15.3888888888887" />
+                  <mssgle:LineSegment
+                    End="9.88888888888911,15.2777777777774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,203.2"
-          Size="288,246.4"
+          PanelSize="288,203"
+          Size="288,246"
           Id="Package\Carga de Direccion"
           TopLeft="581.063492063492,63.9075630359348" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM"
           TopLeft="10.4444444444446,9.55555555555557" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,107.2"
-          Size="204.8,150.4"
+          PanelSize="205,107"
+          Size="205,150"
           Id="Package\Carga de Empleado"
           TopLeft="937.587301587302,77.4285714285714" />
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM"
           TopLeft="41.5238095238095,23.9206349206351" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="262.4,120.8"
-          Size="262.4,164"
+          PanelSize="262,121"
+          Size="262,164"
           Id="Package\Carga de Forma de Pago"
           TopLeft="584.031746031746,350.126984126984" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM"
           TopLeft="16.9206349206346,32.7936507936509" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="254.4,183.2"
-          Size="254.4,225.6"
+          PanelSize="254,183"
+          Size="254,226"
           Id="Package\Carga de Producto"
           TopLeft="285.238095238096,69.8888888888888" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Carga de Venta\DFT_VENTA_DIM"
           TopLeft="45.6666666666667,3.83333333333331" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240.8,103.2"
-          Size="240.8,145.6"
+          PanelSize="241,103"
+          Size="241,146"
           Id="Package\Carga de Venta"
           TopLeft="54.126984126984,359.984126984127" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION"
           TopLeft="17.3888888888889,16.3888888888889" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240,123.2"
-          Size="240,166.4"
+          PanelSize="240,123"
+          Size="240,166"
           Id="Package\Carga Produccion"
           TopLeft="364.5,559.25" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM"
           TopLeft="25,25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="260,124"
-          Size="260,167.2"
+          Size="260,167"
           Id="Package\Contenedor de secuencias"
           TopLeft="905.119047606883,343.235294106922" />
         <EdgeLayout
@@ -6934,6 +7625,40 @@ on p.producto_id = pr.producto_stage_id</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="174.526984126984,505.584126984127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="309.973015873016,53.665873015873"
+              Start="0,0"
+              End="309.973015873016,46.165873015873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8329365079365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8329365079365"
+                    Point2="0,26.8329365079365"
+                    Point3="4,26.8329365079365" />
+                  <mssgle:LineSegment
+                    End="305.973015873016,26.8329365079365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="305.973015873016,26.8329365079365"
+                    Point2="309.973015873016,26.8329365079365"
+                    Point3="309.973015873016,30.8329365079365" />
+                  <mssgle:LineSegment
+                    End="309.973015873016,46.165873015873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="905.119047606883,429.481139116953">
           <EdgeLayout.Curve>
@@ -6977,32 +7702,36 @@ on p.producto_id = pr.producto_stage_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="80,64" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="174.526984126984,505.584126984127">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="250,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="309.973015873016,53.665873015873"
+              EndConnector="35.238095238096,97.8888888888888"
               Start="0,0"
-              End="309.973015873016,46.165873015873">
+              End="27.738095238096,97.8888888888888">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8329365079365" />
+                    End="13.619047619048,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.8329365079365"
-                    Point2="0,26.8329365079365"
-                    Point3="4,26.8329365079365" />
+                    Point1="13.619047619048,0"
+                    Point2="17.619047619048,0"
+                    Point3="17.619047619048,4" />
                   <mssgle:LineSegment
-                    End="305.973015873016,26.8329365079365" />
+                    End="17.619047619048,93.8888888888888" />
                   <mssgle:CubicBezierSegment
-                    Point1="305.973015873016,26.8329365079365"
-                    Point2="309.973015873016,26.8329365079365"
-                    Point3="309.973015873016,30.8329365079365" />
+                    Point1="17.619047619048,93.8888888888888"
+                    Point2="17.619047619048,97.8888888888888"
+                    Point3="21.619047619048,97.8888888888888" />
                   <mssgle:LineSegment
-                    End="309.973015873016,46.165873015873" />
+                    End="27.738095238096,97.8888888888888" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7018,7 +7747,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Compra\DFT_COMPRA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Carga Compra\DFT_COMPRA_DIM\COMPRA_STAGE"
@@ -7046,7 +7775,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7077,15 +7808,15 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Cliente\DFT_CLIENTE_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_DIM"
-          TopLeft="27,82" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE"
           TopLeft="21,14" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_DIM"
+          TopLeft="27,82" />
         <EdgeLayout
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM.Paths[Salida de origen de OLE DB]"
           TopLeft="99.75,56">
@@ -7105,7 +7836,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7137,6 +7870,72 @@ on p.producto_id = pr.producto_stage_id</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE"
+          TopLeft="51.6666666666667,20.8333333333333" />
+        <NodeLayout
+          Size="125,44"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda"
+          TopLeft="81.6666666666667,117.5" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE.Paths[Salida de origen de OLE DB]"
+          TopLeft="140.916666666667,62.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.6666666666667"
+              Start="0,0"
+              End="0,47.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB"
+          TopLeft="58.3333333333334,218.333333333333" />
+        <EdgeLayout
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="145.5,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.8333333333332"
+              Start="0,0"
+              End="0,49.3333333333332">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.3333333333332" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.8890234375,18.5690104166666,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE">
     <LayoutInfo>
@@ -7217,7 +8016,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7324,7 +8125,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Empleado\DFT_EMPLEADO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM\EMPLEADO_STAGE"
@@ -7360,7 +8161,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7382,7 +8185,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7404,7 +8209,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7506,7 +8313,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Producto\DFT_PRODUCTO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM\PRODUCTO_STAGE"
@@ -7534,7 +8341,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7570,7 +8379,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Venta\DFT_VENTA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,41.6"
           Id="Package\Carga de Venta\DFT_VENTA_DIM\VENTA_STAGE"
@@ -7598,7 +8407,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7634,7 +8445,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Produccion\DFT_PRODUCCION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
@@ -7662,7 +8473,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7693,7 +8506,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_STAGE"
@@ -7721,7 +8534,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7750,6 +8565,42 @@ on p.producto_id = pr.producto_stage_id</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[direccion_dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -88,7 +88,7 @@
           <ConfigurationSetting>
             <Id>BDMARTDS</Id>
             <Name>BDMARTDS</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=PCCAUDILLO\MSSQLSERVER2019;Password=;User ID=;Initial Catalog=BD_MART</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=TI;Persist Security Info=True;Password=;User ID=;Initial Catalog=BD_MART</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

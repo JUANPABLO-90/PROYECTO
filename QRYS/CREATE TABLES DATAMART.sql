@@ -166,7 +166,7 @@ UPDATE CASCADE ;
 
 
 
-----------------estas no van-----------------------------
+/*----------------estas no van-----------------------------
 
 
 CREATE TABLE venta_producto
@@ -208,3 +208,5 @@ ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_compra_FK FOREIGN KEY
 UPDATE CASCADE ;
 ALTER TABLE compra_producto ADD CONSTRAINT compra_producto_producto_dim_FK FOREIGN KEY ( producto_dim_key ) REFERENCES producto_dim ( producto_key ) ON
 UPDATE CASCADE ;
+
+*/
