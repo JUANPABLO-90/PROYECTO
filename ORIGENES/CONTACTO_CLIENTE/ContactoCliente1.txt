@@ -45,7 +45,7 @@
 64,papeleria_gale@hotmail.com,4616152005
 65,jricardoalmaraz@gmail.com,
 66,ventas.gpojag@gmail.com,4616133054
-67,gill_gigi@hotmail.com,0
+67,giḷ_gigi@hotmail.com,0
 69,josemanuel.alvarezrodriguez@yahoo.com.mx,4616144673
 70,rimal66@hotmail.com,
 72,sandraayalas@hotmail.com,0

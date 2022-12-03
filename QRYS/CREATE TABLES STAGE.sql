@@ -112,7 +112,7 @@ CREATE TABLE cliente_stage
     razon_social VARCHAR (150) ,
     nombre_comercial VARCHAR (150),
     estatus VARCHAR (15) NOT NULL,
-    email VARCHAR(50),
+    email VARCHAR(150),
     telefono VARCHAR(50)
   ) ;
 CREATE INDEX cliente_stage__IDX ON cliente_stage

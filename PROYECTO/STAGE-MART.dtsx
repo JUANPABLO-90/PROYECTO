@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{58229375-024A-4DA6-9A6C-85A58EE06BC6}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{5486C938-FFE7-4E73-94FA-623A72E50A24}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
+          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
+          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1302,7 +1302,7 @@ on d.direccion_id = c.direccion_stage_id</property>
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[email]"
-                          length="50"
+                          length="150"
                           lineageId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de origen de OLE DB].Columns[email]"
                           name="email"
                           truncationRowDisposition="FailComponent" />
@@ -1374,7 +1374,7 @@ on d.direccion_id = c.direccion_stage_id</property>
                           refId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[email]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="150"
                           name="email" />
                         <externalMetadataColumn
                           refId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de origen de OLE DB].ExternalColumns[telefono]"
@@ -1439,7 +1439,7 @@ on d.direccion_id = c.direccion_stage_id</property>
                           refId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[email]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="150"
                           lineageId="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE.Outputs[Salida de error de origen de OLE DB].Columns[email]"
                           name="email" />
                         <outputColumn
@@ -7366,33 +7366,33 @@ on p.producto_id = pr.producto_stage_id</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Carga Compra\DFT_COMPRA_DIM"
           TopLeft="26.5,11.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="236,109"
+          PanelSize="236,108.8"
           Size="236,152"
           Id="Package\Carga Compra"
           TopLeft="666.416666666667,568.833333333333" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM"
           TopLeft="19.6666666666667,13.2539682539684" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,110"
-          Size="205,153"
+          PanelSize="204.8,110.4"
+          Size="204.8,152.8"
           Id="Package\Carga de Cliente"
           TopLeft="344.555555555556,356.492063492063" />
         <NodeLayout
-          Size="228,42"
+          Size="228,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE"
           TopLeft="41.0555555555557,103.333333333333" />
         <NodeLayout
-          Size="266,42"
+          Size="265.6,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE"
           TopLeft="12.1666666666666,38.5555555555556" />
         <EdgeLayout
@@ -7432,76 +7432,80 @@ on p.producto_id = pr.producto_stage_id</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,203"
-          Size="288,246"
+          PanelSize="288,203.2"
+          Size="288,246.4"
           Id="Package\Carga de Direccion"
           TopLeft="581.063492063492,63.9075630359348" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM"
           TopLeft="10.4444444444446,9.55555555555557" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,107"
-          Size="205,150"
+          PanelSize="204.8,107.2"
+          Size="204.8,150.4"
           Id="Package\Carga de Empleado"
           TopLeft="937.587301587302,77.4285714285714" />
         <NodeLayout
-          Size="215,42"
+          Size="215.2,41.6"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM"
           TopLeft="41.5238095238095,23.9206349206351" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="262,121"
-          Size="262,164"
+          PanelSize="262.4,120.8"
+          Size="262.4,164"
           Id="Package\Carga de Forma de Pago"
           TopLeft="584.031746031746,350.126984126984" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM"
           TopLeft="16.9206349206346,32.7936507936509" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="254,183"
-          Size="254,226"
+          PanelSize="254.4,183.2"
+          Size="254.4,225.6"
           Id="Package\Carga de Producto"
           TopLeft="285.238095238096,69.8888888888888" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Carga de Venta\DFT_VENTA_DIM"
           TopLeft="45.6666666666667,3.83333333333331" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="241,103"
-          Size="241,146"
+          PanelSize="240.8,103.2"
+          Size="240.8,145.6"
           Id="Package\Carga de Venta"
           TopLeft="54.126984126984,359.984126984127" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Carga Produccion\DFT_PRODUCCION"
-          TopLeft="17.3888888888889,16.3888888888889" />
+          TopLeft="18.1031746153388,16.3888888888889" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240,123"
-          Size="240,166"
+          PanelSize="240,123.2"
+          Size="240,166.4"
           Id="Package\Carga Produccion"
           TopLeft="364.5,559.25" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM"
           TopLeft="25,25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="260,124"
-          Size="260,167"
+          Size="260,167.2"
           Id="Package\Contenedor de secuencias"
           TopLeft="905.119047606883,343.235294106922" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="80,64" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="539.238095238096,184.898225962412">
@@ -7681,32 +7685,6 @@ on p.producto_id = pr.producto_stage_id</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="604.5,643.541666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.9166666666667,0"
-              Start="0,0"
-              End="54.4166666666667,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54.4166666666667,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Tarea Ejecutar SQL"
-          TopLeft="80,64" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="250,85">
           <EdgeLayout.Curve>
@@ -7740,6 +7718,28 @@ on p.producto_id = pr.producto_stage_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="604.5,643.641666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.916666666667,0"
+              Start="0,0"
+              End="54.416666666667,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.416666666667,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7747,7 +7747,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Compra\DFT_COMPRA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Carga Compra\DFT_COMPRA_DIM\COMPRA_STAGE"
@@ -7775,9 +7775,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7808,7 +7806,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Cliente\DFT_CLIENTE_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM\CLIENTE_STAGE"
@@ -7836,9 +7834,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7876,11 +7872,15 @@ on p.producto_id = pr.producto_stage_id</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172,42"
+          Size="176.8,41.6"
+          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB"
+          TopLeft="58.3333333333334,218.333333333333" />
+        <NodeLayout
+          Size="172,41.6"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE"
           TopLeft="51.6666666666667,20.8333333333333" />
         <NodeLayout
-          Size="125,44"
+          Size="124.8,44"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda"
           TopLeft="81.6666666666667,117.5" />
         <EdgeLayout
@@ -7905,10 +7905,6 @@ on p.producto_id = pr.producto_stage_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Comando de OLE DB"
-          TopLeft="58.3333333333334,218.333333333333" />
         <EdgeLayout
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE.Paths[Salida de entradas no coincidentes de búsqueda]"
           TopLeft="145.5,161.5">
@@ -7936,6 +7932,42 @@ on p.producto_id = pr.producto_stage_id</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[direccion_dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE">
     <LayoutInfo>
@@ -8016,9 +8048,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8125,7 +8155,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Empleado\DFT_EMPLEADO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM\EMPLEADO_STAGE"
@@ -8161,9 +8191,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8185,9 +8213,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8209,9 +8235,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8247,13 +8271,13 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM\FORMA_P_STAGE"
           TopLeft="43,15" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM\FORMA_P_DIM"
           TopLeft="44,101" />
         <EdgeLayout
@@ -8275,9 +8299,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8313,7 +8335,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Producto\DFT_PRODUCTO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM\PRODUCTO_STAGE"
@@ -8321,29 +8343,27 @@ on p.producto_id = pr.producto_stage_id</property>
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM\PRODUCTO_DIM"
-          TopLeft="39,99" />
+          TopLeft="39,99.7647058930777" />
         <EdgeLayout
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM.Paths[Salida de origen de OLE DB]"
-          TopLeft="116,67">
+          TopLeft="116.1,66.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="0,33.1647058930777"
               Start="0,0"
-              End="0,24.5">
+              End="0,25.6647058930777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,25.6647058930777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8379,7 +8399,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Venta\DFT_VENTA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="148,41.6"
           Id="Package\Carga de Venta\DFT_VENTA_DIM\VENTA_STAGE"
@@ -8407,9 +8427,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8445,7 +8463,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Produccion\DFT_PRODUCCION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
@@ -8473,9 +8491,7 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8506,7 +8522,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_STAGE"
@@ -8514,29 +8530,27 @@ on p.producto_id = pr.producto_stage_id</property>
         <NodeLayout
           Size="164,41.6"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_DIM"
-          TopLeft="43,101" />
+          TopLeft="44,101" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM.Paths[Salida de origen de OLE DB]"
-          TopLeft="128,69">
+          TopLeft="128.5,68.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="0,32.4"
               Start="0,0"
-              End="0,24.5">
+              End="0,24.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,24.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8565,42 +8579,6 @@ on p.producto_id = pr.producto_stage_id</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\DIRECCION_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE\Búsqueda">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[direccion_dim]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
