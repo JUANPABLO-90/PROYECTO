@@ -131,6 +131,31 @@ ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage_direccion_stage_FK FOREIG
 UPDATE CASCADE ;
 
 
+CREATE TABLE cliente_detalle_stage
+  (
+    id INT NOT NULL ,
+    cliente_stage_id INT NOT NULL , 
+    total_hijos VARCHAR (13) ,
+    fecha_nacimiento VARCHAR (150) ,
+    educacion VARCHAR (150),
+    ocupacion VARCHAR (15) NOT NULL,
+    genero VARCHAR(150)
+  ) ;
+CREATE INDEX cliente_stage__IDX ON cliente_stage
+  (
+    id ASC
+  ) ;
+CREATE INDEX cliente_stage_IDX2 ON cliente_stage
+  (
+    rfc ASC ,
+    nombre_comercial ASC ,
+    razon_social ASC
+  ) ;
+ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage_PK PRIMARY KEY ( id ) ;
+ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage__UN UNIQUE ( rfc ) ;
+ALTER TABLE cliente_stage ADD CONSTRAINT cliente_stage_direccion_stage_FK FOREIGN KEY ( direccion_stage_id ) REFERENCES direccion_stage ( id ) ON
+UPDATE CASCADE ;
+
 CREATE TABLE proveedor_stage
   (
     id INT NOT NULL ,

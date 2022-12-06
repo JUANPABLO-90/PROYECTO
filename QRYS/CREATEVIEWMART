@@ -1,0 +1,22 @@
+
+
+-- vTargetMail supports targeted mailing data model
+-- Uses vDMPrep to determine if a customer buys a bike and joins to DimCustomer
+CREATE VIEW [dbo].[vClientDetVenta] 
+AS
+    SELECT
+        c.*, d.direccion_calle, d.direccion_codigo_postal, d.direccion_municipio, d.direccion_estado, d.direccion_pais,
+        CASE (select COUNT(venta_key) 
+		from venta where cliente_key = c.cliente_key) 
+            WHEN 0 THEN 0 
+            ELSE 1 
+        END AS [Comprador], cd.total_hijos, cd.fecha_nacimiento, cd.educacion, cd.ocupacion, cd.genero
+    FROM
+        cliente_dim c 
+		inner join direccion_dim as d
+		on d.direccion_key = c.direccion_key
+		inner join cliente_detalle_dim as cd
+		on cd.cliente_key = c.cliente_id
+;
+
+GO

@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{5486C938-FFE7-4E73-94FA-623A72E50A24}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{F82F865A-DFF1-4D1B-B509-D8678E195E67}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6222,6 +6222,830 @@ where v.cancelado = 'NO' and vp.cancelado = 'NO'</property>
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Carga DetalleCliente"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{614F05CE-8A89-4E44-B8F7-2F65FF5F2031}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga DetalleCliente">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{6A340778-AE0F-4AE4-913B-DCC55861F813}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_CLIENTE_DETALLE_DIM"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="CLIENTE_DETALLE_DIM"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[cliente_detalle_dim]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_MART]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_MART]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[total_hijos]"
+                          cachedDataType="i4"
+                          cachedName="total_hijos"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[total_hijos]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[total_hijos]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[fecha_nacimiento]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_nacimiento"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[fecha_nacimiento]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[educacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="educacion"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[educacion]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[educacion]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[ocupacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ocupacion"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[ocupacion]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[ocupacion]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[genero]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="genero"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[genero]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[cliente_key]"
+                          cachedDataType="i4"
+                          cachedName="cliente_key"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_key]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_key]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_detalle_id]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].Columns[cliente_stage_id]"
+                          cachedDataType="i4"
+                          cachedName="cliente_stage_id"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_id]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_stage_id]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_detalle_key]"
+                          dataType="i4"
+                          name="cliente_detalle_key" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_detalle_id]"
+                          dataType="i4"
+                          name="cliente_detalle_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_key]"
+                          dataType="i4"
+                          name="cliente_key" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente_id]"
+                          dataType="i4"
+                          name="cliente_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[total_hijos]"
+                          dataType="i4"
+                          name="total_hijos" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[educacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="educacion" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[ocupacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ocupacion" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="genero" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="CLIENTE_DETALLE_SATGE"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select c.*, d.cliente_key, d.cliente_id as cliente_id from cliente_detalle_stage  as c
+inner join BD_MART.dbo.cliente_dim as d
+on d.cliente_id = c.cliente_stage_id</property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TI.BD_Stage]"
+                      connectionManagerRefId="Package.ConnectionManagers[TI.BD_Stage]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_stage_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_stage_id]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_stage_id]"
+                          name="cliente_stage_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[total_hijos]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[total_hijos]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[total_hijos]"
+                          name="total_hijos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[educacion]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[educacion]"
+                          length="40"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[educacion]"
+                          name="educacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[ocupacion]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[ocupacion]"
+                          length="100"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[ocupacion]"
+                          name="ocupacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[genero]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[genero]"
+                          length="1"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[genero]"
+                          name="genero"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_key]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_key]"
+                          name="cliente_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_id]"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_id]"
+                          name="cliente_id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_stage_id]"
+                          dataType="i4"
+                          name="cliente_stage_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[total_hijos]"
+                          dataType="i4"
+                          name="total_hijos" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          name="fecha_nacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[educacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="educacion" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[ocupacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ocupacion" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[genero]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="genero" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_key]"
+                          dataType="i4"
+                          name="cliente_key" />
+                        <externalMetadataColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].ExternalColumns[cliente_id]"
+                          dataType="i4"
+                          name="cliente_id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_stage_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_stage_id]"
+                          name="cliente_stage_id" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[total_hijos]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[total_hijos]"
+                          name="total_hijos" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[educacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[educacion]"
+                          name="educacion" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ocupacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ocupacion]"
+                          name="ocupacion" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[genero]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[genero]"
+                          name="genero" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_key]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_key]"
+                          name="cliente_key" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[cliente_id]"
+                          name="cliente_id" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+                  name="Ordenar"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación]"
+                      name="Entrada de ordenación">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[cliente_stage_id]"
+                          cachedDataType="i4"
+                          cachedName="cliente_stage_id"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_stage_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[total_hijos]"
+                          cachedDataType="i4"
+                          cachedName="total_hijos"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[total_hijos]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[fecha_nacimiento]"
+                          cachedDataType="dbDate"
+                          cachedName="fecha_nacimiento"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[educacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="educacion"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[educacion]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[ocupacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ocupacion"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[ocupacion]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[genero]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="genero"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[genero]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[cliente_key]"
+                          cachedDataType="i4"
+                          cachedName="cliente_key"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_key]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación].Columns[cliente_id]"
+                          cachedDataType="i4"
+                          cachedName="cliente_id"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación]"
+                      isSorted="true"
+                      name="Salida de ordenación">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[id]"
+                          name="id"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_stage_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_stage_id]"
+                          name="cliente_stage_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_stage_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[total_hijos]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[total_hijos]"
+                          name="total_hijos">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[total_hijos]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[fecha_nacimiento]"
+                          dataType="dbDate"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[fecha_nacimiento]"
+                          name="fecha_nacimiento">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[fecha_nacimiento]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[educacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[educacion]"
+                          name="educacion">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[educacion]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[ocupacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[ocupacion]"
+                          name="ocupacion">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[ocupacion]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[genero]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[genero]"
+                          name="genero">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[genero]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_key]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_key]"
+                          name="cliente_key">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_key]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_id]"
+                          dataType="i4"
+                          lineageId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación].Columns[cliente_id]"
+                          name="cliente_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB].Columns[cliente_id]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de ordenación]"
+                  endId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de ordenación"
+                  startId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Outputs[Salida de ordenación]" />
+                <path
+                  refId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Carga Produccion"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Contenedor de secuencias"
@@ -7275,7 +8099,7 @@ on p.producto_id = pr.producto_stage_id</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1243F914-7D8D-41D6-B1E5-316F82F5557B}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DELETE FROM compra&#xA;DELETE FROM produccion&#xA;DELETE FROM venta&#xA;DELETE FROM cliente_dim&#xA;DELETE FROM forma_pago_dim&#xA;DELETE FROM proveedor_dim&#xA;DELETE FROM empleado_dim&#xA;DELETE FROM direccion_dim&#xA;DELETE FROM producto_dim" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM compra&#xA;DELETE FROM produccion&#xA;DELETE FROM venta&#xA;DELETE FROM cliente_detalle_dim&#xA;DELETE FROM cliente_dim&#xA;DELETE FROM forma_pago_dim&#xA;DELETE FROM proveedor_dim&#xA;DELETE FROM empleado_dim&#xA;DELETE FROM direccion_dim&#xA;DELETE FROM producto_dim" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -7352,6 +8176,14 @@ on p.producto_id = pr.producto_stage_id</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\Carga Compra" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{4A7CFA45-4925-444A-A256-843C7A074195}"
+      DTS:From="Package\Carga Compra"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Carga DetalleCliente" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -7364,7 +8196,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Carga Compra\DFT_COMPRA_DIM"
@@ -7740,6 +8572,39 @@ on p.producto_id = pr.producto_stage_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM"
+          TopLeft="55.9428698666247,7.76470862787903" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="278.4,104"
+          Size="278.4,147.2"
+          Id="Package\Carga DetalleCliente"
+          TopLeft="945.057153719785,573.647060753977" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="902.416666666667,646.040197043655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.6404870531183,0"
+              Start="0,0"
+              End="35.1404870531183,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.1404870531183,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7747,7 +8612,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Compra\DFT_COMPRA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Carga Compra\DFT_COMPRA_DIM\COMPRA_STAGE"
@@ -7775,7 +8640,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7902,7 +8769,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8048,7 +8917,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8155,7 +9026,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Empleado\DFT_EMPLEADO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM\EMPLEADO_STAGE"
@@ -8191,7 +9062,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8213,7 +9086,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8235,7 +9110,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8271,7 +9148,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="163.2,41.6"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM\FORMA_P_STAGE"
@@ -8299,7 +9176,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8335,7 +9214,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Producto\DFT_PRODUCTO_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM\PRODUCTO_STAGE"
@@ -8363,7 +9242,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8399,7 +9280,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga de Venta\DFT_VENTA_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,41.6"
           Id="Package\Carga de Venta\DFT_VENTA_DIM\VENTA_STAGE"
@@ -8427,7 +9308,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8463,7 +9346,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Carga Produccion\DFT_PRODUCCION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Carga Produccion\DFT_PRODUCCION\PRODUCCION_STAGE"
@@ -8491,7 +9374,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8522,7 +9407,7 @@ on p.producto_id = pr.producto_stage_id</property>
     design-time-name="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_STAGE"
@@ -8550,7 +9435,9 @@ on p.producto_id = pr.producto_stage_id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8571,6 +9458,91 @@ on p.producto_id = pr.producto_stage_id</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE"
+          TopLeft="226.428575284627,27.2000007292804" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar"
+          TopLeft="270.714290324523,130.000001823201" />
+        <EdgeLayout
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de origen de OLE DB]"
+          TopLeft="328.971432804575,68.8000007292804">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.2000010939205"
+              Start="0,0"
+              End="0,53.7000010939205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.7000010939205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM"
+          TopLeft="235.714289728476,230.176473816373" />
+        <EdgeLayout
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de ordenación]"
+          TopLeft="330.614290026499,171.600001823201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.5764719931725"
+              Start="0,0"
+              End="0,51.0764719931725">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.0764719931725" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
