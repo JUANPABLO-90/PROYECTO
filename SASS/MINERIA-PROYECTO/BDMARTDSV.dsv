@@ -1,0 +1,138 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e546cb88-239c-4b2c-beed-702803dd7226" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BDMARTDSV</ID>
+  <Name>BDMARTDSV</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>BDMARTDS</DataSourceID>
+  <Schema>
+    <xs:schema id="BDMARTDSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BDMARTDSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="3344a4b6-4fc7-480c-b065-aa123427add5">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_vClientDetVenta" msprop:design-time-name="a69f1aca-2e31-4d8f-af68-58957b807222" msprop:DbTableName="vClientDetVenta" msprop:FriendlyName="vClientDetVenta" msprop:DbSchemaName="dbo" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="cliente_key" msprop:design-time-name="16f6f270-6255-4a97-bf96-071d83da73cb" msprop:DbColumnName="cliente_key" msprop:FriendlyName="cliente_key" type="xs:int" />
+                  <xs:element name="cliente_rfc" msprop:design-time-name="793443bf-fb5b-4b21-96ca-0bd3d1ba6f93" msprop:DbColumnName="cliente_rfc" msprop:FriendlyName="cliente_rfc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="13" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="cliente_razon_social" msprop:design-time-name="3bab9095-08b8-4fef-af78-39c5a501877c" msprop:DbColumnName="cliente_razon_social" msprop:FriendlyName="cliente_razon_social" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion_calle" msprop:design-time-name="451244b2-9056-47cb-9ce1-58116f831aef" msprop:DbColumnName="direccion_calle" msprop:FriendlyName="direccion_calle" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion_codigo_postal" msprop:design-time-name="46eec0dc-6b26-493a-a95b-4137b3df4934" msprop:DbColumnName="direccion_codigo_postal" msprop:FriendlyName="direccion_codigo_postal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion_municipio" msprop:design-time-name="7646acf2-40a5-4688-9ce5-800261eb6dcb" msprop:DbColumnName="direccion_municipio" msprop:FriendlyName="direccion_municipio" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion_estado" msprop:design-time-name="7ca1702a-5e70-41b8-b021-e35cafd0af08" msprop:DbColumnName="direccion_estado" msprop:FriendlyName="direccion_estado" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion_pais" msprop:design-time-name="275df22b-0297-4692-95cf-c036c7831f86" msprop:DbColumnName="direccion_pais" msprop:FriendlyName="direccion_pais" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Comprador" msdata:ReadOnly="true" msprop:design-time-name="12e63f72-d04d-44ed-a486-746041b728d0" msprop:DbColumnName="Comprador" msprop:FriendlyName="Comprador" type="xs:int" />
+                  <xs:element name="total_hijos" msprop:design-time-name="9b3f62cd-a509-4f18-b8d5-73a400063248" msprop:DbColumnName="total_hijos" msprop:FriendlyName="total_hijos" type="xs:int" minOccurs="0" />
+                  <xs:element name="fecha_nacimiento" msprop:design-time-name="42596e48-ed31-4204-94c3-a7b01b4b37a2" msprop:DbColumnName="fecha_nacimiento" msprop:FriendlyName="fecha_nacimiento" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="educacion" msprop:design-time-name="618f2888-1708-4ecd-b31c-f44313e3cb2c" msprop:DbColumnName="educacion" msprop:FriendlyName="educacion" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ocupacion" msprop:design-time-name="3dafdbc8-e720-4d73-853a-64dce767bf6f" msprop:DbColumnName="ocupacion" msprop:FriendlyName="ocupacion">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="genero" msprop:design-time-name="3c2304b3-670d-4e1e-b6a0-127a0ab5c3bb" msprop:DbColumnName="genero" msprop:FriendlyName="genero" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_vClientDetVenta" />
+          <xs:field xpath="cliente_key" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <BDMARTDSV xmlns="" />
+  </Schema>
+</DataSourceView>

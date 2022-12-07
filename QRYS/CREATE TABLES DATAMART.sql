@@ -70,6 +70,21 @@ ALTER TABLE cliente_dim ADD CONSTRAINT cliente_dim_PK PRIMARY KEY ( cliente_key 
 ALTER TABLE cliente_dim ADD CONSTRAINT cliente_dim_direccion_dim_FK FOREIGN KEY ( direccion_key ) REFERENCES direccion_dim ( direccion_key ) ON
 UPDATE CASCADE ;
 
+CREATE TABLE cliente_detalle_dim
+  (
+    cliente_detalle_key INT IDENTITY(1,1) NOT NULL ,
+    cliente_detalle_id INT NOT NULL ,
+    cliente_key       INT ,
+    cliente_id       INT ,
+    total_hijos INT ,
+    fecha_nacimiento DATE ,
+    educacion VARCHAR (40),
+    ocupacion VARCHAR (100) NOT NULL,
+    genero VARCHAR(1)
+  ) ;
+ALTER TABLE cliente_detalle_dim ADD CONSTRAINT cliente_detalle_dim_PK PRIMARY KEY ( cliente_detalle_key ) ;
+ALTER TABLE cliente_detalle_dim ADD CONSTRAINT cliente_detalle_dim_cliente_dim_FK FOREIGN KEY ( cliente_key ) REFERENCES cliente_dim ( cliente_key ) ON
+UPDATE CASCADE ;
 
  CREATE TABLE venta
   (

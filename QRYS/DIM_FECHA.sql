@@ -30,7 +30,7 @@ create table DIM_FECHA
 	Semestre tinyint not null
     constraint PK_DIM_FECHA PRIMARY KEY CLUSTERED
     (
-        Fecha asc
+        Fecha_KEY asc
     )
 )
 
