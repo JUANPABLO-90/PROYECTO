@@ -1,8 +1,8 @@
-﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="14e77f35-4704-424b-9663-ea7e65ca1a77" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5ce6cb42-64c6-4d7d-bda0-89b0e0ff71fa" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>ClientVentaTM</ID>
   <Name>ClientVentaTM</Name>
-  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
@@ -16,7 +16,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7483" scrolltop="-2707" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="19325" y="10414" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7483" scrolltop="-2707" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18817" y="10414" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
@@ -27,9 +27,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="vClientDetVenta" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4318" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="vClientDetVenta" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4466" height="5974" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000de10000088130000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e00007211000056170000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -70,151 +70,151 @@
       <Value>100</Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="43366a88-f7c2-4f11-985d-f60c14f9aebc">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7377628d-8d5a-4592-b87d-83ef76b19f2f">
     <DataSourceViewID>BDMARTDSV</DataSourceViewID>
   </Source>
   <Columns>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c12dbf04-aa60-4a74-be5c-5dcbcea72027">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="36d72234-e59f-40ce-a78b-9a2e63f335b7">
       <ID>Cliente Key</ID>
       <Name>Cliente Key</Name>
       <IsKey>true</IsKey>
       <Type>Long</Type>
       <Content>Key</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="3abac5dd-19ae-4adc-a8e1-84c9f57b9329">
+        <KeyColumn dwd:design-time-name="03f4c2bb-a201-4e03-98c2-f766a998d77f">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b34613f3-6e15-44bd-bf3b-a08745f57eba">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="780cf851-acc4-48f9-ba8d-1179685b9f62">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>cliente_key</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6b6ef00d-6e49-44a1-b1c7-a305026ed27c">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b52fcc12-6e6f-4da9-9d75-68a104d2fd6f">
       <ID>Comprador</ID>
       <Name>Comprador</Name>
       <Type>Long</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8bac4912-dfa1-4145-92d6-4c0460dd7103">
+        <KeyColumn dwd:design-time-name="487a8720-4558-4ea9-8177-3a69b664f49d">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c4577701-313a-4eea-8bfe-5ee389b86396">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e5d12251-6c51-4822-8ba4-5f46dee0c8d1">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>Comprador</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4a2a0401-17f4-4ed7-900c-786ab0c6d877">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="319f9fe3-253d-43bc-b6ef-34a027168e9c">
       <ID>Direccion Estado</ID>
       <Name>Direccion Estado</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="617d64e6-36df-47a7-bb0c-20748d366204">
+        <KeyColumn dwd:design-time-name="1120e003-7367-4031-8699-eb6f16928693">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="732b49c9-53c9-41e4-b039-1e272f5a6290">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ae9873e-fd8a-49f5-96ec-10cfec20eeb6">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>direccion_estado</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0d57b208-594a-486c-ba06-9ad9cb449867">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d600c5b3-133c-4249-a666-0603a9c08714">
       <ID>Direccion Pais</ID>
       <Name>Direccion Pais</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="61227a43-f3fb-48a3-9b32-a264f2e0ebed">
+        <KeyColumn dwd:design-time-name="683d7e45-06a3-42e0-8a30-a8a495a1d5d5">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="3816956d-d8d5-4c28-a301-8b2840bf683f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ee724d9-0155-49a2-ae99-3507195d90a2">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>direccion_pais</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="3324c6f6-a3b0-442d-911d-b0e94aa946a4">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="26bcb800-d719-45c2-bb84-4c9bda350e3e">
       <ID>Educacion</ID>
       <Name>Educacion</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="46c3ed7d-89f8-4e6a-8a9b-7c492d49b059">
+        <KeyColumn dwd:design-time-name="8ec4e84b-1bbb-4b81-8958-ad24cbf06fe5">
           <DataType>WChar</DataType>
           <DataSize>40</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a64fa38a-ef32-43c0-b82f-507de28b7e62">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e4d9345c-c259-4725-a54f-3bcf5e8f8a07">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>educacion</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="47e77acf-6834-41f8-b961-56707c54f8e9">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f2920051-7685-40e6-b828-532e488261ab">
       <ID>Fecha Nacimiento</ID>
       <Name>Fecha Nacimiento</Name>
       <Type>Date</Type>
       <Content>Continuous</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="3d2bdc7b-3e11-4084-8d11-5509d314c895">
+        <KeyColumn dwd:design-time-name="8354ad19-ddd0-4aa8-8076-8e5afe3b6e7e">
           <DataType>Date</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="df2fdb82-c856-45e2-b820-8ce89d09299a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41e9db52-61e0-4a0e-8897-1ccea42e5161">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>fecha_nacimiento</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="08caa2d9-2537-4064-8584-911dbc6001e0">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="710a82e6-2e19-461a-b3ce-cf3cf0772095">
       <ID>Genero</ID>
       <Name>Genero</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d72593ef-dcf3-4e21-8a1a-046931ccf1ee">
+        <KeyColumn dwd:design-time-name="b6761788-0b02-4577-b0dc-62614272358c">
           <DataType>WChar</DataType>
           <DataSize>1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="4e164fbc-9ec9-4077-925e-90f0cd758656">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c5a30b00-32fb-4db7-8611-18454217aed0">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>genero</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c7047bd5-aed1-41af-aa61-30b5aa6cbc8f">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c2b6eec8-073c-4c0f-bde3-165f3bad8db6">
       <ID>Ocupacion</ID>
       <Name>Ocupacion</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="e5792dbc-8e64-4f04-bc99-abb1ca5844d1">
+        <KeyColumn dwd:design-time-name="b8aec1a1-8ace-42f2-98a8-ca2c2e0bfe50">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1c343238-d054-4471-8bb7-5104a4486fd7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="abbe4447-8a2a-420d-9c50-8b3f5dbc3c1f">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>ocupacion</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6e696386-d08f-4497-b88e-2b35ee85f5d6">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d7c36e36-24b9-4d60-8c28-cba6f16fc831">
       <ID>Total Hijos</ID>
       <Name>Total Hijos</Name>
       <Type>Long</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7e9d7e5d-1f4e-4d24-afb7-49efc8037f0a">
+        <KeyColumn dwd:design-time-name="cb1669f7-d8e5-473e-81e4-6f6c46db6de3">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c854d22e-0b93-4a80-9ef0-5efe65af23c1">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dab2f703-884e-4972-8f13-b719323c6f68">
             <TableID>dbo_vClientDetVenta</TableID>
             <ColumnID>total_hijos</ColumnID>
           </Source>
@@ -223,43 +223,43 @@
     </Column>
   </Columns>
   <MiningModels>
-    <MiningModel dwd:design-time-name="239f2885-392e-4613-8254-30ea738e4b3f">
+    <MiningModel dwd:design-time-name="ab49517e-d927-49d0-9a8f-28936125647d">
       <ID>TMARBOLDECISION</ID>
       <Name>TMARBOLDECISION</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Decision_Trees</Algorithm>
       <Columns>
-        <Column dwd:design-time-name="2cae09d2-4e04-457b-9b9a-33c3f7b9d1da">
+        <Column dwd:design-time-name="f3efd5cc-bcdb-4529-add2-7338d5f1ef62">
           <ID>Cliente Key</ID>
           <Name>Cliente Key</Name>
           <SourceColumnID>Cliente Key</SourceColumnID>
           <Usage>Key</Usage>
         </Column>
-        <Column dwd:design-time-name="ef078db8-1e26-44e6-8b67-fca395eb5792">
+        <Column dwd:design-time-name="58ed97c9-bf9b-4e72-a304-76c21d01b806">
           <ID>Comprador</ID>
           <Name>Comprador</Name>
           <SourceColumnID>Comprador</SourceColumnID>
           <Usage>PredictOnly</Usage>
         </Column>
-        <Column dwd:design-time-name="44d8fbaf-b196-4288-b691-b0fc8dc008f4">
+        <Column dwd:design-time-name="185483b5-527b-4e3e-a752-9db4bc16050c">
           <ID>Direccion Estado</ID>
           <Name>Direccion Estado</Name>
           <SourceColumnID>Direccion Estado</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="8a28a66a-302a-49cf-92b8-2ebc7f2d039c">
+        <Column dwd:design-time-name="d4f120e3-c903-4dbc-ab97-98a051e9d2e1">
           <ID>Direccion Pais</ID>
           <Name>Direccion Pais</Name>
           <SourceColumnID>Direccion Pais</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="f09e775b-5370-498e-8af2-f1833a40ccda">
+        <Column dwd:design-time-name="53736e2d-02e5-46eb-9d9c-4ab833f91251">
           <ID>Educacion</ID>
           <Name>Educacion</Name>
           <SourceColumnID>Educacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="2a63b86a-a390-4c62-9ad4-1c432eb3263e">
+        <Column dwd:design-time-name="fe6322b6-4d4c-47f7-9506-f9a215805156">
           <ID>Fecha Nacimiento</ID>
           <Name>Fecha Nacimiento</Name>
           <SourceColumnID>Fecha Nacimiento</SourceColumnID>
@@ -267,17 +267,17 @@
             <ModelingFlag>REGRESSOR</ModelingFlag>
           </ModelingFlags>
         </Column>
-        <Column dwd:design-time-name="87a0c9c5-cf5b-4f5a-99a6-d49f37a875ba">
+        <Column dwd:design-time-name="eb6b3e84-0988-49c0-8021-3810664f1862">
           <ID>Genero</ID>
           <Name>Genero</Name>
           <SourceColumnID>Genero</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="0cd8dcb7-ad24-41cd-b05f-249a430afcb4">
+        <Column dwd:design-time-name="367fcd53-816f-4f02-8eee-6a5a7da61659">
           <ID>Ocupacion</ID>
           <Name>Ocupacion</Name>
           <SourceColumnID>Ocupacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="cd69700f-783c-48fd-955c-e9c6f5e186a4">
+        <Column dwd:design-time-name="5bfcb92a-3d09-4a46-b44d-37798595f489">
           <ID>Total Hijos</ID>
           <Name>Total Hijos</Name>
           <SourceColumnID>Total Hijos</SourceColumnID>
@@ -285,111 +285,111 @@
       </Columns>
       <AllowDrillThrough>true</AllowDrillThrough>
     </MiningModel>
-    <MiningModel dwd:design-time-name="cc88e88e-faa9-4ffd-8228-d0cd96f3adbd">
+    <MiningModel dwd:design-time-name="f3fcd510-b2c5-4ed9-bda2-8dded7e8218b">
       <ID>TMCLUSTERINGCLIENTEVENTA</ID>
       <Name>TMCLUSTERINGCLIENTEVENTA</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Clustering</Algorithm>
       <Columns>
-        <Column dwd:design-time-name="bc6dd1d3-0765-475d-be9e-aeb2dce0897c">
+        <Column dwd:design-time-name="12fe13e6-dc0d-416b-9569-dd22812439a5">
           <ID>Cliente Key</ID>
           <Name>Cliente Key</Name>
           <SourceColumnID>Cliente Key</SourceColumnID>
           <Usage>Key</Usage>
         </Column>
-        <Column dwd:design-time-name="fc1daf98-b369-421b-b0c5-409d908d9954">
+        <Column dwd:design-time-name="71555f81-b79f-44e0-a213-08a7d3f97f6f">
           <ID>Comprador</ID>
           <Name>Comprador</Name>
           <SourceColumnID>Comprador</SourceColumnID>
           <Usage>PredictOnly</Usage>
         </Column>
-        <Column dwd:design-time-name="a8fe4ac2-6520-4798-a5e1-996197b76a85">
+        <Column dwd:design-time-name="0c580a67-48fb-49fc-b6db-44180b2c50f5">
           <ID>Direccion Estado</ID>
           <Name>Direccion Estado</Name>
           <SourceColumnID>Direccion Estado</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="7cb54e84-7b89-4693-92aa-342bd60fd3e3">
+        <Column dwd:design-time-name="6bf6d518-a4a8-4d4d-bbb9-bf15a4f77397">
           <ID>Direccion Pais</ID>
           <Name>Direccion Pais</Name>
           <SourceColumnID>Direccion Pais</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="e6806693-88fb-4d4c-8c93-463bd6235d18">
+        <Column dwd:design-time-name="c8619bc8-51e7-46df-bbb5-a06f0f983f03">
           <ID>Educacion</ID>
           <Name>Educacion</Name>
           <SourceColumnID>Educacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="9ff9ee42-bd91-4955-8e0d-ab7e870f6f99">
+        <Column dwd:design-time-name="6b202988-9231-4750-93ba-8449084777b1">
           <ID>Fecha Nacimiento</ID>
           <Name>Fecha Nacimiento</Name>
           <SourceColumnID>Fecha Nacimiento</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="c3cccbcd-4ac8-428f-917a-ae1c0e7f61eb">
+        <Column dwd:design-time-name="b83a2e1e-ade7-48cc-9b15-b17aafe0505b">
           <ID>Genero</ID>
           <Name>Genero</Name>
           <SourceColumnID>Genero</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="4962fcd7-67e4-452c-b96a-fa374e99fea8">
+        <Column dwd:design-time-name="d53c8ee2-4770-4c38-bf22-189de9a56af5">
           <ID>Ocupacion</ID>
           <Name>Ocupacion</Name>
           <SourceColumnID>Ocupacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="88ff369e-9228-42ca-b12f-aedaf8b1327e">
+        <Column dwd:design-time-name="04a3404d-2c80-4b75-9b25-9965a0819af4">
           <ID>Total Hijos</ID>
           <Name>Total Hijos</Name>
           <SourceColumnID>Total Hijos</SourceColumnID>
         </Column>
       </Columns>
     </MiningModel>
-    <MiningModel dwd:design-time-name="8e604948-50b1-486a-a3b3-c835a798ffbd">
+    <MiningModel dwd:design-time-name="2513c379-de98-4fd8-b0f8-ab989c796710">
       <ID>TMBayesClienteVenta</ID>
       <Name>TMBayesClienteVenta</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Naive_Bayes</Algorithm>
       <Columns>
-        <Column dwd:design-time-name="85452e86-5ece-4f11-b94b-bee716b2b208">
+        <Column dwd:design-time-name="5462a26c-786b-4c66-8e17-a5f30fa3ca54">
           <ID>Cliente Key</ID>
           <Name>Cliente Key</Name>
           <SourceColumnID>Cliente Key</SourceColumnID>
           <Usage>Key</Usage>
         </Column>
-        <Column dwd:design-time-name="63307d64-f082-4859-8085-4a2ed370bbdc">
+        <Column dwd:design-time-name="f18c7888-6b55-4407-bac9-d37dd73140b4">
           <ID>Comprador</ID>
           <Name>Comprador</Name>
           <SourceColumnID>Comprador</SourceColumnID>
           <Usage>PredictOnly</Usage>
         </Column>
-        <Column dwd:design-time-name="7b55e648-73c9-41d4-abf5-8c65961846ee">
+        <Column dwd:design-time-name="003f9193-82dd-4f6c-b5ac-f845b8989944">
           <ID>Direccion Estado</ID>
           <Name>Direccion Estado</Name>
           <SourceColumnID>Direccion Estado</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="4aaae865-5a3c-4e71-961f-9f3178e77968">
+        <Column dwd:design-time-name="f96d7bc9-394d-45f8-82bb-9fa2411d34a2">
           <ID>Direccion Pais</ID>
           <Name>Direccion Pais</Name>
           <SourceColumnID>Direccion Pais</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="1b63e927-2426-4af3-bbae-3249bc316f22">
+        <Column dwd:design-time-name="a0cfb55a-f775-4808-a474-4ad65bb00b7f">
           <ID>Educacion</ID>
           <Name>Educacion</Name>
           <SourceColumnID>Educacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="dd820fe5-97a2-42cc-b381-37b25d0d02cb">
+        <Column dwd:design-time-name="0195adec-2536-4d0f-8657-876765bf225b">
           <ID>Genero</ID>
           <Name>Genero</Name>
           <SourceColumnID>Genero</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="31451821-152f-4557-94c8-bd572fb072f2">
+        <Column dwd:design-time-name="9b4c526b-4340-46b1-a741-2c0a427756e0">
           <ID>Ocupacion</ID>
           <Name>Ocupacion</Name>
           <SourceColumnID>Ocupacion</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="d3545b2d-4917-4361-ae0a-be54e53f9084">
+        <Column dwd:design-time-name="b62f2d84-54ef-486b-a3b8-8bef8880897b">
           <ID>Total Hijos</ID>
           <Name>Total Hijos</Name>
           <SourceColumnID>Total Hijos</SourceColumnID>
