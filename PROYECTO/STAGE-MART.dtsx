@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{F82F865A-DFF1-4D1B-B509-D8678E195E67}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{A5BC0465-F430-42D6-802E-DAED7D9CDDFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
+          DTS:ConnectionString="Data Source=ti;Initial Catalog=BD_MART;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{1243F914-7D8D-41D6-B1E5-316F82F5557B}TI.BD_MART;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{13033209-945C-4FF0-BD0F-A4F751BC292A}TI.BD_Stage;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -8198,33 +8198,33 @@ on p.producto_id = pr.producto_stage_id</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Carga Compra\DFT_COMPRA_DIM"
           TopLeft="26.5,11.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="236,108.8"
+          PanelSize="236,109"
           Size="236,152"
           Id="Package\Carga Compra"
           TopLeft="666.416666666667,568.833333333333" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Carga de Cliente\DFT_CLIENTE_DIM"
           TopLeft="19.6666666666667,13.2539682539684" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,110.4"
-          Size="204.8,152.8"
+          PanelSize="205,110"
+          Size="205,153"
           Id="Package\Carga de Cliente"
           TopLeft="344.555555555556,356.492063492063" />
         <NodeLayout
-          Size="228,41.6"
+          Size="228,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM  DELETE"
           TopLeft="41.0555555555557,103.333333333333" />
         <NodeLayout
-          Size="265.6,41.6"
+          Size="266,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DIM INSERT UPDATE"
           TopLeft="12.1666666666666,38.5555555555556" />
         <EdgeLayout
@@ -8264,78 +8264,89 @@ on p.producto_id = pr.producto_stage_id</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,203.2"
-          Size="288,246.4"
+          PanelSize="288,203"
+          Size="288,246"
           Id="Package\Carga de Direccion"
           TopLeft="581.063492063492,63.9075630359348" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Carga de Empleado\DFT_EMPLEADO_DIM"
           TopLeft="10.4444444444446,9.55555555555557" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,107.2"
-          Size="204.8,150.4"
+          PanelSize="205,107"
+          Size="205,150"
           Id="Package\Carga de Empleado"
           TopLeft="937.587301587302,77.4285714285714" />
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Carga de Forma de Pago\DFT_FORMA_DE_PAGO_DIM"
           TopLeft="41.5238095238095,23.9206349206351" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="262.4,120.8"
-          Size="262.4,164"
+          PanelSize="262,121"
+          Size="262,164"
           Id="Package\Carga de Forma de Pago"
           TopLeft="584.031746031746,350.126984126984" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO_DIM"
           TopLeft="16.9206349206346,32.7936507936509" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="254.4,183.2"
-          Size="254.4,225.6"
+          PanelSize="254,183"
+          Size="254,226"
           Id="Package\Carga de Producto"
           TopLeft="285.238095238096,69.8888888888888" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Carga de Venta\DFT_VENTA_DIM"
           TopLeft="45.6666666666667,3.83333333333331" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240.8,103.2"
-          Size="240.8,145.6"
+          PanelSize="241,103"
+          Size="241,146"
           Id="Package\Carga de Venta"
           TopLeft="54.126984126984,359.984126984127" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="218,42"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM"
+          TopLeft="55.9428698666247,7.76470862787903" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="278,104"
+          Size="278,147"
+          Id="Package\Carga DetalleCliente"
+          TopLeft="945.057153719785,573.647060753977" />
+        <NodeLayout
+          Size="170,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION"
           TopLeft="18.1031746153388,16.3888888888889" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240,123.2"
-          Size="240,166.4"
+          PanelSize="240,123"
+          Size="240,166"
           Id="Package\Carga Produccion"
           TopLeft="364.5,559.25" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM"
           TopLeft="25,25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="260,124"
-          Size="260,167.2"
+          Size="260,167"
           Id="Package\Contenedor de secuencias"
           TopLeft="905.119047606883,343.235294106922" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="80,64" />
         <EdgeLayout
@@ -8572,17 +8583,6 @@ on p.producto_id = pr.producto_stage_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="217.6,41.6"
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM"
-          TopLeft="55.9428698666247,7.76470862787903" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="278.4,104"
-          Size="278.4,147.2"
-          Id="Package\Carga DetalleCliente"
-          TopLeft="945.057153719785,573.647060753977" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="902.416666666667,646.040197043655">
@@ -9343,6 +9343,91 @@ on p.producto_id = pr.producto_stage_id</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE"
+          TopLeft="226.428575284627,27.2000007292804" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar"
+          TopLeft="270.714290324523,130.000001823201" />
+        <EdgeLayout
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de origen de OLE DB]"
+          TopLeft="328.971432804575,68.8000007292804">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.2000010939205"
+              Start="0,0"
+              End="0,53.7000010939205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.7000010939205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM"
+          TopLeft="235.714289728476,230.176473816373" />
+        <EdgeLayout
+          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de ordenación]"
+          TopLeft="330.614290026499,171.600001823201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.5764719931725"
+              Start="0,0"
+              End="0,51.0764719931725">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.0764719931725" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Carga Produccion\DFT_PRODUCCION">
     <LayoutInfo>
       <GraphLayout
@@ -9458,91 +9543,6 @@ on p.producto_id = pr.producto_stage_id</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Contenedor de secuencias\DFT_PROVEEDOR_DIM\PROVEEDOR_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE"
-          TopLeft="226.428575284627,27.2000007292804" />
-        <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\Ordenar"
-          TopLeft="270.714290324523,130.000001823201" />
-        <EdgeLayout
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de origen de OLE DB]"
-          TopLeft="328.971432804575,68.8000007292804">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.2000010939205"
-              Start="0,0"
-              End="0,53.7000010939205">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.7000010939205" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM"
-          TopLeft="235.714289728476,230.176473816373" />
-        <EdgeLayout
-          Id="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM.Paths[Salida de ordenación]"
-          TopLeft="330.614290026499,171.600001823201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58.5764719931725"
-              Start="0,0"
-              End="0,51.0764719931725">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.0764719931725" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_SATGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga DetalleCliente\DFT_CLIENTE_DETALLE_DIM\CLIENTE_DETALLE_DIM">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

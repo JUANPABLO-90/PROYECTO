@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{8D2CD7B4-924A-458D-B98F-351A98F4461B}">
+  DTS:VersionBuild="209"
+  DTS:VersionGUID="{84918C5F-9B1D-40F8-900E-7E0BA3580260}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -58,7 +58,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\stormdebw\Documents\PROYECTO\ORIGENES\DETALLECLIENTE\detalleCliente.txt">
+          DTS:ConnectionString="C:\PROYECTO\ORIGENES\DETALLECLIENTE\detalleCliente.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="id"
-              DTS:DTSID="{B4FC43FC-8493-4D62-9BE9-9BCB1A4D8419}"
+              DTS:DTSID="{EABA4495-41F7-4A0C-89A0-A3FD4C2EE6FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="clienteId"
-              DTS:DTSID="{7E0E1F0F-1847-46A7-A9B6-0E1C11CCC317}"
+              DTS:DTSID="{2CF302A2-7DB2-4049-95D7-68CE4FC3F33C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="totalHijos"
-              DTS:DTSID="{39C9E2A8-DEA3-4DC0-A92D-7AA16DBA812F}"
+              DTS:DTSID="{E4C7E1AA-FBE3-48AD-AC00-E280A69AF3DD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -90,7 +90,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="fechaNac"
-              DTS:DTSID="{67BEC58E-AA01-4836-964B-A565932C08ED}"
+              DTS:DTSID="{B3508088-8477-4315-B6EB-15D30D2DE21B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="educacion"
-              DTS:DTSID="{521CDD6B-2172-4A21-9C36-6B8A8526AB5A}"
+              DTS:DTSID="{49D4C7FC-EABE-46A6-AE11-0E5673729278}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +108,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ocupacion"
-              DTS:DTSID="{D3E8429D-289F-497D-86C4-133AF1DA103D}"
+              DTS:DTSID="{08F3D1D1-CD4E-46F9-90EC-4E29875691DD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="genero"
-              DTS:DTSID="{1953E50F-89BA-4A35-AC7D-44F7CBFF03A3}"
+              DTS:DTSID="{462F9BF6-D722-4488-8A15-BE8E33D2A324}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -242,7 +242,12 @@
       DTS:ObjectName="MySQL32.root">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=root;Dsn=MySQL32;" />
+          DTS:ConnectionString="uid=root;Dsn=MySQL;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzXcOFZp48EGzAjU15RWfDwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAjlHl0TEOi98zhb9ZNQj+gXw+Jd6pZ52/HfQ7/qS1rfgAAAAAOgAAAAAIAACAAAABxMy/gS9yH8LbAkoeJN+mazlHq/1lDtLXy6OIjWM/+8SAAAACKEmycDJCal7SpMOyiJP2JOtHx3FTc8LfALzO4OAqikUAAAACXstPEmbsrUuil9X0Bm63lEXUJHIAS5HmCe7luhX2hJ+Q7h1BFNW+HsEtRu+702zUjJeQmSjrWRLhQhNDy9Ddf</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -254,7 +259,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_ORIGEN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{C26A3788-F714-44D0-BD58-25D7AC352EB4}TI.BD_ORIGEN;" />
+          DTS:ConnectionString="Data Source=TI;Initial Catalog=BD_ORIGEN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{C26A3788-F714-44D0-BD58-25D7AC352EB4}TI.BD_ORIGEN;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -266,7 +271,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PCCAUDILLO\MSSQLSERVER2019;Initial Catalog=BD_Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{8B69F670-1514-438A-A01F-879C469E4139}TI.BD_Stage;" />
+          DTS:ConnectionString="Data Source=ti;Initial Catalog=BD_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{8B69F670-1514-438A-A01F-879C469E4139}TI.BD_Stage;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -14759,11 +14764,11 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Carga Cliente\DFT_CLIENTE"
           TopLeft="23,5.49999999999997" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT"
           TopLeft="21.8285834589788,73.5882379109473" />
         <EdgeLayout
@@ -14791,38 +14796,38 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="246.4,180"
-          Size="246.4,223.2"
+          PanelSize="246,180"
+          Size="246,223"
           Id="Package\Carga Cliente"
           TopLeft="1200.41666666667,391.833333333333" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Carga Compra\DFT_COMPRA"
           TopLeft="40.25,14" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,80.8"
-          Size="204.8,124"
+          PanelSize="205,81"
+          Size="205,124"
           Id="Package\Carga Compra"
           TopLeft="302.5,413.5" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Carga Compra Producto\DFT_COMPRA_P"
           TopLeft="21.3333333333333,13" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.8,110.4"
-          Size="220.8,152.8"
+          PanelSize="221,110"
+          Size="221,153"
           Id="Package\Carga Compra Producto"
           TopLeft="47.0833333333337,398.083333333334" />
         <NodeLayout
-          Size="180,68.8"
+          Size="180,69"
           Id="Package\Carga de Direccion\DFT_DIRECCION INSERT_UPDATE"
           TopLeft="40.1111111111112,163.222222222222" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="217,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE"
           TopLeft="255.555555555555,175.722222222222" />
         <EdgeLayout
@@ -14850,100 +14855,100 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="499.2,304.8"
-          Size="499.2,348"
+          PanelSize="499,305"
+          Size="499,348"
           Id="Package\Carga de Direccion"
           TopLeft="311.25,20.5" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Carga de Producto\DFT_PRODUCTO"
           TopLeft="16.75,27.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,124"
-          Size="204.8,167.2"
+          PanelSize="205,124"
+          Size="205,167"
           Id="Package\Carga de Producto"
           TopLeft="62.25,144.5" />
         <NodeLayout
-          Size="186.4,41.6"
+          Size="187,42"
           Id="Package\Carga Detalle Cliente\DFT_DETALLECLIENTE"
           TopLeft="10.1714355293587,17.9764758218944" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,114.4"
-          Size="204.8,157.6"
+          PanelSize="205,115"
+          Size="205,158"
           Id="Package\Carga Detalle Cliente"
-          TopLeft="982.200006726811,938.270591677926" />
+          TopLeft="1308.62857815538,669.699163106497" />
         <NodeLayout
-          Size="212,41.6"
+          Size="212,42"
           Id="Package\Carga Estatus de Compra\DFT_ESTATUS_COMPRA"
           TopLeft="39.25,29.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,127.2"
-          Size="288,169.6"
+          PanelSize="288,127"
+          Size="288,170"
           Id="Package\Carga Estatus de Compra"
           TopLeft="538.75,387.25" />
         <NodeLayout
-          Size="191.2,41.6"
+          Size="191,42"
           Id="Package\Carga Formas de Pago\DFT_FORMAS_PAGO"
           TopLeft="6.25000000000023,8" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="216,104.8"
+          PanelSize="216,105"
           Size="216,148"
           Id="Package\Carga Formas de Pago"
           TopLeft="1201.25,121" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Carga Movimiento Caja\DFT_MOVIMIENTOCAJA"
           TopLeft="25.9428628843659,18.6470609362975" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="252.8,135.2"
-          Size="252.8,178.4"
+          PanelSize="253,135"
+          Size="253,178"
           Id="Package\Carga Movimiento Caja"
           TopLeft="727.797624821566,664.91177150892" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="170,42"
           Id="Package\Carga Produccion\DFT_PRODUCCION"
           TopLeft="34.8428596061103,20.0117688348961" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="240.8,121.6"
-          Size="240.8,164.8"
+          PanelSize="241,122"
+          Size="241,165"
           Id="Package\Carga Produccion"
           TopLeft="1027.73809592335,670.44118432823" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR"
           TopLeft="39.0000060456142,26.9294145209566" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="243.2,126.4"
-          Size="243.2,168.8"
+          PanelSize="243,126"
+          Size="243,169"
           Id="Package\Carga Proveedor"
           TopLeft="898.75,384.75" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Carga Venta\DFT_VENTASQL"
           TopLeft="46.3603232923821,3.80065357093855" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Carga Venta\Foreach Excel-Ventas\DFT_VENTAFILE"
           TopLeft="26.5079424089314,24.1986950459644" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,88.8"
-          Size="204.8,132"
+          PanelSize="205,89"
+          Size="205,132"
           Id="Package\Carga Venta\Foreach Excel-Ventas"
           TopLeft="25.1428581159944,74.2326821933294" />
         <EdgeLayout
@@ -14971,23 +14976,23 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316,220.8"
+          PanelSize="316,221"
           Size="316,264"
           Id="Package\Carga Venta"
           TopLeft="4.53571427354998,611.916666666667" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Carga Venta Producto\DFT_VENTAPRODUCTOSQL"
           TopLeft="32.7714366363019,20.6705909486461" />
         <NodeLayout
-          Size="207.2,41.6"
+          Size="207,42"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO\DFT_VENTAPRODUCTOXLS"
           TopLeft="20.1714370620497,13.7176511556634" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="233.6,92.8"
-          Size="233.6,136"
+          PanelSize="234,93"
+          Size="234,136"
           Id="Package\Carga Venta Producto\Foreach VENTA-PRODUCTO"
           TopLeft="19.6000080040525,110.470589672405" />
         <EdgeLayout
@@ -15015,23 +15020,23 @@ WHERE id =?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="308.8,299.2"
-          Size="308.8,342.4"
+          PanelSize="309,299"
+          Size="309,342"
           Id="Package\Carga Venta Producto"
           TopLeft="375.764292879008,578.00882776567" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Cargar Empleados\DFT_EMPLEADO"
           TopLeft="42.7428571793494,29.5852928306817" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="243.2,176"
-          Size="243.2,219.2"
+          PanelSize="243,176"
+          Size="243,219"
           Id="Package\Cargar Empleados"
           TopLeft="887.542865268552,109.870589125445" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="190,42"
           Id="Package\DELETE TABLES STAGE"
           TopLeft="70.1020420101572,39.3277316439936" />
         <EdgeLayout
@@ -15170,30 +15175,18 @@ WHERE id =?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="1148.13809592335,835.24118432823">
+          TopLeft="1268.73809592335,750.820173717364">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63.5380891965397,103.029407349696"
+              EndConnector="39.8904822320324,0"
               Start="0,0"
-              End="-63.5380891965397,95.5294073496964">
+              End="32.3904822320324,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5147036748482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.5147036748482"
-                    Point2="0,51.5147036748482"
-                    Point3="-4,51.5147036748482" />
-                  <mssgle:LineSegment
-                    End="-59.5380891965397,51.5147036748482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.5380891965397,51.5147036748482"
-                    Point2="-63.5380891965397,51.5147036748482"
-                    Point3="-63.5380891965397,55.5147036748482" />
-                  <mssgle:LineSegment
-                    End="-63.5380891965397,95.5294073496964" />
+                    End="32.3904822320324,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15489,31 +15482,31 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar 1"
           TopLeft="341,124" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Combinación de mezcla"
           TopLeft="438,222" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Ordenar"
           TopLeft="663,128" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Origen de archivo plano"
           TopLeft="623,29" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE"
           TopLeft="460,379" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\CLIENTE_STAGE1"
           TopLeft="322,25" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\Carga Cliente\DFT_CLIENTE_TXT\Columna derivada 1"
           TopLeft="453,289.8" />
         <EdgeLayout
@@ -16052,15 +16045,15 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="240.8,41.6"
+          Size="241,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\CM_DELETE_DIRECCION_ORIGEN"
           TopLeft="313,261" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\DIRECCION_ORIGEN"
           TopLeft="349,57" />
         <NodeLayout
-          Size="128.8,41.6"
+          Size="129,42"
           Id="Package\Carga de Direccion\DFT_DIRECCION_DELETE\Búsqueda"
           TopLeft="368,156" />
         <EdgeLayout
@@ -16082,9 +16075,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16220,17 +16211,17 @@ WHERE id =?</property>
     design-time-name="Package\Carga Detalle Cliente\DFT_DETALLECLIENTE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178,42"
           Id="Package\Carga Detalle Cliente\DFT_DETALLECLIENTE\File txt DetalleCliente"
           TopLeft="127.857145034537,35.176471081572" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Carga Detalle Cliente\DFT_DETALLECLIENTE\DETALLE_CLIENTE_STAGE"
           TopLeft="121.428573496488,206.470591130966" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Detalle Cliente\DFT_DETALLECLIENTE\Ordenar"
           TopLeft="166.428574262833,114.705883961648" />
         <EdgeLayout
@@ -16252,9 +16243,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16276,9 +16265,7 @@ WHERE id =?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16663,15 +16650,15 @@ WHERE id =?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_ORIGEN"
           TopLeft="190.142860755629,27.5882357231061" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\PROVEEDOR_STAGE"
           TopLeft="195.00000332083,203.411767558656" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\Carga Proveedor\DFT_PROVEEDOR\Ordenar"
           TopLeft="222.857146652377,113.94117806857" />
         <EdgeLayout
@@ -16726,14 +16713,14 @@ WHERE id =?</property>
           Text="ORIGEN MYSQL"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="113.6,NaN"
+          Size="114,NaN"
           Id="8e127328-ed24-49c4-bae0-e114cd669956"
           TopLeft="70.0000011920929,25.2352944715625" />
         <AnnotationLayout
           Text="BD_STAGE"
           ParentId="Package\Carga Proveedor\DFT_PROVEEDOR"
           FontInfo="{assembly:Null}"
-          Size="81.6,NaN"
+          Size="82,NaN"
           Id="a0edfb0b-b11d-48c4-9954-65362ea4a11e"
           TopLeft="82.8571442681917,202.54117788625" />
       </GraphLayout>
